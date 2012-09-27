@@ -1,0 +1,17 @@
+2012/09/27 17:23:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /home/marin/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/application/index?r=gii
+---
+2012/09/27 17:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "telescope/index".' in /home/marin/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('telescope/index')
+#1 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/application/index.php?r=telescope/index
+HTTP_REFERER=http://localhost/application/index.php?r=site/login
+---

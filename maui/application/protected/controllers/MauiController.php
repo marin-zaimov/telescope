@@ -1,0 +1,5 @@
+<?
+
+class MauiController extends Controller {
+
+}
