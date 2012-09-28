@@ -31,8 +31,8 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Telecsope', 'url'=>array('/telescope/index'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Calendar', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'User Profile', 'url'=>array('/site/contact')),
+				array('label'=>'Calendar', 'url'=>array('/calendar/index', 'view'=>'about')),
+				array('label'=>'User Profile', 'url'=>array('/user/index')),
 				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)

@@ -39,3 +39,36 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/application/index.php?r=gii
 ---
+2012/09/28 01:40:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/marin/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('page')
+#1 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('page')
+#2 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('calendar/page')
+#3 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/application/index.php?r=calendar/page&view=about
+HTTP_REFERER=http://localhost/application/index.php?r=telescope/index
+---
+2012/09/28 01:40:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/marin/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('page')
+#1 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('page')
+#2 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('calendar/page')
+#3 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/application/index.php?r=calendar/page&view=about
+HTTP_REFERER=http://localhost/application/index.php?r=site/login
+---
+2012/09/28 01:40:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/marin/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('page')
+#1 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('page')
+#2 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('calendar/page')
+#3 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/application/index.php?r=calendar/page&view=about
+HTTP_REFERER=http://localhost/application/index.php?r=site/login
+---
