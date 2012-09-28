@@ -1,0 +1,23 @@
+Controllers
+-Site
+-User
+-Calendar
+-Telescope
+-Forum
+
+
+Models - lone for each table
+-User
+-Calendar
+-Reservation
+-ForumTitle
+-ForumPost
+
+
+
+Pages
+-Calendar
+-day within calendar
+-user profile
+-telecsope landing page
+-telescope logged in page

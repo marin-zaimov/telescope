@@ -15,3 +15,27 @@ Stack trace:
 REQUEST_URI=/application/index.php?r=telescope/index
 HTTP_REFERER=http://localhost/application/index.php?r=site/login
 ---
+2012/09/28 01:20:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /home/marin/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/application/index.php?r=gii
+---
+2012/09/28 01:20:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /home/marin/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/application/index.php?r=gii
+---
+2012/09/28 01:20:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /home/marin/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/marin/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/application/index.php?r=gii
+---
