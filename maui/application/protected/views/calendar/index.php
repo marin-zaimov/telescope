@@ -39,10 +39,5 @@ $this->breadcrumbs=array(
   this is a random div to show how to use css selectors
 </div>
 
-
-
-<!-- include js file here -->
-<script type="javascript" url="/js/calendarManager.js" />
-
-
+<script src="<?= Yii::app()->request->baseUrl; ?>/js/calendarManager.js"></script>
 

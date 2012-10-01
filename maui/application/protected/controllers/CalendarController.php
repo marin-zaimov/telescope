@@ -1,6 +1,6 @@
 <?php
 
-class CalendarController extends Controller
+class CalendarController extends MauiController
 {
 	public function actionIndex()
 	{

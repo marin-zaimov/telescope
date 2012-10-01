@@ -42,4 +42,4 @@ $this->breadcrumbs=array(
 
 
 <!-- include js file here -->
-<script type="javascript" url="/js/telescopeManager.js" />
+<script src="<?= Yii::app()->request->baseUrl; ?>/js/telescopeManager.js"></script>
