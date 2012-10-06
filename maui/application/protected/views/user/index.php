@@ -30,9 +30,9 @@ $this->breadcrumbs=array(
 </p>
 
 <select id="selectInt">
-<? foreach (array(1,2,3,4,5) as $int): ?>
-  <option value="<?= $int; ?>" > <?= $int; ?> </option>
-<? endforeach; ?>
+<?php foreach (array(1,2,3,4,5) as $int): ?>
+  <option value="<?php= $int; ?>" > <?php= $int; ?> </option>
+<?php endforeach; ?>
 </select>
 
 <div id="randomDiv">
@@ -42,4 +42,4 @@ $this->breadcrumbs=array(
 
 
 <!-- include js file here -->
-<script src="<?= Yii::app()->request->baseUrl; ?>/js/userManager.js"></script>
+<script src="<?php= Yii::app()->request->baseUrl; ?>/js/userManager.js"></script>
