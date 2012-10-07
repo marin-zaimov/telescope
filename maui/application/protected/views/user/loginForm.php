@@ -33,6 +33,8 @@ GMT: <select name= "User[GMToffset]">
        <option value="GMT-10">GMT-10:Alaska-Hawaii Standard</option>
        <option value="GMT-11">GMT-11: Nome</option>
        <option value="GMT-12">GMT-12:International Date Line West</option>
+       
+       
 </select><br>
 <input type="submit" value="Submit">
 <form>
