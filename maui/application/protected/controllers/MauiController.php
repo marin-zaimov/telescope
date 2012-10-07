@@ -1,4 +1,4 @@
-<?
+<?php
 
 class MauiController extends Controller {
 
