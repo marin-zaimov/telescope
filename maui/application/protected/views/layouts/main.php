@@ -12,11 +12,21 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
+
+    <!-- css imports -->
+    <!-- FIXME? include fullcalendart.print.css? it's more printer friendly... good for teachers? -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/fullcalendar.css" />
+
   
+    <!-- js imports -->
+    <!-- FIXME? JQuery files for drag and drop for fullcalendar -->
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>
-   
+   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/fullcalendar.min.js"></script>
+   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/gcal.js"></script>
+
+  
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
