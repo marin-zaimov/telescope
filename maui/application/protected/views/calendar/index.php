@@ -29,15 +29,8 @@ $this->breadcrumbs=array(
 	the file <tt><?php echo __FILE__; ?></tt>.
 </p>
 
-<select id="selectInt">
-<?php foreach (array(1,2,3,4,5) as $int): ?>
-  <option value="<?php echo $int; ?>" > <?php echo $int; ?> </option>
-<?php endforeach; ?>
-</select>
 
-<div id="randomDiv">
-  this is a random div to show how to use css selectors
-</div>
+<div id="calendar"></div>
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/calendarManager.js"></script>
 
