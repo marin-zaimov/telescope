@@ -72,3 +72,58 @@ Stack trace:
 REQUEST_URI=/application/index.php?r=calendar/page&view=about
 HTTP_REFERER=http://localhost/application/index.php?r=site/login
 ---
+2012/10/06 20:37:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loginForm".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('loginForm')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('loginForm')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/loginForm')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/loginForm
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/06 20:38:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loginForm".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('loginForm')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('loginForm')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/loginForm')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/loginForm
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/06 20:39:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logiForm".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('logiForm')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('logiForm')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/logiForm')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/logiForm
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/profile
+---
+2012/10/06 20:40:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logiForm".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('logiForm')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('logiForm')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/logiForm')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/logiForm
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/profile
+---
+2012/10/06 20:40:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logiForm".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('logiForm')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('logiForm')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/logiForm')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/logiForm
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/profile
+---

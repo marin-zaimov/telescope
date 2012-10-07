@@ -12,6 +12,11 @@ class UserController extends Controller
 		$this->render('profile');
 	}
 
+	public function actionShowUserForm()
+	{
+		$this->render('loginForm');
+	}
+
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()

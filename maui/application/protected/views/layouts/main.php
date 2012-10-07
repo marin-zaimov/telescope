@@ -35,6 +35,7 @@
 				array('label'=>'Telecsope', 'url'=>array('/telescope/index'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Calendar', 'url'=>array('/calendar/index', 'view'=>'about')),
 				array('label'=>'User Profile', 'url'=>array('/user/index')),
+				array('label'=>'New User', 'url'=>array('/user/ShowUserForm')),
 				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
