@@ -127,3 +127,147 @@ Stack trace:
 REQUEST_URI=/telescope/maui/application/index.php/user/logiForm
 HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/profile
 ---
+2012/10/06 21:07:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "html_form_action.asp".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('html_form_actio...')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('html_form_actio...')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/html_form_...')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/html_form_action.asp?User%5Bemail%5D=&User%5Bpassword%5D=&User%5BcPassword%5D=&User%5BfirstName%5D=&User%5BlastName%5D=&User%5Borganization%5D=&User%5BGMToffset%5D=GMT%2B0
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
+2012/10/06 21:07:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "html_form_action.asp".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('html_form_actio...')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('html_form_actio...')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/html_form_...')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/html_form_action.asp?User%5Bemail%5D=&User%5Bpassword%5D=&User%5BcPassword%5D=&User%5BfirstName%5D=&User%5BlastName%5D=&User%5Borganization%5D=&User%5BGMToffset%5D=GMT%2B0
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
+2012/10/06 21:08:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "html_form_action.asp".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('html_form_actio...')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('html_form_actio...')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/html_form_...')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/html_form_action.asp?User%5Bemail%5D=&User%5Bpassword%5D=&User%5BcPassword%5D=&User%5BfirstName%5D=&User%5BlastName%5D=&User%5Borganization%5D=&User%5BGMToffset%5D=GMT%2B0
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
+2012/10/06 21:08:45 [error] [php] Undefined index: User (/home/jasmine/telescope/maui/application/protected/controllers/UserController.php:22)
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(287): UserController->runAction()
+#1 /home/jasmine/telescope/maui/yii/framework/web/CController.php(266): UserController->runActionWithFilters()
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): UserController->run()
+#3 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/jasmine/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=password&User%5BcPassword%5D=password&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+in /home/jasmine/telescope/maui/application/protected/controllers/UserController.php (22)
+in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/06 21:10:10 [error] [php] Undefined index: User (/home/jasmine/telescope/maui/application/protected/controllers/UserController.php:22)
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(287): UserController->runAction()
+#1 /home/jasmine/telescope/maui/yii/framework/web/CController.php(266): UserController->runActionWithFilters()
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): UserController->run()
+#3 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/jasmine/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=pass&User%5BcPassword%5D=pass&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+in /home/jasmine/telescope/maui/application/protected/controllers/UserController.php (22)
+in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/06 21:11:34 [error] [php] Undefined index: User[email] (/home/jasmine/telescope/maui/application/protected/controllers/UserController.php:22)
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(287): UserController->runAction()
+#1 /home/jasmine/telescope/maui/yii/framework/web/CController.php(266): UserController->runActionWithFilters()
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): UserController->run()
+#3 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/jasmine/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=pass&User%5BcPassword%5D=pass&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+in /home/jasmine/telescope/maui/application/protected/controllers/UserController.php (22)
+in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/06 21:12:11 [error] [php] Undefined index: User (/home/jasmine/telescope/maui/application/protected/controllers/UserController.php:22)
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(287): UserController->runAction()
+#1 /home/jasmine/telescope/maui/yii/framework/web/CController.php(266): UserController->runActionWithFilters()
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): UserController->run()
+#3 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/jasmine/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=a&User%5BcPassword%5D=a&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+in /home/jasmine/telescope/maui/application/protected/controllers/UserController.php (22)
+in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/06 21:13:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/user/Creat...')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=a&User%5BcPassword%5D=a&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
+2012/10/06 21:14:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/user/Creat...')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=a&User%5BcPassword%5D=a&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
+2012/10/06 21:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/user/Creat...')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=f&User%5BcPassword%5D=f&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
+2012/10/06 21:16:47 [error] [php] Undefined index: User (/home/jasmine/telescope/maui/application/protected/controllers/UserController.php:22)
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(287): UserController->runAction()
+#1 /home/jasmine/telescope/maui/yii/framework/web/CController.php(266): UserController->runActionWithFilters()
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): UserController->run()
+#3 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/jasmine/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=&User%5BcPassword%5D=&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+in /home/jasmine/telescope/maui/application/protected/controllers/UserController.php (22)
+in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/06 21:19:57 [error] [php] var_dump() expects at least 1 parameter, 0 given (/home/jasmine/telescope/maui/application/protected/controllers/UserController.php:27)
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#1 /home/jasmine/telescope/maui/yii/framework/web/CController.php(287): UserController->runAction()
+#2 /home/jasmine/telescope/maui/yii/framework/web/CController.php(266): UserController->runActionWithFilters()
+#3 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): UserController->run()
+#4 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#5 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/jasmine/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=d&User%5BcPassword%5D=d&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+in /home/jasmine/telescope/maui/application/protected/controllers/UserController.php (27)
+in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/06 21:21:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "CreateUser".' in /home/jasmine/telescope/maui/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CController.php(271): CController->missingAction('CreateUser')
+#1 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(283): CController->run('CreateUser')
+#2 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/CreateUser')
+#3 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/telescope/maui/application/index.php/user/CreateUser?User%5Bemail%5D=jasmine%40gatech.edu&User%5Bpassword%5D=g&User%5BcPassword%5D=g&User%5BfirstName%5D=Jasmine&User%5BlastName%5D=Lawrence&User%5Borganization%5D=Georgia+Tech&User%5BGMToffset%5D=GMT-5
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/ShowUserForm
+---
