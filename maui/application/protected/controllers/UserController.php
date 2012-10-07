@@ -14,8 +14,15 @@ class UserController extends Controller
 
 	public function actionShowUserForm()
 	{
+		if(isset($_POST['User'])){
+		var_dump($_POST['User']);
+		die;
+				
+		}else{
 		$this->render('loginForm');
+		}
 	}
+
 
 	// Uncomment the following methods and override them if needed
 	/*
