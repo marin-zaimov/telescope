@@ -31,7 +31,7 @@ $this->breadcrumbs=array(
 
 <select id="selectInt">
 <?php foreach (array(1,2,3,4,5) as $int): ?>
-  <option value="<?php= $int; ?>" > <?php= $int; ?> </option>
+  <option value="<?php echo $int; ?>" > <?php echo $int; ?> </option>
 <?php endforeach; ?>
 </select>
 
@@ -39,5 +39,5 @@ $this->breadcrumbs=array(
   this is a random div to show how to use css selectors
 </div>
 
-<script src="<?php= Yii::app()->request->baseUrl; ?>/js/calendarManager.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/calendarManager.js"></script>
 
