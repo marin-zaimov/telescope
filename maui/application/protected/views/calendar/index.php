@@ -29,27 +29,9 @@ $this->breadcrumbs=array(
 	the file <tt><?php echo __FILE__; ?></tt>.
 </p>
 
-<!--
-<p>
-<a href="#" id="test_link" data-toggle="modal">Test link</a>
-</p>
 
-<div id="test_modal">
-  <div class="modal hide fade">
-    <div class="modal-header">
-      <a class="close" data-dismiss="modal">×</a>
-      <h3>Create Dashboard</h3>
-    </div>
-    <div class="modal-body">
-      <p>Test p tag</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="btn cancel-button">Cancel</a>
-    </div>
-  </div>
-</div>
--->
 
+<!-- bootstrap example -->
 
 <!-- Button to trigger modal -->
 <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
@@ -69,6 +51,7 @@ $this->breadcrumbs=array(
   </div>
 </div>
 
+<!-- end bootstrap example -->
 
 
 
