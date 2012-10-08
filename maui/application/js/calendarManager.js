@@ -28,9 +28,10 @@ $(function() {
         $(this).css('background-color', 'red');
 
     }
-  }),
+  })
 
-  $('#test_link').on('click', goModal);
+  // test code, saving as example
+  //$('#test_link').on('click', goModal);
 
 
 });
@@ -43,8 +44,12 @@ function onIntChange() {
   $('#randomDiv').html('you chose' + $(this).val());
 }
 
+// this test modal code wasn't needed.
+// may need the scrap later
+/*
 function goModal() {
   //$('#randomDiv').html('you chose' + $(this).val());
   $('#test_modal').modal('show'); // cool?
   //alert('yo');
 }
+*/
