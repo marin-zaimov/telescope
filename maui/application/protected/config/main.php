@@ -30,6 +30,10 @@ return array(
 		),
 		
 	),
+	//controller map for rss feed
+	'controllerMap'=>array(
+     'YiiFeedWidget' => 'application.extensions.yii-feed-widget.YiiFeedWidgetController'
+),
 
 	// application components
 	'components'=>array(
