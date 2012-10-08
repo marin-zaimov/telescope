@@ -4,6 +4,14 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
+
+<!-- Feed widget -->
+    <?php 
+        $this->widget('application.extensions.yii-feed-widget.YiiFeedWidget',
+        array('url'=>'http://apod.nasa.gov/apod.rss','limit'=>1)
+       );
+    ?>
+    
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 <p>Congratulations! You have successfully created your Yii application.</p>
@@ -20,9 +28,4 @@ the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
 should you have any questions.</p>
 
-	<!-- Feed widget -->
-    <?php 
-        $this->widget('application.extensions.yii-feed-widget.YiiFeedWidget',
-        array('url'=>'http://apod.nasa.gov/apod.rss','limit'=>1)
-       );
-    ?>
+	
