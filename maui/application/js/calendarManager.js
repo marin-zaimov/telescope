@@ -12,7 +12,26 @@ $(function() {
   
   $('#calendar').fullCalendar({
     // put your options and callbacks here
+    dayClick: function(date, allDay, jsEvent, view) {
+
+        if (allDay) {
+            alert('Clicked on the entire day: ' + date);
+        }else{
+            alert('Clicked on the slot: ' + date);
+        }
+
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+        alert('Current view: ' + view.name);
+
+        // change the day's background color just for fun
+        $(this).css('background-color', 'red');
+
+    }
   })
+
+  // test code, saving as example
+  //$('#test_link').on('click', goModal);
 
 
 });
@@ -24,3 +43,13 @@ $(function() {
 function onIntChange() {
   $('#randomDiv').html('you chose' + $(this).val());
 }
+
+// this test modal code wasn't needed.
+// may need the scrap later
+/*
+function goModal() {
+  //$('#randomDiv').html('you chose' + $(this).val());
+  $('#test_modal').modal('show'); // cool?
+  //alert('yo');
+}
+*/

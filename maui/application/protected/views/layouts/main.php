@@ -19,12 +19,16 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/fullcalendar.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/maui.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap.min.css" />
+
+
   
     <!-- js imports -->
     <!-- FIXME? JQuery files for drag and drop for fullcalendar -->
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/fullcalendar.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/gcal.js"></script>
+   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/bootstrap.min.js"></script>
 
   
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
