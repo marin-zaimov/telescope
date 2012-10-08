@@ -29,6 +29,31 @@ $this->breadcrumbs=array(
 	the file <tt><?php echo __FILE__; ?></tt>.
 </p>
 
+<p>
+<a href="#" id="test_link">Test link</a>
+</p>
+
+<div id="test_modal">
+  <div class="modal fade">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3>Create Dashboard</h3>
+    </div>
+    <div class="modal-body">
+      <form class="form-inline">
+        <label>Name:
+          <input type="input"></input>
+        </label>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn cancel-button">Cancel</a>
+      <a href="#" class="btn btn-primary create-button">Create</a>
+    </div>
+  </div>
+</div>
+
+
 
 <div id="calendar"></div>
 
