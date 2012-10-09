@@ -2396,3 +2396,17 @@ REQUEST_URI=/telescope/maui/application/index.php/YiiFeedWidget/getFeed?url=http
 in /home/jasmine/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
 in /home/jasmine/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
 in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/08 20:05:44 [error] [php] include(LoginForm.php): failed to open stream: No such file or directory (/home/marin/telescope/maui/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /home/marin/telescope/maui/application/protected/controllers/SiteController.php(80): spl_autoload_call()
+#1 /home/marin/telescope/maui/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#2 /home/marin/telescope/maui/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#3 /home/marin/telescope/maui/yii/framework/web/CController.php(287): SiteController->runAction()
+#4 /home/marin/telescope/maui/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#5 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#6 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#7 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#8 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/maui/index.php/site/login
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (80)
+in /home/marin/telescope/maui/application/index.php (13)
