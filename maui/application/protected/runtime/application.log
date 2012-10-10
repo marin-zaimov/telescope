@@ -2396,3 +2396,219 @@ REQUEST_URI=/telescope/maui/application/index.php/YiiFeedWidget/getFeed?url=http
 in /home/jasmine/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
 in /home/jasmine/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
 in /home/jasmine/telescope/maui/application/index.php (13)
+2012/10/08 19:15:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:16:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:16:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:17:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:17:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/aboutUs/index
+---
+2012/10/08 19:18:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/aboutUs/index
+---
+2012/10/08 19:19:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:19:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/telescope/index
+---
+2012/10/08 19:19:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/08 19:28:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/telescope/index
+---
+2012/10/08 19:28:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/telescope/index
+---
+2012/10/08 19:58:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php?r=site/page&view=about
+---
+2012/10/08 19:58:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/aboutUs/main
+---
+2012/10/09 16:44:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php?r=site/page&view=about
+---
+2012/10/10 18:30:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php?r=site/page&view=about
+---
+2012/10/10 18:30:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/main".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/main')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/main
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/user/index
+---
+2012/10/10 19:13:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/indexl".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/indexl')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/indexl
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/calendar/index?view=about
+---
+2012/10/10 19:15:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/indexl".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/indexl')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/indexl
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/calendar/index?view=about
+---
+2012/10/10 19:15:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/indexl".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/indexl')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/indexl
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/calendar/index?view=about
+---
+2012/10/10 19:15:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/aboutUs/indexl
+---
+2012/10/10 19:15:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/10 19:15:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/site/index
+---
+2012/10/10 19:16:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aboutUs/index".' in /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/jasmine/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('aboutUs/index')
+#1 /home/jasmine/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/jasmine/telescope/maui/application/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/telescope/maui/application/index.php/aboutUs/index
+HTTP_REFERER=http://localhost/telescope/maui/application/index.php/telescope/index
+---

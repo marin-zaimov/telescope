@@ -46,11 +46,11 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'About Us', 'url'=>array('/aboutUs/index')),
 				array('label'=>'Telecsope', 'url'=>array('/telescope/index'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Calendar', 'url'=>array('/calendar/index', 'view'=>'about')),
 				array('label'=>'User Profile', 'url'=>array('/user/index')),
 				array('label'=>'New User', 'url'=>array('/user/ShowUserForm')),
-				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				
@@ -71,7 +71,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Team Teamwork.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 		

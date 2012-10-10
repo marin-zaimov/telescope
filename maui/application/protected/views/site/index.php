@@ -5,16 +5,18 @@ $this->pageTitle=Yii::app()->name;
 ?>
 
 
+
+    
+<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+
 <!-- Feed widget -->
     <?php 
         $this->widget('application.extensions.yii-feed-widget.YiiFeedWidget',
         array('url'=>'http://apod.nasa.gov/apod.rss','limit'=>1)
        );
     ?>
-    
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<p>This is a temporary site for the maui telescope project!</p>
 
 <p>You may change the content of this page by modifying the following two files:</p>
 <ul>
