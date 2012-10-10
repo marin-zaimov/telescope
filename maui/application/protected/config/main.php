@@ -58,7 +58,9 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=ec2-54-242-94-210.compute-1.amazonaws.com;dbname=maui',
+			'class'=>'application.extensions.PHPPDO.CPdoDbConnection',
+      'pdoClass' => 'PHPPDO',
+			'connectionString' => 'mysql:localhost;dbname=maui',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'marin',

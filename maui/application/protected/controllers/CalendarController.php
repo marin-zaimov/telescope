@@ -16,6 +16,11 @@ class CalendarController extends MauiController
 	{
 		$this->render('showDay');
 	}
+	
+	public function actionPopulateDB()
+	{
+	    var_dump('hahaha');
+	}
 
 	// Uncomment the following methods and override them if needed
 	/*
