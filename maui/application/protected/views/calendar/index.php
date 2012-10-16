@@ -29,7 +29,7 @@ $this->breadcrumbs=array(
 	the file <tt><?php echo __FILE__; ?></tt>.
 </p>
 
-
+<a href="#" id="blob" class="btn large primary" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A title">hover for popover</a>
 
 <!-- bootstrap example -->
 

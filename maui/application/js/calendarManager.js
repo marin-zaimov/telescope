@@ -25,13 +25,65 @@ $(function() {
         alert('Current view: ' + view.name);
 
         // change the day's background color just for fun
-        $(this).css('background-color', 'red');
+        $(this).css('background', 'url(../images/turtle.jpg)');
+        //$(this).css('background-color', 'red');
 
-    }
+    },
+
+    eventMouseover: function(event, jsEvent, view) {
+      alert('moused over');
+      //$(".fc-event").css('background-color);
+    },
+
+    // example of events
+
+    events: [
+        {
+            title: '',
+            start: '2012-10-10',
+            description: 'This is a cool event'
+        },/*{
+            title: 'My Event',
+            start: '2012-10-10',
+            description: 'This is a cool event'
+        },{
+            title: 'My Event',
+            start: '2012-10-10',
+            description: 'This is a cool event'
+        },{
+            title: 'My Event',
+            start: '2012-10-10',
+            description: 'This is a cool event'
+        },{
+            title: 'My Event',
+            start: '2012-10-10',
+            description: 'This is a cool event'
+        },{
+            title: 'My Event',
+            start: '2012-10-10',
+            description: 'This is a cool event'
+        }*/
+
+    ],
+
+    // example of how to move the header
+    /*header: {
+      left: 'today prev, next',
+      center: '',
+      right: 'title',
+    },*/
+
   })
 
   // test code, saving as example
   //$('#test_link').on('click', goModal);
+
+  // test code for bootstrap pop-ups
+  var options = {
+    trigger: 'hover',
+  }
+  $("#blob").popover({offset: 10});
+
 
 
 });
