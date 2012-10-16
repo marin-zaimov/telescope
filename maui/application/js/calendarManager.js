@@ -31,8 +31,9 @@ $(function() {
     },
 
     eventMouseover: function(event, jsEvent, view) {
-      alert('moused over');
+      //alert('moused over');
       //$(".fc-event").css('background-color);
+      $("#sample").modal();
     },
 
     // example of events
@@ -75,14 +76,13 @@ $(function() {
 
   })
 
-  // test code, saving as example
-  //$('#test_link').on('click', goModal);
+  $('#modal-calendar').fullCalendar({
+    defaultView: 'agendaDay',
+  })
+
 
   // test code for bootstrap pop-ups
-  var options = {
-    trigger: 'hover',
-  }
-  $("#blob").popover({offset: 10});
+  //$("#blob").popover({offset: 10});
 
 
 
@@ -93,15 +93,6 @@ $(function() {
 // DECLARE FUNCTIONS HERE
 
 function onIntChange() {
-  $('#randomDiv').html('you chose' + $(this).val());
+  //$('#randomDiv').html('you chose' + $(this).val());
 }
 
-// this test modal code wasn't needed.
-// may need the scrap later
-/*
-function goModal() {
-  //$('#randomDiv').html('you chose' + $(this).val());
-  $('#test_modal').modal('show'); // cool?
-  //alert('yo');
-}
-*/
