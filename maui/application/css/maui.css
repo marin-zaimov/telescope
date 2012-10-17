@@ -2,3 +2,42 @@
     height: 400px;
     width: 400px;
 }
+
+
+
+/* -------------------- */
+/* fullcalendar styling */
+/* -------------------- */
+.fc-event {
+   background: url('../images/turtle.jpg') no-repeat;
+   min-height: 49px;
+   min-width: 64px;
+}
+
+/*
+.fc-border-separate 
+{
+    height: 20px;
+    margin-left: 178px;
+    margin-top: -9px;
+    width: 20px;
+    background:url('../images/turtle.jpg') no-repeat;
+}*/
+
+
+
+
+
+/* ------------------- */
+/* simple modal styling */
+/* ------------------- */
+
+#simplemodal-overlay {
+  background-color:#000;
+}
+#simplemodal-container {
+  background-color:#333;
+  border:8px solid #444;
+  padding:12px;
+  color:white;
+}

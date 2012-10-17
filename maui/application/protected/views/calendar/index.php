@@ -29,6 +29,17 @@ $this->breadcrumbs=array(
 	the file <tt><?php echo __FILE__; ?></tt>.
 </p>
 
+<a href="#" id="blob" class="btn large primary" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A title">hover for popover</a>
+
+<!-- simple modal example -->
+<div id="sample" style="display:none">
+  <h2>Sample Data</h2>
+  <p>This is some sample data from the current page</p>
+  <p>You can press ESC to close this dialog or click <a href="#" class="simplemodal-close">close</a>.</p>
+
+  <div id="modal-calendar"></div>
+</div>
+
 
 
 <!-- bootstrap example -->
@@ -56,6 +67,7 @@ $this->breadcrumbs=array(
 
 
 <div id="calendar"></div>
+
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/calendarManager.js"></script>
 
