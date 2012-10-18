@@ -15,24 +15,22 @@ class UserIdentity extends CUserIdentity
 	//private $_privileges = array();
 	//private $_access = array();
 	
-	/*public function authenticate()
+	public function authenticate()
 	{
-		//$this->_auth = Yii::app()->authManager;
+    if ($this->username == 'demo' && $this->password == 'demo') {
+      $this->errorCode=self::ERROR_NONE;
+      return !$this->errorCode;
+    }
 
-		try {
-      //$this->_userData = Users::model()->findByAttributes(array('email'=>'marin@gatech.edu'));
-			$this->_userData = Users::model()->findByAttributes(array('email' => $this->username));
-			//throw new Exception($this->userData->email);
-			if($this->_userData->verifyPassword($this->password)) {
-				$this->errorCode=self::ERROR_NONE;
-			}
-			else {
-				$this->errorCode=self::ERROR_PASSWORD_INVALID;
-			}
-
+		$this->_userData = Users::model()->findByAttributes(array('email' => $this->username));
+		if (empty($this->_userData)) {
+		$this->errorCode=self::ERROR_USERNAME_INVALID;
 		}
-		catch (Exception $ex) {
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
+		else if($this->_userData->verifyPassword($this->password)) {
+			$this->errorCode=self::ERROR_NONE;
+		}
+		else {
+			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		}
 
 		return !$this->errorCode;
@@ -46,7 +44,7 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	public function authenticate()
+	/*public function authenticate()
 	{
 		$users=array(
 			// username => password
@@ -60,5 +58,5 @@ class UserIdentity extends CUserIdentity
 		else
 			$this->errorCode=self::ERROR_NONE;
 		return !$this->errorCode;
-	}
+	}*/
 }
