@@ -106,4 +106,25 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	public function filters()
+  {
+    return array( 'accessControl' ); // perform access control for CRUD operations
+  }
+
+  public function accessRules()
+  {
+    // marin zaimov 10/18/2012
+    //commented out because all of the actions in this controller should be allowed for non logged in users
+    /*return array(
+      array('allow', // allow authenticated users to access all actions
+        'users'=>array('@'),
+      ),
+      array('allow',
+        'actions'=>array('login'),
+        'users'=>array('?'),
+      ),
+      array('deny'),
+    );*/
+  }
 }
