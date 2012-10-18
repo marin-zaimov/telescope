@@ -14,12 +14,29 @@ class UserController extends Controller
 
 	public function actionShowUserForm()
 	{
-		if(isset($_POST['User'])){
-		var_dump($_POST['User']);
-		die;
-				
-		}else{
-		$this->render('loginForm');
+		if(isset($_GET['User'])){
+		  if (!$_GET['User']['password'] == $_GET['User']['cPassword']) {
+	      throw new Exception('Password and Confirm Password field are not the same.');
+	    }
+		  $user = Users::createFromArray($_GET['User']);
+		  if (!empty($_GET['User']['password'])) {
+				if (PasswordHelper::isValidPasswordPattern($_GET['User']['password'])) {
+					$user->salt = PasswordHelper::generateRandomSalt();
+					$user->password = PasswordHelper::hashPassword($user->password, $user->salt);
+				}
+				else {
+					throw new Exception('Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
+				}
+			}
+			
+		  if ($user->save()) {
+		    var_dump('Saved!');
+		  }
+		  else {
+		    var_dump('Not Saved');
+		  }
+		} else {
+		  $this->render('loginForm');
 		}
 	}
 
@@ -50,4 +67,18 @@ class UserController extends Controller
 		);
 	}
 	*/
+	public function filters()
+  {
+    return array( 'accessControl' ); // perform access control for CRUD operations
+  }
+
+  public function accessRules()
+  {
+    return array(
+      array('allow', // allow authenticated users to access all actions
+        'users'=>array('@'),
+      ),
+      array('deny'),
+    );
+  }
 }

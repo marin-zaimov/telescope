@@ -17,6 +17,7 @@ return array(
 		'application.models.*',
 		'application.controllers.*',
 		'application.components.*',
+		'application.extensions.Maui.*',
 	),
 
 	'modules'=>array(
@@ -39,7 +40,9 @@ return array(
 	'components'=>array(
 		'user'=>array(
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>true,'loginUrl'=>array('site/login'),
+      'class' => 'WebUser',
+
 		),
 		// uncomment the following to enable URLs in path-format
 		
@@ -76,13 +79,18 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'enabled' => true,
+					'levels'=>'info, trace, error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				
 				array(
 					'class'=>'CWebLogRoute',
+					'enabled' => true,
+					'levels'=>'info, trace, error, warning',
 				),
+				array(
+					'class'=>'CProfileLogRoute',
+					'enabled' => true,
+				)
 				
 			),
 		),

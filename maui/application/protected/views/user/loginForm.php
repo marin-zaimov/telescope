@@ -1,5 +1,3 @@
-<html>
-<body>
 
 <form name="input" action="ShowUserForm" method="get">
 Email: <input type="text" name="User[email]"><br>
@@ -38,5 +36,4 @@ GMT: <select name= "User[GMToffset]">
 </select><br>
 <input type="submit" value="Submit">
 <form>
-</body>
-</html>
+
