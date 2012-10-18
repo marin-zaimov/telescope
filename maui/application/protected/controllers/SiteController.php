@@ -114,9 +114,10 @@ class SiteController extends Controller
 
   public function accessRules()
   {
-    // marin zaimov 10/18/2012
-    //commented out because all of the actions in this controller should be allowed for non logged in users
     return array(
+      // marin zaimov 10/18/2012
+      //commented out because all of the actions in this controller should be allowed for non logged in users
+    
       /*array('allow', // allow authenticated users to access all actions
         'users'=>array('@'),
       ),
