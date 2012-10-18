@@ -4727,3 +4727,1012 @@ in /home/marin/telescope/maui/application/protected/controllers/AboutUsControlle
 2012/10/18 13:49:12 [trace] [system.CModule] Loading "clientScript" application component
 in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
 in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:42 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:42 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:42 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:42 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:42 [error] [php] Invalid argument supplied for foreach() (/home/marin/telescope/maui/yii/framework/web/auth/CAccessControlFilter.php:92)
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#1 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#2 /home/marin/telescope/maui/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#3 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#4 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#5 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php/site/index
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:42 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.web.filters.CFilterChain] Running filter AboutUsController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [error] [php] Invalid argument supplied for foreach() (/home/marin/telescope/maui/yii/framework/web/auth/CAccessControlFilter.php:92)
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#1 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#2 /home/marin/telescope/maui/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#3 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#4 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#5 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php/site/login
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:47 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:49 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:51 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:51 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:51 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:51 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:51 [error] [php] Invalid argument supplied for foreach() (/home/marin/telescope/maui/yii/framework/web/auth/CAccessControlFilter.php:92)
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#1 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#2 /home/marin/telescope/maui/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#3 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#4 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#5 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:51 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:52 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:55 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:55 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:55 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:55 [error] [php] Invalid argument supplied for foreach() (/home/marin/telescope/maui/yii/framework/web/auth/CAccessControlFilter.php:92)
+Stack trace:
+#0 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#1 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#2 /home/marin/telescope/maui/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#3 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#4 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#5 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:54:55 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/index.php (16)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (122)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (194)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (169)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (125)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.web.filters.CFilterChain] Running filter YiiFeedWidgetController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:40 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:41 [error] [php] /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/cache is not writeable. Make sure you've set the correct relative or absolute path, and that the location is server-writable. (/home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php:1358)
+Stack trace:
+#0 unknown(0): YiiFeedWidgetController->actionGetFeed()
+#1 /home/marin/telescope/maui/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /home/marin/telescope/maui/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /home/marin/telescope/maui/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(134): YiiFeedWidgetController->runAction()
+#5 /home/marin/telescope/maui/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /home/marin/telescope/maui/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /home/marin/telescope/maui/yii/framework/web/filters/CInlineFilter.php(59): YiiFeedWidgetController->filterAccessControl()
+#8 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /home/marin/telescope/maui/yii/framework/web/CController.php(266): YiiFeedWidgetController->runActionWithFilters()
+#11 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): YiiFeedWidgetController->run()
+#12 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php/YiiFeedWidget/getFeed?url=http%3A%2F%2Fapod.nasa.gov%2Fapod.rss&limit=1
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:41 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.web.filters.CFilterChain] Running filter AboutUsController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:42 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.web.filters.CFilterChain] Running filter TelescopeController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:43 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.web.filters.CFilterChain] Running filter AboutUsController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/index.php (16)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (122)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (194)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (169)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (125)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.web.filters.CFilterChain] Running filter YiiFeedWidgetController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:45 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:46 [error] [php] /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/cache is not writeable. Make sure you've set the correct relative or absolute path, and that the location is server-writable. (/home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php:1358)
+Stack trace:
+#0 unknown(0): YiiFeedWidgetController->actionGetFeed()
+#1 /home/marin/telescope/maui/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /home/marin/telescope/maui/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /home/marin/telescope/maui/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(134): YiiFeedWidgetController->runAction()
+#5 /home/marin/telescope/maui/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /home/marin/telescope/maui/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /home/marin/telescope/maui/yii/framework/web/filters/CInlineFilter.php(59): YiiFeedWidgetController->filterAccessControl()
+#8 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /home/marin/telescope/maui/yii/framework/web/CController.php(266): YiiFeedWidgetController->runActionWithFilters()
+#11 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): YiiFeedWidgetController->run()
+#12 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php/YiiFeedWidget/getFeed?url=http%3A%2F%2Fapod.nasa.gov%2Fapod.rss&limit=1
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:46 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.web.filters.CFilterChain] Running filter AboutUsController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:47 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.web.filters.CFilterChain] Running filter TelescopeController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.web.filters.CFilterChain] Running filter CalendarController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:48 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:49 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:50 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "db" application component
+in /home/marin/telescope/maui/application/protected/models/Users.php (28)
+in /home/marin/telescope/maui/application/protected/components/UserIdentity.php (25)
+in /home/marin/telescope/maui/application/protected/models/LoginForm.php (52)
+2012/10/18 13:55:52 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/marin/telescope/maui/application/protected/models/Users.php (28)
+in /home/marin/telescope/maui/application/protected/components/UserIdentity.php (25)
+in /home/marin/telescope/maui/application/protected/models/LoginForm.php (52)
+2012/10/18 13:55:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `users`
+in /home/marin/telescope/maui/application/protected/models/Users.php (28)
+in /home/marin/telescope/maui/application/protected/components/UserIdentity.php (25)
+in /home/marin/telescope/maui/application/protected/models/LoginForm.php (52)
+2012/10/18 13:55:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /home/marin/telescope/maui/application/protected/models/Users.php (28)
+in /home/marin/telescope/maui/application/protected/components/UserIdentity.php (25)
+in /home/marin/telescope/maui/application/protected/models/LoginForm.php (52)
+2012/10/18 13:55:52 [trace] [system.db.ar.CActiveRecord] Users.findByAttributes()
+in /home/marin/telescope/maui/application/protected/components/UserIdentity.php (25)
+in /home/marin/telescope/maui/application/protected/models/LoginForm.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (94)
+2012/10/18 13:55:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `users` `t` WHERE `t`.`email`=:yp0 LIMIT 1
+in /home/marin/telescope/maui/application/protected/components/UserIdentity.php (25)
+in /home/marin/telescope/maui/application/protected/models/LoginForm.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (94)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (39)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (39)
+2012/10/18 13:55:52 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (39)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.web.filters.CFilterChain] Running filter AboutUsController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/index.php (16)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (122)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (194)
+2012/10/18 13:55:56 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (169)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (125)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.web.filters.CFilterChain] Running filter YiiFeedWidgetController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [error] [php] /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/cache is not writeable. Make sure you've set the correct relative or absolute path, and that the location is server-writable. (/home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php:1358)
+Stack trace:
+#0 unknown(0): YiiFeedWidgetController->actionGetFeed()
+#1 /home/marin/telescope/maui/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /home/marin/telescope/maui/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /home/marin/telescope/maui/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(134): YiiFeedWidgetController->runAction()
+#5 /home/marin/telescope/maui/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /home/marin/telescope/maui/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /home/marin/telescope/maui/yii/framework/web/filters/CInlineFilter.php(59): YiiFeedWidgetController->filterAccessControl()
+#8 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /home/marin/telescope/maui/yii/framework/web/CController.php(266): YiiFeedWidgetController->runActionWithFilters()
+#11 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): YiiFeedWidgetController->run()
+#12 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php/YiiFeedWidget/getFeed?url=http%3A%2F%2Fapod.nasa.gov%2Fapod.rss&limit=1
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.web.filters.CFilterChain] Running filter AboutUsController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
+2012/10/18 13:55:57 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/AboutUsController.php (9)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.web.filters.CFilterChain] Running filter CalendarController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (64)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (7)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (64)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (7)
+2012/10/18 13:55:58 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (39)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (39)
+2012/10/18 13:55:59 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/UserController.php (39)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/index.php (16)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (122)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (194)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (169)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidget.php (125)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/views/YiiFeedWidget.php (20)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (77)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.web.filters.CFilterChain] Running filter YiiFeedWidgetController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [error] [php] /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/cache is not writeable. Make sure you've set the correct relative or absolute path, and that the location is server-writable. (/home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php:1358)
+Stack trace:
+#0 unknown(0): YiiFeedWidgetController->actionGetFeed()
+#1 /home/marin/telescope/maui/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#2 /home/marin/telescope/maui/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 /home/marin/telescope/maui/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(134): YiiFeedWidgetController->runAction()
+#5 /home/marin/telescope/maui/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /home/marin/telescope/maui/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /home/marin/telescope/maui/yii/framework/web/filters/CInlineFilter.php(59): YiiFeedWidgetController->filterAccessControl()
+#8 /home/marin/telescope/maui/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /home/marin/telescope/maui/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /home/marin/telescope/maui/yii/framework/web/CController.php(266): YiiFeedWidgetController->runActionWithFilters()
+#11 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(283): YiiFeedWidgetController->run()
+#12 /home/marin/telescope/maui/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#13 /home/marin/telescope/maui/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /home/marin/telescope/maui/application/index.php(13): CWebApplication->run()
+REQUEST_URI=/tel/index.php/YiiFeedWidget/getFeed?url=http%3A%2F%2Fapod.nasa.gov%2Fapod.rss&limit=1
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:56:08 [trace] [system.CModule] Loading "errorHandler" application component
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
+in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:06 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (23)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (30)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/views/site/login.php (52)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/10/18 13:58:07 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (98)
+in /home/marin/telescope/maui/application/index.php (13)
