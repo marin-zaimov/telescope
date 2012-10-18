@@ -78,6 +78,10 @@ class UserController extends Controller
       array('allow', // allow authenticated users to access all actions
         'users'=>array('@'),
       ),
+      array('allow',
+        'actions'=>array('index'),
+        'users'=>array('?'),
+      ),
       array('deny'),
     );
   }

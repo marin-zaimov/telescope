@@ -17,7 +17,7 @@ class UserIdentity extends CUserIdentity
 	
 	public function authenticate()
 	{
-    if ($this->username == 'demo' && $this->password == 'demo') {
+    if (($this->username == 'admin' && $this->password == 'admin') || ($this->username == 'demo' && $this->password == 'demo')) {
       $this->errorCode=self::ERROR_NONE;
       return !$this->errorCode;
     }
