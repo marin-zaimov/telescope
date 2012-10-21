@@ -22,6 +22,18 @@ class CalendarController extends MauiController
 	    var_dump('hahaha');
 	}
 
+  public function actionDash()
+  {
+    $names = array('john doe', 'jane doe');
+    $ids = array('123', '223');
+
+    $data['names'] = $names;
+    $data['ids'] = $ids;
+    //var_dump($data);
+
+    echo json_encode($data);
+  }
+
 	public function filters()
   {
     return array( 'accessControl' ); // perform access control for CRUD operations
