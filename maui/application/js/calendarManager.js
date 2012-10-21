@@ -97,12 +97,7 @@ $(function() {
 
 
     eventMouseover: function(event, jsEvent, view) {
-      //alert('moused over');
-      //$.getJSON('http://localhost/telescope/maui/application/index.php/calendar/dash.php', function(response) {
-      $.getJSON('CalendarController.php/actionDash', function(response) {
-        alert('hit inside getJSON');
-
-
+      $.getJSON('Dash', function(response) {
         alert(response.names[0]);   // john doe
       });
     },
