@@ -22,17 +22,24 @@ $this->breadcrumbs=array(
   }
 
 </style>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
-
+<!-- <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 <p>
 	You may change the content of this page by modifying
 	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+</p>-->
+<h1>Extra title?</h1>
+<p>A note for users?</h1>
 
-<a href="#" id="blob" class="btn large primary" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A title">hover for popover</a>
+<!-- popover example -->
+<!-- <a href="#" id="blob" class="btn large primary" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A title">hover for popover</a> -->
+
+
+<!--<p id="popoverTitle" style="display:none;">meh title<a href="#" id="close-popover" style="float:right;">X</a>-->
+
+
 
 <!-- simple modal example -->
-<div id="sample" style="display:none">
+<div id="sample" style="display:none;">
   <h2>Sample Data</h2>
   <p>This is some sample data from the current page</p>
   <p>You can press ESC to close this dialog or click <a href="#" class="simplemodal-close">close</a>.</p>
@@ -42,28 +49,32 @@ $this->breadcrumbs=array(
 
 
 
-<!-- bootstrap example -->
 
-<!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
 
-<!-- Modal -->
-<div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
+
+<!--
+bootstrap example
+
+  ...Button to trigger modal..
+  <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+  ..Modal..
+  <div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body">
+      <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn btn-primary">Save changes</button>
+    </div>
   </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
-</div>
 
-<!-- end bootstrap example -->
-
+  end bootstrap example
+-->
 
 
 <div id="calendar"></div>

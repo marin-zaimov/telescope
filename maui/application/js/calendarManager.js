@@ -12,53 +12,99 @@ $(function() {
   
   $('#calendar').fullCalendar({
     // put your options and callbacks here
+
+    /* 
+      when a day is clicked, offer a popover with the viewable events,
+      and have a link to create a reservation
+    */
     dayClick: function(date, allDay, jsEvent, view) {
+      /* note: 'this' refers to the <td> of the clicked day */
 
-        /*if (allDay) {
-            alert('Clicked on the entire day: ' + date);
-        }else{
-            alert('Clicked on the slot: ' + date);
-        }*/
-        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        //alert('Current view: ' + view.name);
-
-        // change the day's background color just for fun
-        //$(this).css('background', 'url(../images/turtle.jpg)');
-        //$(this).css('background-color', 'red');
-
-        $("#sample").modal({
-          minHeight: 2000,
-          minWidth: 600,
-          //onClose: function() {
-            //alert('sup');
-          //},
-
-          onOpen: function (dialog) {
-            dialog.overlay.fadeIn('slow', function () {
-              dialog.data.hide();
-              dialog.container.fadeIn('slow', function () {
-                dialog.data.slideDown('slow');	 
-                $('#modal-calendar').fullCalendar({
-                  defaultView: 'agendaDay',
-                });
-
-              });
-            });
-          },
-
-          position: [50,50],
-
-
-        });
-
+      /* check for and remove old popover */
+      var t = $('#cal-popover');
+      if (t.length != 0) {
+        killPopover(t);
+      }
         
+      /*
+        grab the appropriate td.
+        fullcalendar doesn't play nice with positioning bootstrap's popovers.
+        the best combination seems to be:
+          anything sunday through wednesday, use the NEXT td and position to the right
+          anything thursday through saturday, use the CLICKED td and position to the left
+        this keeps the popover's bubble pointing to the appropriate day, and it keeps
+        it from spilling beyond the window's width
+      */
+      var day = (''+date).substring(0,3);
+      var popPosition;
+      if (day == 'Thu' || day == 'Fri' || day == 'Sat') {
+        popPosition = 'left';
+        $(this).append('<a href="#" id="cal-popover" rel="popover"></a>');
+      }
+      else {
+        popPosition = 'right';
+        $(this).next().append('<a href="#" id="cal-popover" rel="popover"></a>');
+      }
 
+      /* initialize other popover vars */
+      var popTitle = 'meh title  <a href="#" id="close-popover" style="float:right;">X</a>';
+      var popContent = '<h1>h1 content </h1><p>p tag</p>';
+
+      /* show the popover */
+      $("#cal-popover").popover({
+        placement: popPosition,
+        title: popTitle,
+        content: popContent,
+      });
+      $('#cal-popover').popover('show');
+      setClose(); /* set up event to fire when popover's X box is clicked */
+
+
+
+      //$(this).css('background', 'url(../images/turtle.jpg)');
+
+
+
+
+      /* save this 
+      $("#sample").modal({
+        minHeight: 2000,
+        minWidth: 600,
+        //onClose: function() {
+          //alert('sup');
+        //},
+
+        onOpen: function (dialog) {
+          dialog.overlay.fadeIn('slow', function () {
+            dialog.data.hide();
+            dialog.container.fadeIn('slow', function () {
+              dialog.data.slideDown('slow');	 
+              $('#modal-calendar').fullCalendar({
+                defaultView: 'agendaDay',
+              });
+
+            });
+          });
+        },
+
+        position: [50,50],
+
+
+      });
+      */
 
     },
 
+
     eventMouseover: function(event, jsEvent, view) {
       //alert('moused over');
-      //$(".fc-event").css('background-color);
+      $.getJSON('http://localhost/telescope/maui/application/index.php/calendar/dash.php', function(response) {
+        alert('hit inside getJSON');
+
+
+      //$.getJSON('/dash.php', function(response) {
+        alert(response.names[0]);   // john doe
+      });
     },
 
     // example of events
@@ -101,11 +147,14 @@ $(function() {
 
   })
 
+ 
+  /*
+  $("#close-popover").on("click", function(event) {
+    alert('closer');
+  })
+  */
+
   
-
-  // test code for bootstrap pop-ups
-  //$("#blob").popover({offset: 10});
-
 
 
 });
@@ -117,4 +166,29 @@ $(function() {
 function onIntChange() {
   //$('#randomDiv').html('you chose' + $(this).val());
 }
+
+function trueDayClick(date, allDay, jsEvent, view) {
+
+}
+
+
+function setClose() {
+  $("#close-popover").on("click", function(event) {
+    killPopover($('#cal-popover'));
+  });
+}
+
+
+function killPopover(t) {
+  t.popover('destroy'); /* kill old popover */
+  t.remove(); /* remove element from the DOM */
+  $('#close-popover').remove(); /* remove old title */
+}
+
+
+
+
+
+
+
 
