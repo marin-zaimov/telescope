@@ -4,14 +4,14 @@ class UserController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->render('index');
+		$this->render('account');
 	}
 
 	public function actionProfile()
 	{
 		$this->render('profile');
 	}
-
+	
 	public function actionShowUserForm()
 	{
 		if(isset($_GET['User'])){
