@@ -27,8 +27,9 @@ $this->breadcrumbs=array(
 	You may change the content of this page by modifying
 	the file <tt><?php echo __FILE__; ?></tt>.
 </p>-->
-<h1>Extra title?</h1>
-<p>A note for users?</h1>
+<h1>Calendar</h1>
+<p>Select a day to see the available reservations</h1>
+<p>Click here to filter the events</h1>
 
 <!-- popover example -->
 <!-- <a href="#" id="blob" class="btn large primary" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A title">hover for popover</a> -->
