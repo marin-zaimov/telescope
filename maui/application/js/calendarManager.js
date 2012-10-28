@@ -12,16 +12,6 @@ $(function() {
   
   setupCalendar();
   //enablePopover();
-  
- 
-  /*
-  $("#close-popover").on("click", function(event) {
-    alert('closer');
-  })
-  */
-
-  
-
 
 });
 
@@ -44,26 +34,37 @@ function setupCalendar() {
     */
     dayClick: function(date, allDay, jsEvent, view) {
 
+      //alert(date);
+
       $("#sample").modal({
         minHeight: 2000,
         minWidth: 600,
 
-        onOpen: function (dialog) {
+        // visual affects:
+        // append fc-day calendar if wanted
+        /*onOpen: function (dialog) {
           dialog.overlay.fadeIn('slow', function () {
             dialog.data.hide();
             dialog.container.fadeIn('slow', function () {
               dialog.data.slideDown('slow');	 
-              $('#modal-calendar').fullCalendar({
-                defaultView: 'agendaDay',
-              });
+
+              // fc-day calendar
+              //$('#modal-calendar').fullCalendar({
+                //defaultView: 'agendaDay',
+              //});
 
             });
           });
-        },
+        },*/
 
         position: [50,50],
 
       });
+
+      $.getJSON('Dash', function(response) {
+        alert(response.names[0]);   // john doe
+      });
+      
 
     },
 
@@ -144,13 +145,6 @@ function setupCalendar() {
 }
 
 
-function onIntChange() {
-  //$('#randomDiv').html('you chose' + $(this).val());
-}
-
-function trueDayClick(date, allDay, jsEvent, view) {
-
-}
 
 
 function setClose() {
@@ -165,10 +159,6 @@ function killPopover(t) {
   t.remove(); /* remove element from the DOM */
   $('#close-popover').remove(); /* remove old title */
 }
-
-
-
-
 
 
 

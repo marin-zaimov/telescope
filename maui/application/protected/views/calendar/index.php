@@ -31,6 +31,12 @@ $this->breadcrumbs=array(
 <p>Select a day to see the available reservations</h1>
 <p>Click here to filter the events</h1>
 
+
+
+
+
+
+
 <!-- popover example -->
 <!-- <a href="#" id="blob" class="btn large primary" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A title">hover for popover</a> -->
 
@@ -41,11 +47,38 @@ $this->breadcrumbs=array(
 
 <!-- simple modal example -->
 <div id="sample" style="display:none;">
+
   <h2>Sample Data</h2>
   <p>This is some sample data from the current page</p>
   <p>You can press ESC to close this dialog or click <a href="#" class="simplemodal-close">close</a>.</p>
 
-  <div id="modal-calendar"></div>
+  <div class="accordion" id="accordion2">
+
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        System Configuration <div style="float:right;">test</div>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse"> <!-- add "in" to class to open at load -->
+      <div class="accordion-inner">
+        Replace me with sysconfig options
+      </div>
+    </div>
+
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        Graph Details
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+          Replace me with axis, experiment, and statistics options
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
 
 
