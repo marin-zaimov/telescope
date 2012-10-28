@@ -99,8 +99,8 @@ function setupCalendar() {
       }
 
       /* initialize other popover vars */
-      var popTitle = 'meh title  <a href="#" id="close-popover" style="float:right;">X</a>';
-      var popContent = '<h1>h1 content </h1><p>p tag</p>';
+      var popTitle = 'Event Title  <a href="#" id="close-popover" style="float:right;">X</a>';
+      var popContent = '<h1>Moon </h1><p>Reservation Open</p>';
 
       /* show the popover */
       $("#cal-popover").popover({

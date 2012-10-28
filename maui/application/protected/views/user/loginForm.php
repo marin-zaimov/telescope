@@ -1,4 +1,5 @@
-
+<h1>Create a New Account</h1>
+<p>To create a new account enter your information below. You will recieve and email to confirm your account.</p>
 <form name="input" action="ShowUserForm" method="get">
 Email: <input type="text" name="User[email]"><br>
 Password: <input type="password" name="User[password]"><br>
