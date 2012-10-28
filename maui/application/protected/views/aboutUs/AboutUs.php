@@ -4,11 +4,20 @@
 
 <h1><p><b>About Us</b></p></h1>
 
-<p>The Maui Telescope project is a collaboration of the Georgia Institute of Technology and the United States Air force. This project was started so that teachers around the world could use this telescope as a tool to teach their students.We hope that his site will be used by students and teacher around the world!</p>
-
+<p>The Maui Telescope Project is a collaboration between the Georgia Institute of Technology and the United States Air force. This project was started so that educators around the world could use this telescope as a tool to teach their students about astronomy.We hope that his site will be used by students and teacher around the world!</p>
+<br>
 <p>This is a paragraph about our sponsors.</p>
-<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/GeorgiaTech_logo.png" alt="saturn"width="100" height="80"> <p>          </p>
-<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/AirforceLogo.jpg" alt="saturn"width="100" height="80">
+
+<table border="0">
+
+  <tr>
+    <td><center><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/GeorgiaTech_logo.png" alt="saturn"width="200" height="180"></center></td>
+    <td><center><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/AirforceLogo.jpg" alt="saturn"width="200" height="180"></center></td>
+  </tr>
+
+</table>
+
+
 
 
 <br><br>
