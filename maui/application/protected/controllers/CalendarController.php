@@ -39,9 +39,12 @@ class CalendarController extends MauiController
   {
     
     $criteria = SkyTimes::model()->getDbCriteria();
-    $criteria->addCondition('startTime > '.$startTime);
-    $criteria->addCondition('endTime < '.$endTime);
+    //$criteria->addCondition('startTime > '.$startTime);
+    //$criteria->addCondition('endTime < '.$endTime);
 
+    $criteria = addCondition('id' == 4863);
+    $skytimes = SkyTimes::model()->find($criteria);
+  
   
     $names = array('john doe', 'jane doe');
     $ids = array('123', '223');
@@ -49,8 +52,10 @@ class CalendarController extends MauiController
     $data['names'] = $names;
     $data['ids'] = $ids;
     //var_dump($data);
+    //echo json_encode($data);
+    //echo 'yo';
+    echo json_encode($skytimes);
 
-    echo json_encode($data);
   }
 
 

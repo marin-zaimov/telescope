@@ -62,7 +62,9 @@ function setupCalendar() {
       });
 
       $.getJSON('Dash', function(response) {
-        alert(response.names[0]);   // john doe
+        //alert(response.names[0]);   // john doe
+        alert(response['id']);   // john doe
+        //alert(response['id']'changed');   // john doe
       });
       
 
