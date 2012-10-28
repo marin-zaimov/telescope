@@ -57,29 +57,23 @@
       <a class="brand" href="#">Maui Telescope</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Live Feed</a></li>
-          <li><a href="#">Forum</a></li>
+          <li class="active"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/index"><i class="icon-home icon-white"></i> Home</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/aboutUs/index">About</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/telescope/index">Telescope</a></li>
+        <? if (Yii::app()->user->isGuest): ?>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/login">Register/Login</a></li>
+        <? else: ?> 
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/calendar/index">Calendar</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
+              <li><a href="#">My Profile</a></li>
+              <li><a href="#">My Reservations</a></li>
+              <li><a href="#">My Photo Gallery</a></li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown 2<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="nav-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/logout">Logout (<? echo Yii::app()->user->name; ?>)</a></li>
+        <? endif; ?>
         </ul>
         <form class="navbar-search pull-right" action="">
           <input type="text" class="search-query span2" placeholder="Search">
@@ -89,7 +83,7 @@
   </div><!-- /.navbar-inner -->
 </div><!-- /.navbar -->
 
-	<div id="mainmenu">
+<!--	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
@@ -104,6 +98,7 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
