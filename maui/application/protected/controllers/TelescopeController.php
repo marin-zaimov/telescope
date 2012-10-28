@@ -7,11 +7,6 @@ class TelescopeController extends Controller
 		$this->render('index');
 	}
 
-	public function actionMove()
-	{
-		$this->render('move');
-	}
-
 	public function filters()
   {
     return array( 'accessControl' ); // perform access control for CRUD operations
