@@ -4,42 +4,12 @@
 $this->breadcrumbs=array(
 	'Telescope',
 );
+
 ?>
 
-<!-- THIS IS AN HTML COMMENT!!!! -->
+<h1><p><b>Telescope Veiw</b></p></h1>
 
-<!-- style should typically go into its ows stylesheet (a .css file in application/css/) -->
-<style>
-  #selectInt {
-    width: 300px;
-    color: #00FF00;
-  }
-  #randomDiv {
-    width: 500px;
-    height: 200px;
-    background-color: #000;
-    
-  }
-
-</style>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
-
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
-
-<select id="selectInt">
-<?php foreach (array(1,2,3,4,5) as $int): ?>
-  <option value="<?php echo $int; ?>" > <?php echo $int; ?> </option>
-<?php endforeach; ?>
-</select>
-
-<div id="randomDiv">
-  this is a random div to show how to use css selectors
-</div>
-
-
-
-<!-- include js file here -->
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/telescopeManager.js"></script>
+<p>This page allows you to view live feed the the telescope is active. </p>
+<br>
+<br> 
+ <center ><iframe width="560" height="315" src="http://www.youtube.com/embed/vMG6gKz5I0g" frameborder="0" allowfullscreen  autostart="false"></iframe></center>

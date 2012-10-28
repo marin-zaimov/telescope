@@ -24,6 +24,10 @@ Saturn - Monday June, 2013 at 5:00pm EST</p>
 <br>
 <p><b>VIDEOS</b></p>
 <br>
+
+<embed src="http://www.tizag.com/files/html/htmlexample.mpeg"
+ autostart="false" />
+ 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/qa04iRjaBMA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
 </body>
