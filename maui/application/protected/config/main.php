@@ -1,5 +1,6 @@
 <?php
 
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -66,7 +67,7 @@ return array(
 			'connectionString' => 'mysql:localhost;dbname=maui',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'marin',
+			'password' => 'sirdante11',
 			'charset' => 'utf8',
 		),
 		

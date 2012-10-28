@@ -34,8 +34,6 @@ function setupCalendar() {
     */
     dayClick: function(date, allDay, jsEvent, view) {
 
-      //alert(date);
-
       $("#sample").modal({
         minHeight: 2000,
         minWidth: 600,
@@ -61,10 +59,31 @@ function setupCalendar() {
 
       });
 
-      $.getJSON('Dash', function(response) {
+
+
+      // make this (local date varable):
+      // Thu Oct 18 2012 00:00:00 GMT-0400 (EDT)
+      // look like this (mysql format):
+      //'2012-10-18 00:00:00'
+
+      alert(date.getMonth());
+      var genTime = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate();
+      var startTime = genTime + ' 00:00:00';
+      var endTime = genTime + ' 23:59:59';
+      var toServer = {
+          'startTime': startTime,
+          'endTime': endTime,
+      };
+
+      
+      $.post('GetEvents', toServer, function(response) {
         //alert(response.names[0]);   // john doe
-        alert(response['id']);   // john doe
+        //alert(response['id']);   // john doe
         //alert(response['id']'changed');   // john doe
+        alert(response);
+
+
+
       });
       
 

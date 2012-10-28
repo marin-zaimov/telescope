@@ -22,36 +22,35 @@ class CalendarController extends MauiController
 	    var_dump('hahaha');
 	}
 
-  public function actionDash()
-  {
-    $names = array('john doe', 'jane doe');
-    $ids = array('123', '223');
 
-    $data['names'] = $names;
-    $data['ids'] = $ids;
-    //var_dump($data);
-
-    echo json_encode($data);
-  }
-
-
-  public function action()
+  public function actionGetEvents()
   {
     
+    $startTime = $_POST['startTime'];
+    $endTime =$_POST['endTime'];
+
+    //var_dump($startTime);
+    //var_dump($endTime);
+
     $criteria = SkyTimes::model()->getDbCriteria();
-    //$criteria->addCondition('startTime > '.$startTime);
-    //$criteria->addCondition('endTime < '.$endTime);
+    $criteria->addCondition('startTIme > '.$startTime);
+    $criteria->addCondition('endTime < '.$endTime);
 
-    $criteria = addCondition('id' == 4863);
+    //$criteria->addCondition('id' == 4863);
+
+
     $skytimes = SkyTimes::model()->find($criteria);
+    
+    //$event = SkyTimes::model()->findByPK(4863);
+    //var_dump($event->attributes);
   
-  
-    $names = array('john doe', 'jane doe');
-    $ids = array('123', '223');
+    //$names = array('john doe', 'jane doe');
+    //$ids = array('123', '223');
 
-    $data['names'] = $names;
-    $data['ids'] = $ids;
-    //var_dump($data);
+    //$data['names'] = $names;
+    //$data['ids'] = $ids;
+
+    //var_dump($skytimes);
     //echo json_encode($data);
     //echo 'yo';
     echo json_encode($skytimes);
