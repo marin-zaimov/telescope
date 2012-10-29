@@ -66,8 +66,8 @@ function setupCalendar() {
       // look like this (mysql format):
       //'2012-10-18 00:00:00'
 
-      alert(date.getMonth());
-      var genTime = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate();
+      //alert(date);
+      var genTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
       var startTime = genTime + ' 00:00:00';
       var endTime = genTime + ' 23:59:59';
       var toServer = {
@@ -77,10 +77,18 @@ function setupCalendar() {
 
       
       $.post('GetEvents', toServer, function(response) {
-        //alert(response.names[0]);   // john doe
-        //alert(response['id']);   // john doe
-        //alert(response['id']'changed');   // john doe
+
         alert(response);
+        var temp = jQuery.parseJSON(response);
+        var reservation_times = temp.reservation_times;
+
+        //var keys = Object.keys(response);
+        //for (var key in response)
+          //alert(key);
+        //alert(rts);
+        //for (rt in rts) {
+          //alert(rt);
+        //}
 
 
 
