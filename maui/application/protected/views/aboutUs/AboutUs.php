@@ -23,32 +23,9 @@
 <br><br>
 <p>This site was the Fall 2012 Senior Design project of Team Teamwork. Jasmine Lawrence served as Project Manager. Chris Porter, Marin Zaimov and Brad Vanslyke served as developers.</p>
 
-<h1><p><b>Contact Us</b></p></h1>
-<p>Please contact us if you have any questions, comments or concerns. Thanks!</p>
-<form method="post" enctype="text/plain">
-Name:<br>
-<input type="text" name="name" value="your name"><br>
-E-mail:<br>
-<input type="text" name="mail" value="your email"><br>
-Comment:<br>
-<input type="text" name="comment" value="your comment" size="50"><br><br>
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
-</form>
-</form>
+<iframe height="517" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none"  src="http://telescope.wufoo.com/embed/z7x3p9/"><a href="http://telescope.wufoo.com/forms/z7x3p9/">Fill out my Wufoo form!</a></iframe>
 
 </body>
 </html>
 
 
-<?php
-if(isset($_POST['name']) && isset($_POST['mail']) && isset($_POST['comment'])){
-
-$to = 'jasmine@gatech.edu';
-$subject = 'Comments from TOM';
-$message = $_POST['name'].$_POST['mail'].$_POST['comment'] ;
-mail($to, $subject, $message); 
-}
-
-
-?>
