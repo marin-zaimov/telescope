@@ -86,8 +86,8 @@ function setupCalendar() {
         //alert('sup');
         var accordion = $('#accordion2');
         //sel.append('<p>Word up</p>');
-        /* two places -- in the anchor and in the id */
-        $('#accordion2').append('<div class="accordion-heading">'+
+        // two places -- in the anchor and in the id
+        /*$('#accordion2').append('<div class="accordion-heading">'+
       '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">'+
         'This was appended'+
       '</a>'+
@@ -112,7 +112,7 @@ function setupCalendar() {
           var fullString = headHTML + clickableOjbectAndTime + tailHTML; 
           accordion.append(fullString);
           ++i;
-        }
+        }*/
 
         
 
