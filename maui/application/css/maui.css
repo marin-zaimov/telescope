@@ -8,11 +8,10 @@
 /* -------------------- */
 /* fullcalendar styling */
 /* -------------------- */
-.fc-event {
-   background: url('../images/turtle.jpg') no-repeat;
+/*.fc-event {
    min-height: 49px;
    min-width: 64px;
-}
+}*/
 
 /*
 .fc-border-separate 

@@ -38,6 +38,7 @@ function setupCalendar() {
         minHeight: 2000,
         minWidth: 600,
 
+        // TODO reinstate the visuals
         // visual affects:
         // append fc-day calendar if wanted
         /*onOpen: function (dialog) {
@@ -59,14 +60,10 @@ function setupCalendar() {
 
       });
 
-
-
       // make this (local date varable):
       // Thu Oct 18 2012 00:00:00 GMT-0400 (EDT)
       // look like this (mysql format):
       //'2012-10-18 00:00:00'
-
-      //alert(date);
       var genTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
       var startTime = genTime + ' 00:00:00';
       var endTime = genTime + ' 23:59:59';
@@ -75,75 +72,46 @@ function setupCalendar() {
           'endTime': endTime,
       };
 
-      
+
+      // add the current date as the header
+      $('#modal-day').append(date.toDateString());
+
+      // get necessary data for the date from the server
+      // and populate the list of reservation times
       $.post('GetEvents', toServer, function(response) {
 
-        alert(response);
+        // response holds the server's JSON response
+        // capture it
         var temp = jQuery.parseJSON(response);
         var reservation_times = temp.reservation_times;
 
-        //for (
-        //alert('sup');
+        // select our modal's accordion div
         var accordion = $('#accordion2');
-        //sel.append('<p>Word up</p>');
-        // two places -- in the anchor and in the id
-        /*$('#accordion2').append('<div class="accordion-heading">'+
-      '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">'+
-        'This was appended'+
-      '</a>'+
-    '</div>'+
-    '<div id="collapse3" class="accordion-body collapse">'+
-      '<div class="accordion-inner">'+
-          'This is appended inner content'+
-      '</div>'+
-    '</div>');*/
+        
+        // loop over all reservation times
+        // and add the event, time period, and relevant data to the accordion list
         var i = 0;
         while (i < reservation_times.length) {
+
           var eventDict = reservation_times[i];
-          //alert(reservation_times.length);
-          //alert(eventDict['startTime']);
           var headHTML = '<div class="accordion-heading">'+
             '               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'">';
           var clickableObjectAndTime = eventDict['event']+'<div style="float:right;">'+eventDict['startTime']+' - '+eventDict['endTime']+'</div>';
+          var bookItButton = '<p><a href="#" id="bookit-btn'+i+'" class="btn btn-primary btn-large" onclick="clique(this.id)">Book that shit</a></p>';
           var tailHTML =   '</a>'+
                          '</div>'+
                            '<div id="collapse'+i+'" class="accordion-body collapse"> <!-- add "in" to class to open at load -->'+
                              '<div class="accordion-inner">'+
-                               'Replace me with reservation fields'+
+                               bookItButton+'TODO sweet pics and links plz'+
                              '</div>'+
                            '</div>';
           var fullString = headHTML + clickableObjectAndTime + tailHTML; 
-          //accordion.append("yo");//fullString);*/
+
+          // add the content to the page
           accordion.append(fullString);
+
           ++i;
         }
-
-        
-
-
-
-// this has to get appended.
-/*<div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        System Configuration <div style="float:right;">test</div>
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse"> <!-- add "in" to class to open at load -->
-      <div class="accordion-inner">
-        Replace me with reservation fields
-      </div>
-    </div>
-    */
-
-
-        //var keys = Object.keys(response);
-        //for (var key in response)
-          //alert(key);
-        //alert(rts);
-        //for (rt in rts) {
-          //alert(rt);
-        //}
-
 
 
       });
@@ -227,7 +195,10 @@ function setupCalendar() {
 
 }
 
-
+// takes in the id of the bookit button that was clicked
+function clique(el_id) {
+  alert(e);
+}
 
 
 function setClose() {

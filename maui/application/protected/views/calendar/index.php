@@ -48,14 +48,10 @@ $this->breadcrumbs=array(
 <!-- simple modal example -->
 <div id="sample" style="display:none;">
 
-  <h2>Sample Data</h2>
-  <p>This is some sample data from the current page</p>
-  <p>You can press ESC to close this dialog or click <a href="#" class="simplemodal-close">close</a>.</p>
-
-  <div class="accordion" id="accordion2">
-
-
-  </div>
+  <h4><a href="#" class="simplemodal-close" style="float:right;">X</a></h4>
+  <h2 id="modal-day"></h2>
+  <p>TODO Summarize the viewing times here?</p>
+  <div class="accordion" id="accordion2"></div>
 
 
 </div>

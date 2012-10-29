@@ -41,8 +41,8 @@ class CalendarController extends MauiController
     //$criteria->addCondition("endTime < '".$endTime."'");
 
     // build query
-    $criteria->addCondition("startTIme > :startTime");
-    $criteria->addCondition("endTime < :endTime");
+    $criteria->addCondition("startTIme >= :startTime");
+    $criteria->addCondition("endTime <= :endTime");
     $criteria->params = array(':startTime' => $startTime, ':endTime' => $endTime);
 
     // query
