@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'skyTimes':
  * @property integer $id
- * @property string $startTIme
+ * @property string $startTime
  * @property string $endTime
  * @property string $type
  */
@@ -37,11 +37,11 @@ class SkyTimes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('startTIme, endTime, type', 'required'),
+			array('startTime, endTime, type', 'required'),
 			array('type', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, startTIme, endTime, type', 'safe', 'on'=>'search'),
+			array('id, startTime, endTime, type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,7 +63,7 @@ class SkyTimes extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'startTIme' => 'Start Time',
+			'startTime' => 'Start Time',
 			'endTime' => 'End Time',
 			'type' => 'Type',
 		);
@@ -81,7 +81,7 @@ class SkyTimes extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('startTIme',$this->startTIme,true);
+		$criteria->compare('startTime',$this->startTime,true);
 		$criteria->compare('endTime',$this->endTime,true);
 		$criteria->compare('type',$this->type,true);
 

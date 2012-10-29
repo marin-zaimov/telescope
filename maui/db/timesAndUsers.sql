@@ -101,11 +101,11 @@ DROP TABLE IF EXISTS `skyTimes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skyTimes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `startTIme` datetime NOT NULL,
+  `startTime` datetime NOT NULL,
   `endTime` datetime NOT NULL,
   `type` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `unique3` (`startTIme`,`endTime`,`type`)
+  KEY `unique3` (`startTime`,`endTime`,`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2433 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,6 +135,7 @@ CREATE TABLE `users` (
   `lastName` varchar(255) NOT NULL,
   `organization` varchar(255) DEFAULT NULL,
   `GMToffset` varchar(5) NOT NULL,
+  `termsOfService` varchar(1) DEFAULT 'N',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -145,7 +146,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (4,'marin@gatech.edu','a5e82af048c67edf6f74086ad19b714a5c6be028','c210cfce3d','Marin','Zaimov','GT','0'),(5,'test@maui.com','00b93696ef780f644d3081d342a669e19807938b','c508972006','test','maui','GT','0'),(6,'test2@maui.com','c2da50dfd06f50105ea0b231e1e5df7e32bcc2ba','eea887a87f','Test','Maui','GT','-5'),(7,'testsome@maui.com','c7f152e0829f1468d05a83cebb1fff07ef0e7371','faa2166de0','test','stom','som','0'),(8,'jasmine@gatech.edu','d6dc760f71ffd9c2af1b009fafe44f78add5839e','c75a246c4b','Jasmine','Lawrence','GT','-5'),(9,'brad@gatech.edu','72baf6dad4ecfb1c3f1e68c53417cf178c3eec11','87bca45811','Brad','VanSlyke','GT','-5'),(10,'chris@gatech.edu','ff09849081bf2aabff20e3a29a066abba61c32c2','8aa4eca379','Chris','Porter','GT','-5');
+INSERT INTO `users` VALUES (4,'marin@gatech.edu','a5e82af048c67edf6f74086ad19b714a5c6be028','c210cfce3d','Marin','Zaimov','GT','0','N'),(5,'test@maui.com','00b93696ef780f644d3081d342a669e19807938b','c508972006','test','maui','GT','0','N'),(6,'test2@maui.com','c2da50dfd06f50105ea0b231e1e5df7e32bcc2ba','eea887a87f','Test','Maui','GT','-5','N'),(7,'testsome@maui.com','c7f152e0829f1468d05a83cebb1fff07ef0e7371','faa2166de0','test','stom','som','0','N'),(8,'jasmine@gatech.edu','d6dc760f71ffd9c2af1b009fafe44f78add5839e','c75a246c4b','Jasmine','Lawrence','GT','-5','N'),(9,'brad@gatech.edu','72baf6dad4ecfb1c3f1e68c53417cf178c3eec11','87bca45811','Brad','VanSlyke','GT','-5','N'),(10,'chris@gatech.edu','ff09849081bf2aabff20e3a29a066abba61c32c2','8aa4eca379','Chris','Porter','GT','-5','N');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-10-28 17:32:26
+-- Dump completed on 2012-10-29 11:31:10
