@@ -96,12 +96,15 @@ function setupCalendar() {
       '<div class="accordion-inner">'+
           'This is appended inner content'+
       '</div>'+
-    '</div>');
-        var i = 1;
-        while (i < ) {
+    '</div>');*/
+        var i = 0;
+        while (i < reservation_times.length) {
+          var eventDict = reservation_times[i];
+          //alert(reservation_times.length);
+          //alert(eventDict['startTime']);
           var headHTML = '<div class="accordion-heading">'+
             '               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'">';
-          var clickableObjectAndTime; 
+          var clickableObjectAndTime = eventDict['event']+'<div style="float:right;">'+eventDict['startTime']+' - '+eventDict['endTime']+'</div>';
           var tailHTML =   '</a>'+
                          '</div>'+
                            '<div id="collapse'+i+'" class="accordion-body collapse"> <!-- add "in" to class to open at load -->'+
@@ -109,10 +112,11 @@ function setupCalendar() {
                                'Replace me with reservation fields'+
                              '</div>'+
                            '</div>';
-          var fullString = headHTML + clickableOjbectAndTime + tailHTML; 
+          var fullString = headHTML + clickableObjectAndTime + tailHTML; 
+          //accordion.append("yo");//fullString);*/
           accordion.append(fullString);
           ++i;
-        }*/
+        }
 
         
 

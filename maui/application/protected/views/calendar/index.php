@@ -54,27 +54,6 @@ $this->breadcrumbs=array(
 
   <div class="accordion" id="accordion2">
 
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        System Configuration <div style="float:right;">test</div>
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse"> <!-- add "in" to class to open at load -->
-      <div class="accordion-inner">
-        Replace me with sysconfig options
-      </div>
-    </div>
-
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Graph Details
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-          Replace me with axis, experiment, and statistics options
-      </div>
-    </div>
 
   </div>
 
