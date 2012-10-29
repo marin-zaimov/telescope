@@ -12,6 +12,7 @@ $(function() {
   one = 1;
   //keeps track of changes to the slect bar and runs a function on change
   $('#selectInt').on('change', onIntChange);
+  $('.carousel').carousel(cycle);
 });
 
 
