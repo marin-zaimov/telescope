@@ -24,7 +24,38 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
   <style>
       body {
-      padding-top: 60px; /* When using the navbar-top-fixed */
+        padding-top: 60px; /* When using the navbar-top-fixed */
+      }
+      .navbar-inner {
+        background-color: #222;
+        background-image: -moz-linear-gradient(top,#222,#111);
+        background-image: -webkit-gradient(linear,0 0,0 100%,from(#222),to(#111));
+        background-image: -webkit-linear-gradient(top,#222,#111);
+        background-image: -o-linear-gradient(top,#222,#111);
+        background-image: linear-gradient(to bottom,#222,#111);
+        background-repeat: repeat-x;
+        border: 1px solid #444;
+        border-top: 0;
+      }
+      #page {
+        margin-top: -20px;
+        margin-bottom: 5px;
+        background: white;
+        border: 1px solid #CCC;
+      }
+      .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+        color: #FFF;
+        background-color: #000;
+      }
+      .navbar .nav > li > a {
+        text-shadow: none;
+      }
+      .navbar .nav > li a:hover {
+        color: #FFF;
+      }
+      .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+        color: #FFF;
+        background-color: #000;
       }
   </style>
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
@@ -42,7 +73,27 @@
   
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
+<?
+  $urls = array(
+    'home' => array('name' => 'Home', 'url' => Yii::app()->request->baseUrl .'/index.php/site/index'),
+    'about' => array('name' => 'About', 'url' => Yii::app()->request->baseUrl .'/index.php/aboutUs/index'),
+    'telescope' => array('name' => 'Telescope', 'url' => Yii::app()->request->baseUrl .'/index.php/telescope/index'),
+    'login' => array('name' => 'Login/Register', 'url' => Yii::app()->request->baseUrl .'/index.php/site/login'),
+    'logout' => array('name' => 'Logout ('.Yii::app()->user->name.')', 'url' => Yii::app()->request->baseUrl .'/index.php/site/logout'),
+    'calendar' => array('name' => 'Calendar', 'url' => Yii::app()->request->baseUrl .'/index.php/calendar/index'),
+    'profile' => array('name' => 'My Profile', 'url' => Yii::app()->request->baseUrl .'/#'),
+    'reservations' => array('name' => 'My Reservations', 'url' => Yii::app()->request->baseUrl .'/#'),
+    'photoGallery' => array('name' => 'My Photo Gallery', 'url' => Yii::app()->request->baseUrl .'/#'),
+  );
+    
+  function createNavLi($index, $urls) {
+    $class = (strpos($_SERVER['REQUEST_URI'], $urls[$index]['url'])===0) ? 'active' : '';
 
+    $result = '<li class="'.$class.'"><a href="'.$urls[$index]['url'].'">'.$urls[$index]['name'].'</a></li>';
+
+    return $result;
+  }
+?>
 <body>
 
 <div class="container" id="page">
@@ -56,15 +107,17 @@
       </a>
       <a class="brand" href="#">Maui Telescope</a>
       <div class="nav-collapse">
-        <ul class="nav">
-          <li class="active"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/index"><i class="icon-home icon-white"></i> Home</a></li>
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/aboutUs/index">About</a></li>
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/telescope/index">Telescope</a></li>
+        <ul class="nav pull-right">
+          <? echo createNavLi('home', $urls); ?>
+          <? echo createNavLi('about', $urls); ?>
+          <? echo createNavLi('telescope', $urls); ?>
         <? if (Yii::app()->user->isGuest): ?>
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/login">Register/Login</a></li>
+          <? echo createNavLi('login', $urls); ?>
         <? else: ?> 
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/calendar/index">Calendar</a></li>
-          <li class="dropdown">
+          <? echo createNavLi('calendar', $urls); ?>
+          <li class="dropdown <? ((strpos($_SERVER['REQUEST_URI'], $urls['profile']['url'])===0)
+                 || (strpos($_SERVER['REQUEST_URI'], $urls['reservations']['url'])===0)
+                  || (strpos($_SERVER['REQUEST_URI'], $urls['photoGallery']['url'])===0)) ? 'active' : ''?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">My Profile</a></li>
@@ -72,32 +125,13 @@
               <li><a href="#">My Photo Gallery</a></li>
             </ul>
           </li>
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/logout">Logout (<? echo Yii::app()->user->name; ?>)</a></li>
+          <? echo createNavLi('logout', $urls); ?>
         <? endif; ?>
         </ul>
-        <form class="navbar-search pull-right" action="">
-          <input type="text" class="search-query span2" placeholder="Search">
-        </form>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
   </div><!-- /.navbar-inner -->
 </div><!-- /.navbar -->
-
-<!--	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About Us', 'url'=>array('/aboutUs/index')),
-				array('label'=>'Telecsope', 'url'=>array('/telescope/index'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Calendar', 'url'=>array('/calendar/index', 'view'=>'about')),
-				array('label'=>'User Profile', 'url'=>array('/user/index')),
-				array('label'=>'New User', 'url'=>array('/user/ShowUserForm')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-				
-			),
-		)); ?>
-	</div><!-- mainmenu -->
 
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -111,15 +145,6 @@
 	
 
 	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by Team Teamwork.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-		
-		
-	
-	</div><!-- footer -->
 
 </div><!-- page -->
 
