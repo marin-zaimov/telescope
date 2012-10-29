@@ -82,6 +82,56 @@ function setupCalendar() {
         var temp = jQuery.parseJSON(response);
         var reservation_times = temp.reservation_times;
 
+        //for (
+        //alert('sup');
+        var accordion = $('#accordion2');
+        //sel.append('<p>Word up</p>');
+        /* two places -- in the anchor and in the id */
+        $('#accordion2').append('<div class="accordion-heading">'+
+      '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">'+
+        'This was appended'+
+      '</a>'+
+    '</div>'+
+    '<div id="collapse3" class="accordion-body collapse">'+
+      '<div class="accordion-inner">'+
+          'This is appended inner content'+
+      '</div>'+
+    '</div>');
+        var i = 1;
+        while (i < ) {
+          var headHTML = '<div class="accordion-heading">'+
+            '               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'">';
+          var clickableObjectAndTime; 
+          var tailHTML =   '</a>'+
+                         '</div>'+
+                           '<div id="collapse'+i+'" class="accordion-body collapse"> <!-- add "in" to class to open at load -->'+
+                             '<div class="accordion-inner">'+
+                               'Replace me with reservation fields'+
+                             '</div>'+
+                           '</div>';
+          var fullString = headHTML + clickableOjbectAndTime + tailHTML; 
+          accordion.append(fullString);
+          ++i;
+        }
+
+        
+
+
+
+// this has to get appended.
+/*<div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        System Configuration <div style="float:right;">test</div>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse"> <!-- add "in" to class to open at load -->
+      <div class="accordion-inner">
+        Replace me with reservation fields
+      </div>
+    </div>
+    */
+
+
         //var keys = Object.keys(response);
         //for (var key in response)
           //alert(key);
