@@ -51,3 +51,5 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+If you dont have an account, <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/user/showUserForm">click here to register</a>

@@ -39,6 +39,36 @@ class UserController extends Controller
 		  $this->render('loginForm');
 		}
 	}
+	
+	public function actionVerifyEmail()
+	{
+	  $email = $_GET['email'];
+	  $id = $_GET['id'];
+		if (isset($_GET['User'])) {
+		  if (!$_GET['User']['password'] == $_GET['User']['cPassword']) {
+	      throw new Exception('Password and Confirm Password field are not the same.');
+	    }
+		  $user = Users::createFromArray($_GET['User']);
+		  if (!empty($_GET['User']['password'])) {
+				if (PasswordHelper::isValidPasswordPattern($_GET['User']['password'])) {
+					$user->salt = PasswordHelper::generateRandomSalt();
+					$user->password = PasswordHelper::hashPassword($user->password, $user->salt);
+				}
+				else {
+					throw new Exception('Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
+				}
+			}
+			
+		  if ($user->save()) {
+		    var_dump('Saved!');
+		  }
+		  else {
+		    var_dump('Not Saved');
+		  }
+		} else {
+		  $this->render('loginForm');
+		}
+	}
 
 
 	// Uncomment the following methods and override them if needed
@@ -78,10 +108,10 @@ class UserController extends Controller
       array('allow', // allow authenticated users to access all actions
         'users'=>array('@'),
       ),
-      /*array('allow',
-        'actions'=>array('index'),
+      array('allow',
+        'actions'=>array('showUserForm'),
         'users'=>array('?'),
-      ),*/
+      ),
       array('deny'),
     );
   }
