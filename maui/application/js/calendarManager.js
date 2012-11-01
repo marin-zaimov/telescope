@@ -97,7 +97,7 @@ function setupCalendar() {
           var headHTML = '<div class="accordion-heading">'+
             '               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'">';
           var clickableObjectAndTime = eventDict['event']+'<div style="float:right;">'+eventDict['startTime']+' - '+eventDict['endTime']+'</div>';
-          var bookItButton = '<p><a href="#" id="bookit-btn'+i+'" class="btn btn-primary btn-large" onclick="clique(this.id)">Book that shit</a></p>';
+          var bookItButton = '<p><a href="#" id="bookit-btn'+i+'" class="btn btn-primary btn-large" onclick="clique(this.id)">Book it!</a></p>';
           var tailHTML =   '</a>'+
                          '</div>'+
                            '<div id="collapse'+i+'" class="accordion-body collapse"> <!-- add "in" to class to open at load -->'+
