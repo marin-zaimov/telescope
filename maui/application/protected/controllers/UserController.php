@@ -14,13 +14,21 @@ class UserController extends Controller
 	
 	public function actionShowUserForm()
 	{
-		if(isset($_GET['User'])){
-		  if (!$_GET['User']['password'] == $_GET['User']['cPassword']) {
+	  $userData = $_POST['User'];
+		if(isset($userData)){
+		  
+		  if (!$userData['password'] == $userData['cPassword']) {
 	      throw new Exception('Password and Confirm Password field are not the same.');
 	    }
-		  $user = Users::createFromArray($_GET['User']);
-		  if (!empty($_GET['User']['password'])) {
-				if (PasswordHelper::isValidPasswordPattern($_GET['User']['password'])) {
+	    if ($userData['termsOfService'] == "on") {
+	      $userData['termsOfService'] = 'Y';
+	    }
+	    else {
+	      $userData['termsOfService'] = 'N';
+	    }
+		  $user = Users::createFromArray($userData);
+		  if (!empty($userData['password'])) {
+				if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
 					$user->salt = PasswordHelper::generateRandomSalt();
 					$user->password = PasswordHelper::hashPassword($user->password, $user->salt);
 				}
@@ -33,6 +41,7 @@ class UserController extends Controller
 		    var_dump('Saved!');
 		  }
 		  else {
+		    var_dump($user->errors);
 		    var_dump('Not Saved');
 		  }
 		} else {
