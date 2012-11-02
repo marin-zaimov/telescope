@@ -14,8 +14,8 @@ class UserController extends Controller
 	
 	public function actionShowUserForm()
 	{
-	  $userData = $_POST['User'];
-		if(isset($userData)){
+		if(isset($_POST['User'])){
+	    $userData = $_POST['User'];
 		  
 		  if (!$userData['password'] == $userData['cPassword']) {
 	      throw new Exception('Password and Confirm Password field are not the same.');
