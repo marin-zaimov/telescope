@@ -20,8 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/fullcalendar.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/maui.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap.min.css" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap-responsive.css" />
+  	
   <style>
       body {
         padding-top: 60px; /* When using the navbar-top-fixed */
@@ -58,7 +58,6 @@
         background-color: #000;
       }
   </style>
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
 
   
@@ -93,6 +92,7 @@
 
     return $result;
   }
+  echo Yii::app()->user->model->attributes;
 ?>
 <body>
 

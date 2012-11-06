@@ -28,12 +28,25 @@ class UserIdentity extends CUserIdentity
 		}
 		else if($this->_userData->verifyPassword($this->password)) {
 			$this->errorCode=self::ERROR_NONE;
+			$this->setupIdentity();
 		}
 		else {
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		}
 
 		return !$this->errorCode;
+	}
+	
+	private function setupIdentity()
+	{
+		$this->_id = $this->_userData->id;
+		$this->setState('email', $this->_userData->email);
+		$this->setState('id', $this->_userData->id);
+		$this->setState('firstName', $this->_userData->firstName);
+		$this->setState('lastName', $this->_userData->lastName);
+		//$this->setState('fullName', $this->_userData->firstName . ' ' . $this->_userData->lastName);
+
+		
 	}
 	
 	/**

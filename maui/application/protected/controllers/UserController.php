@@ -53,7 +53,7 @@ class UserController extends Controller
 	{
 	  $email = $_GET['email'];
 	  $id = $_GET['id'];
-		if (isset($_GET['User'])) {
+		if (isset($_GET['id']) and isset($_GET['email'])) {
 		  if (!$_GET['User']['password'] == $_GET['User']['cPassword']) {
 	      throw new Exception('Password and Confirm Password field are not the same.');
 	    }
