@@ -38,6 +38,7 @@ class UserController extends Controller
 			}
 			
 		  if ($user->save()) {
+		    $this->emailNewUser($user);
 		    var_dump('Saved!');
 		  }
 		  else {
@@ -51,31 +52,26 @@ class UserController extends Controller
 	
 	public function actionVerifyEmail()
 	{
-	  $email = $_GET['email'];
-	  $id = $_GET['id'];
 		if (isset($_GET['id']) and isset($_GET['email'])) {
-		  if (!$_GET['User']['password'] == $_GET['User']['cPassword']) {
-	      throw new Exception('Password and Confirm Password field are not the same.');
-	    }
-		  $user = Users::createFromArray($_GET['User']);
-		  if (!empty($_GET['User']['password'])) {
-				if (PasswordHelper::isValidPasswordPattern($_GET['User']['password'])) {
-					$user->salt = PasswordHelper::generateRandomSalt();
-					$user->password = PasswordHelper::hashPassword($user->password, $user->salt);
-				}
-				else {
-					throw new Exception('Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
-				}
-			}
-			
-		  if ($user->save()) {
-		    var_dump('Saved!');
+	    
+		  $user = Users::model()->findByPk($_GET['id']);
+		  if ($user->email == $_GET['email']) {
+		    $user->emailVerified = 'Y';
+		    $model=new LoginForm;
+		    $messages = array();
+		    if ($user->save()) {
+		      $messages[] = 'Thank you for veryfying your email';
+		    }
+		    else {
+		      $model->addError('username','Your email verification failed.');
+		    }
+		    $this->render('/site/login',array('model'=>$model, 'messages' => $messages));
 		  }
 		  else {
-		    var_dump('Not Saved');
+		    throw new Exception('Invalid URL');
 		  }
 		} else {
-		  $this->render('loginForm');
+		  throw new Exception('This link is not valid');
 		}
 	}
 
@@ -118,7 +114,7 @@ class UserController extends Controller
         'users'=>array('@'),
       ),
       array('allow',
-        'actions'=>array('showUserForm'),
+        'actions'=>array('showUserForm','verifyEmail'),
         'users'=>array('?'),
       ),
       array('deny'),
