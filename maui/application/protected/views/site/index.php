@@ -20,59 +20,40 @@ $this->pageTitle=Yii::app()->name;
 
 
 
-
-
-<div id= "myCarousel" class="carousel slide">
-	<div class="carousel-inner">
-		<div class="active item">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/howey.jpg" alt="howey" width="200" height="128">
-			<div class="carousel-caption">
-				<h4> First Label Here </h4>
-				<p>
-				"First flavor text here."
-				</p>
-			</div>
-		</div>
-	<div class="item">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/moon_phases.jpg" alt="moon_phases" width="200" height="128">
-			<div class="carousel-caption">
-				<h4> SecondLabel Here </h4>
-				<p>
-				"Second flavor text here."
-				</p>
-			</div>
-		</div>
-		<div class="item">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/MRTC_Telescope.jpeg" alt="MRTC_Telescope" width="200" height="128">
-			<div class="carousel-caption">
-				<h4> Third Label Here </h4>
-				<p>
-				"Third flavor text here."
-				</p>
-			</div>
-		</div>
-		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-	</div>
-</div>
-  
-        <!-- Javascript placed at the end of the document so the pages load faster -->
-
-        <script src="bootstrap/jquery.js"></script>	
-
-        <script src="bootstrap/bootstrap.js"></script>
-
-        <script src="bootstrap/bootstrap-alert.js"></script>
-
-        <script src="bootstrap/bootstrap-carousel.js"></script>
-
-        <script src="bootstrap/bootstrap-transition.js"></script>
-
-
-        <script type="text/javascript">
-
-        $('.carousel').carousel("cycle")
-
+ <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+        <div class="carousel-inner">
         
-
-        </script>
+            <div class="active item"> 
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/howey.jpg" alt="howey" width="900" height="50">
+            <h4> Howey Physics Building </h4>
+				<p>
+				"Location of the Georgia Tech Observatory!."
+				</p>
+            </div>
+        
+            <div class="item"> 
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/moon_phases.jpg" alt="moon_phases" width="900" height="50">
+            <h4> Phases of the Moon </h4>
+				<p>
+				Make a reservation to see the moon today!
+				</p>
+            </div>
+            
+            <div class="item">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/MRTC_Telescope.jpeg" alt="MRTC_Telescope" width="900" height="50">
+            <h4> MRTC Telescope </h4>
+				<p>
+				Check out the specs on this awesome telescope.
+				</p>
+            </div>
+       </div>
+            <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+       </div>
+       
+       <script>
+       $('.carousel').carousel("cycle")
+       
+       </script>
