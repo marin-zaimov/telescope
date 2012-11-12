@@ -20,8 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/fullcalendar.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/maui.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap.min.css" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap-responsive.css" />
+  	
   <style>
       body {
         padding-top: 60px; /* When using the navbar-top-fixed */
@@ -58,7 +58,6 @@
         background-color: #000;
       }
   </style>
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
 
   
@@ -70,10 +69,9 @@
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/bootstrap.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/jquery.simplemodal.1.4.3.min.js"></script>
 
-  
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
-<?
+<?php
   $urls = array(
     'home' => array('name' => 'Home', 'url' => Yii::app()->request->baseUrl .'/index.php/site/index'),
     'about' => array('name' => 'About', 'url' => Yii::app()->request->baseUrl .'/index.php/aboutUs/index'),
@@ -93,6 +91,7 @@
 
     return $result;
   }
+  echo Yii::app()->user->model->attributes;
 ?>
 <body>
 
@@ -108,13 +107,13 @@
       <a class="brand" href="#">Maui Telescope</a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
-          <? echo createNavLi('home', $urls); ?>
-          <? echo createNavLi('about', $urls); ?>
-          <? echo createNavLi('telescope', $urls); ?>
-        <? if (Yii::app()->user->isGuest): ?>
-          <? echo createNavLi('login', $urls); ?>
-        <? else: ?> 
-          <? echo createNavLi('calendar', $urls); ?>
+          <?php echo createNavLi('home', $urls); ?>
+          <?php echo createNavLi('about', $urls); ?>
+          <?php echo createNavLi('telescope', $urls); ?>
+        <?php if (Yii::app()->user->isGuest): ?>
+          <?php echo createNavLi('login', $urls); ?>
+        <?php else: ?> 
+          <?php echo createNavLi('calendar', $urls); ?>
           <li class="dropdown <? ((strpos($_SERVER['REQUEST_URI'], $urls['profile']['url'])===0)
                  || (strpos($_SERVER['REQUEST_URI'], $urls['reservations']['url'])===0)
                   || (strpos($_SERVER['REQUEST_URI'], $urls['photoGallery']['url'])===0)) ? 'active' : ''?>">
@@ -125,8 +124,8 @@
               <li><a href="#">My Photo Gallery</a></li>
             </ul>
           </li>
-          <? echo createNavLi('logout', $urls); ?>
-        <? endif; ?>
+          <?php echo createNavLi('logout', $urls); ?>
+        <?php endif; ?>
         </ul>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->

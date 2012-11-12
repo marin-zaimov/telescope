@@ -37,11 +37,11 @@ class CalendarController extends MauiController
     $criteria = SkyTimes::model()->getDbCriteria();
 
     // NOT SAFE:
-    //$criteria->addCondition("startTIme > '".$startTime."'");
+    //$criteria->addCondition("startTime > '".$startTime."'");
     //$criteria->addCondition("endTime < '".$endTime."'");
 
     // build query
-    $criteria->addCondition("startTIme >= :startTime");
+    $criteria->addCondition("startTime >= :startTime");
     $criteria->addCondition("endTime <= :endTime");
     $criteria->params = array(':startTime' => $startTime, ':endTime' => $endTime);
 
@@ -61,15 +61,15 @@ class CalendarController extends MauiController
       $evening = array();
       $morning = array();
       foreach ($temp_skytimes as $ts) {
-        if (intval(substr($ts['startTIme'],11,2)) >= 12)
+        if (intval(substr($ts['startTime'],11,2)) >= 12)
           $evening[] = $ts;
         else
           $morning[] = $ts;
       }
 
       // sort the evening and morning times separately
-      usort($evening, array($this,"sortByStartTime"));
-      usort($morning, array($this,"sortByStartTime"));
+      usort($evening, array($this,"sortBystartTime"));
+      usort($morning, array($this,"sortBystartTime"));
 
       // combine them, with evening first, then morning
       $result_skytimes = array_merge($evening, $morning);
@@ -82,7 +82,7 @@ class CalendarController extends MauiController
       $reservation_times = array();
       foreach ($result_skytimes as $rs) {
 
-        $start = substr($rs['startTIme'],11,5);
+        $start = substr($rs['startTime'],11,5);
         $end = substr($rs['endTime'],11,5);
 
         $half_hour = intval(substr($start, 3, 2));
@@ -149,14 +149,14 @@ class CalendarController extends MauiController
   }
 
   // sort a set of evening or morning times by start time, earliest first
-  public function sortByStartTime($a, $b)
+  public function sortBystartTime($a, $b)
   {
-    $a_time = intval(substr($a['startTIme'],11,2)
-                  . (substr($a['startTIme'],14,2))
-                  . (substr($a['startTIme'],17,2)));
-    $b_time = intval(substr($b['startTIme'],11,2)
-                  . (substr($b['startTIme'],14,2))
-                  . (substr($b['startTIme'],17,2)));
+    $a_time = intval(substr($a['startTime'],11,2)
+                  . (substr($a['startTime'],14,2))
+                  . (substr($a['startTime'],17,2)));
+    $b_time = intval(substr($b['startTime'],11,2)
+                  . (substr($b['startTime'],14,2))
+                  . (substr($b['startTime'],17,2)));
 
     if ($a_time < $b_time)
       return -1;

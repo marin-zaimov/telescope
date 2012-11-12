@@ -9,8 +9,15 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Login</h1>
+<h3>Login</h3>
 
+<?php if (isset($messages)): ?>
+  <?php foreach($messages as $m): ?>
+    <h4><?php echo $m; ?> </h4>
+  <?php endforeach; ?>
+<?php endif; ?>
+
+  
 <p>Please fill out the following form with your login credentials:</p>
 
 <div class="form">
@@ -20,6 +27,7 @@ $this->breadcrumbs=array(
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
+	'action' => array('site/login')
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
