@@ -1,8 +1,22 @@
-<!DOCTYPE html>
-<html>
-<body>
 
 <h1><p><b>My Account</b></p></h1>
+
+<style>
+  .splash-section {
+    border-radius: 15px;
+    moz-border-radius: 15px;
+    padding: 20px;
+    border: #777 1px solid;
+    background: #EEE;
+  }
+</style>
+
+<div class="row-fluid">
+  <div class="splash-section span4">My Account</div>
+  <div class="splash-section span4">My Reservations</div>
+  <div class="splash-section span4">My Photos and Vidoes</div>
+</div>
+
 
 <h3><p><b>My Reservations</b></p></h3>
 
@@ -27,7 +41,4 @@ Saturn - Monday June, 2013 at 5:00pm EST</p>
 
  
 <iframe width="640" height="360" src="http://www.youtube.com/embed/qa04iRjaBMA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-
-</body>
-</html>
 

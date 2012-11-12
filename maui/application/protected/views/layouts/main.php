@@ -79,7 +79,7 @@
     'login' => array('name' => 'Login/Register', 'url' => Yii::app()->request->baseUrl .'/index.php/site/login'),
     'logout' => array('name' => 'Logout ('.Yii::app()->user->name.')', 'url' => Yii::app()->request->baseUrl .'/index.php/site/logout'),
     'calendar' => array('name' => 'Calendar', 'url' => Yii::app()->request->baseUrl .'/index.php/calendar/index'),
-    'profile' => array('name' => 'My Profile', 'url' => Yii::app()->request->baseUrl .'/#'),
+    'profile' => array('name' => 'My Profile', 'url' => Yii::app()->request->baseUrl .'/index.php/user/profile'),
     'reservations' => array('name' => 'My Reservations', 'url' => Yii::app()->request->baseUrl .'/#'),
     'photoGallery' => array('name' => 'My Photo Gallery', 'url' => Yii::app()->request->baseUrl .'/#'),
   );
@@ -119,6 +119,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">My Profile</a></li>
+              <?php echo createNavLi('profile', $urls); ?>
               <li><a href="#">My Reservations</a></li>
               <li><a href="#">My Photo Gallery</a></li>
             </ul>
