@@ -25,6 +25,14 @@ class CalendarController extends MauiController
 	    var_dump('hahaha');
 	}
 
+  public function actionReserveEvent() {
+
+    $u_id = Yii::app()->user->id;
+    //var_dump($u_id);
+    die;
+
+  }
+
 
   // gets the events returns and returns the 
   public function actionGetEvents()
@@ -115,8 +123,6 @@ class CalendarController extends MauiController
 
       }
 
-      //var_dump($reservation_times);
-      //die;
 
     }
     //TODO strip out id and crap from result_skytimes.... do we even need it?
@@ -166,4 +172,6 @@ class CalendarController extends MauiController
       return 0;
   }
 
+
+  
 }

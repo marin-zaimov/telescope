@@ -27,8 +27,8 @@ class WebUser extends CWebUser {
     {
         if($this->_model===null)
         {
-            if($id!==null)
-                $this->_model=User::model()->findByPk($this->id);
+            if($this->id!==null)
+                $this->_model=Users::model()->findByPk($this->id);
         }
         return $this->_model;
     }

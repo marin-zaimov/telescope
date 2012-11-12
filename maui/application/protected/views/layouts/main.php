@@ -92,7 +92,6 @@
 
     return $result;
   }
-  echo Yii::app()->user->model->attributes;
 ?>
 <body>
 

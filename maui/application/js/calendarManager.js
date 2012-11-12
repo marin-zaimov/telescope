@@ -93,16 +93,18 @@ function setupCalendar() {
         var i = 0;
         while (i < reservation_times.length) {
 
+          //TODO create a function to do this stuff
+
           var eventDict = reservation_times[i];
           var headHTML = '<div class="accordion-heading">'+
             '               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'">';
           var clickableObjectAndTime = eventDict['event']+'<div style="float:right;">'+eventDict['startTime']+' - '+eventDict['endTime']+'</div>';
-          var bookItButton = '<p><a href="#" id="bookit-btn'+i+'" class="btn btn-primary btn-large" onclick="clique(this.id)">Book it!</a></p>';
+          var bookItButton = '<p><button id="bookit-btn'+i+'" class="bookit-click btn btn-primary btn-large" data-id="'+i+'">Book it!</button></p>';
           var tailHTML =   '</a>'+
                          '</div>'+
                            '<div id="collapse'+i+'" class="accordion-body collapse"> <!-- add "in" to class to open at load -->'+
                              '<div class="accordion-inner">'+
-                               bookItButton+'TODO sweet pics and links plz'+
+                               bookItButton+'TODO add pics and links'+
                              '</div>'+
                            '</div>';
           var fullString = headHTML + clickableObjectAndTime + tailHTML; 
@@ -112,6 +114,13 @@ function setupCalendar() {
 
           ++i;
         }
+
+
+        $('.bookit-click').on('click', function() {
+          var id = $(this).data('id');
+          bookitClick(id);
+          alert(id);
+        });
 
 
       });
@@ -196,8 +205,15 @@ function setupCalendar() {
 }
 
 // takes in the id of the bookit button that was clicked
-function clique(el_id) {
-  alert(e);
+function bookitClick(id) {
+
+  //alert('test');
+  alert(id);
+  //alert($(this).data('id'));
+  $.post('ReserveEvent', function(data) {
+    alert('callback');
+  });
+
 }
 
 
