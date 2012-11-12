@@ -133,7 +133,12 @@ class CalendarController extends MauiController
 
   }
 
+  public function actionMyReservations() {
 
+    $userModel = Yii::app()->user->model;
+    
+    $this->render('myReservations', array());
+  }
 
 	public function filters()
   {

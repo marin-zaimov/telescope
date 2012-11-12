@@ -8,8 +8,10 @@
  * @property integer $userId
  * @property string $startTime
  * @property string $endTime
+ * @property integer $skyTimeId
  *
  * The followings are the available model relations:
+ * @property SkyTimes $skyTime
  * @property Users $user
  */
 class Reservations extends CActiveRecord
@@ -40,11 +42,11 @@ class Reservations extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userId, startTime, endTime', 'required'),
-			array('userId', 'numerical', 'integerOnly'=>true),
+			array('userId, startTime, endTime, skyTimeId', 'required'),
+			array('userId, skyTimeId', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, userId, startTime, endTime', 'safe', 'on'=>'search'),
+			array('id, userId, startTime, endTime, skyTimeId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class Reservations extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'skyTime' => array(self::BELONGS_TO, 'SkyTimes', 'skyTimeId'),
 			'user' => array(self::BELONGS_TO, 'Users', 'userId'),
 		);
 	}
@@ -70,6 +73,7 @@ class Reservations extends CActiveRecord
 			'userId' => 'User',
 			'startTime' => 'Start Time',
 			'endTime' => 'End Time',
+			'skyTimeId' => 'Sky Time',
 		);
 	}
 
@@ -88,6 +92,7 @@ class Reservations extends CActiveRecord
 		$criteria->compare('userId',$this->userId);
 		$criteria->compare('startTime',$this->startTime,true);
 		$criteria->compare('endTime',$this->endTime,true);
+		$criteria->compare('skyTimeId',$this->skyTimeId);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
