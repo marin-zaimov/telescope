@@ -27,6 +27,8 @@ class LoginForm extends CFormModel
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
 			array('password', 'authenticate'),
+			// needs to have verified email
+			array('username', 'checkVerifiedEmail'),
 		);
 	}
 
@@ -40,6 +42,14 @@ class LoginForm extends CFormModel
 		);
 	}
 
+  public function checkVerifiedEmail($attribute,$params) {
+
+		$user = Users::model()->getByEmail($this->username);
+		if (empty($user) || $user->emailVerified == 'N') {
+		  $this->addError('username','Your email has not been verified. Click the link you received in your email after registration to verify it.');
+		}
+  }
+  
 	/**
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().

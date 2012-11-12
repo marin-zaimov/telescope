@@ -116,7 +116,7 @@ class Users extends MauiModel
 		));
 	}
 	
-	public static function getByEmail($email, $throwNotFoundException = true) 
+	public static function getByEmail($email) 
 	{
 		$user = null;
 		if(strlen($email) > 0) {
