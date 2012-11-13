@@ -45,9 +45,11 @@ class LoginForm extends CFormModel
   public function checkVerifiedEmail($attribute,$params) {
 
 		$user = Users::model()->getByEmail($this->username);
-		if (empty($user) || $user->emailVerified == 'N') {
-		  $this->addError('username','Your email has not been verified. Click the link you received in your email after registration to verify it.');
-		}
+		if ($this->username != 'admin') {
+		  if (empty($user) || $user->emailVerified == 'N') {
+		    $this->addError('username','Your email has not been verified. Click the link you received in your email after registration to verify it.');
+		  }
+    }
   }
   
 	/**

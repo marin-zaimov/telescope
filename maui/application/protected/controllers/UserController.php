@@ -4,7 +4,7 @@ class UserController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->render('account');
+		//$this->render('account');
 	}
 
 	public function actionProfile()
