@@ -188,7 +188,18 @@ Message = {
   
   'clearAllInputErrors' : function(selector) {
     $('.input-error').removeClass('input-error');
-  }
+  },
+  'clearStickys' : function(status) {
+		  if (status == true) {
+		    $('.sticky').filter('.st-success').find('.st-close').trigger('click');
+		  }
+		  else if (status == false) {
+		    $('.sticky').filter('.st-error').find('.st-close').trigger('click');
+		  }
+		  else {
+		    $('.st-close', '.sticky').trigger('click');
+		  }
+		}
 };
 
 UIHelper = {

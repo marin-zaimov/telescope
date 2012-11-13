@@ -144,7 +144,7 @@ class CalendarController extends MauiController
   {
     $id = $_POST['id'];
     $response = new AjaxResponse;
-    //$numDeleted = Reservations::model()->deleteByPk($id);
+    $numDeleted = Reservations::model()->deleteByPk($id);
     if (!empty($numDeleted)) {
       $response->setStatus(true, 'Reservation deleted successfully');
     }
