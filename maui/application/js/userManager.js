@@ -1,23 +1,26 @@
 
-// DECLARE GLOBAL VARIABLES HERE
-var one;
-var two = 2;
-
-//THIS PRINTS A VARIABLE TO THE BROWSER CONSOLE FOR DEBUGGING
-console.log(two);
-
-
-// CODE IN THIS FUNCTION RUNS ON PAGE LOAD
 $(function() {
-  one = 1;
-  //keeps track of changes to the slect bar and runs a function on change
-  $('#selectInt').on('change', onIntChange);
+alert('ha');
+  //$('#saveUser').on('click', saveUser);
+  $('#userForm').submit(function() {
+  saveUser($(this).serialize());
+  return false;
+});
 });
 
 
 
 // DECLARE FUNCTIONS HERE
 
-function onIntChange() {
-  $('#randomDiv').html('you chose' + $(this).val());
+function saveUser(data) {
+  $.post('saveUser', data, function(result) {
+    result = $.parseJSON(result);
+    if (result.status == true) {
+      $('#userForm').html('User saved succesfully!');
+      Message.flash('User saved succesfully', true);
+    }
+    else {
+      Message.flash('User could not be saved', false, result.messages);
+    }
+  });
 }

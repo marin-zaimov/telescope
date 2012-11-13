@@ -1,11 +1,15 @@
-<? $termsOfService = 'terms of service are defined here. This string is in protected/views/users/login form at the top.'; ?>
+<?php $termsOfService = 'terms of service are defined here. This string is in protected/views/users/login form at the top.'; ?>
+
+<?php if ($newUser): ?>
+  <h3>Create a New Account</h3>
+  <p>To create a new account enter your information below. You will recieve and email to confirm your account.</p>
+<?php else: ?>
+  <h3>Edit your profile</h3>
+<?php endif; ?>
 
 
-<h3>Create a New Account</h3>
 
-<p>To create a new account enter your information below. You will recieve and email to confirm your account.</p>
-
-<form class="user-form form-horizontal" name="input" action="ShowUserForm" method="post">
+<form class="user-form form-horizontal" id="userForm" name="input" action="ShowUserForm" method="post">
   
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
@@ -86,3 +90,4 @@
   <input class="btn btn-primary" type="submit" value="Submit">
 <form>
 
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/userManager.js"></script>
