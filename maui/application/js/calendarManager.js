@@ -120,7 +120,13 @@ function setupCalendar() {
           var id = $(this).data('id');
           bookitClick(id);
           alert(id);
+
+          //$.post(/Reser);
+
+
         });
+
+        alert(reservation_times[1].ref);
 
 
       });

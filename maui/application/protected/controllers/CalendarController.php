@@ -116,7 +116,7 @@ class CalendarController extends MauiController
 
 
           // append to our reservation list
-          $reservation_times[] = array('event' => $rs['type'], 'startTime' => $interval_begin, 'endTime' => $interval_end);
+          $reservation_times[] = array('event' => $rs['type'], 'startTime' => $interval_begin, 'endTime' => $interval_end, 'ref' => $rs['id']);
 
         }
 
