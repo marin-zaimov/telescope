@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/maui.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap-responsive.css" />
-  	
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/sticky.css" />  	
   <style>
       body {
         padding-top: 60px; /* When using the navbar-top-fixed */
@@ -66,8 +66,10 @@
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/fullcalendar.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/gcal.js"></script>
+   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/sticky.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/bootstrap.min.js"></script>
    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/jquery.simplemodal.1.4.3.min.js"></script>
+   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/MauiBase.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -79,9 +81,8 @@
     'login' => array('name' => 'Login/Register', 'url' => Yii::app()->request->baseUrl .'/index.php/site/login'),
     'logout' => array('name' => 'Logout ('.Yii::app()->user->name.')', 'url' => Yii::app()->request->baseUrl .'/index.php/site/logout'),
     'calendar' => array('name' => 'Calendar', 'url' => Yii::app()->request->baseUrl .'/index.php/calendar/index'),
-    'profile' => array('name' => 'My Profile', 'url' => Yii::app()->request->baseUrl .'/#'),
-    'reservations' => array('name' => 'My Reservations', 'url' => Yii::app()->request->baseUrl .'/#'),
-    'photoGallery' => array('name' => 'My Photo Gallery', 'url' => Yii::app()->request->baseUrl .'/#'),
+    'profile' => array('name' => 'My Profile', 'url' => Yii::app()->request->baseUrl .'/index.php/user/profile'),
+    'reservations' => array('name' => 'My Reservations', 'url' => Yii::app()->request->baseUrl .'/index.php/calendar/myReservations'),
   );
     
   function createNavLi($index, $urls) {
@@ -113,14 +114,11 @@
           <?php echo createNavLi('login', $urls); ?>
         <?php else: ?> 
           <?php echo createNavLi('calendar', $urls); ?>
-          <li class="dropdown <? ((strpos($_SERVER['REQUEST_URI'], $urls['profile']['url'])===0)
-                 || (strpos($_SERVER['REQUEST_URI'], $urls['reservations']['url'])===0)
-                  || (strpos($_SERVER['REQUEST_URI'], $urls['photoGallery']['url'])===0)) ? 'active' : ''?>">
+          <li class="dropdown <?php echo ((strpos($_SERVER['REQUEST_URI'], $urls['profile']['url'])===0) || (strpos($_SERVER['REQUEST_URI'], $urls['reservations']['url'])===0)) ? 'active' : ''; ?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">My Profile</a></li>
-              <li><a href="#">My Reservations</a></li>
-              <li><a href="#">My Photo Gallery</a></li>
+              <?php echo createNavLi('profile', $urls); ?>
+              <?php echo createNavLi('reservations', $urls); ?>
             </ul>
           </li>
           <?php echo createNavLi('logout', $urls); ?>

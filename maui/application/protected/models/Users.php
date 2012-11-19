@@ -47,6 +47,8 @@ class Users extends MauiModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+		  array('email', 'unique'),
+      array('email', 'email'),
 			array('email, password, firstName, lastName, GMToffset', 'required'),
 			array('email, password, salt, firstName, lastName, organization', 'length', 'max'=>255),
 			array('GMToffset', 'length', 'max'=>5),

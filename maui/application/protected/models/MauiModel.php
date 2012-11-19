@@ -46,7 +46,7 @@ class MauiModel extends CActiveRecord
 						$relationAttributes = $relationModels->attributes;
 					}
 					if ($asObject) {
-						$relationAttributes = (object) $relationAttributes;
+						$relationAttributes = $relationAttributes;
 					}
 					$attributes[$relationName] = $relationAttributes;
 				}
@@ -76,7 +76,7 @@ class MauiModel extends CActiveRecord
 				}
 				
 				if ($asObject) {
-					$relationAttributes = (object) $relationAttributes;
+					$relationAttributes = $relationAttributes;
 				}
 				$attributes[$relationName] = $relationAttributes;
 			}

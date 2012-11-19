@@ -133,7 +133,27 @@ class CalendarController extends MauiController
 
   }
 
+  public function actionMyReservations() {
 
+    $userModel = Yii::app()->user->model;
+    
+    $this->render('myReservations', array('reservations' => $userModel->reservations));
+  }
+  
+  public function actionRemoveMyReservation()
+  {
+    $id = $_POST['id'];
+    $response = new AjaxResponse;
+    $numDeleted = Reservations::model()->deleteByPk($id);
+    if (!empty($numDeleted)) {
+      $response->setStatus(true, 'Reservation deleted successfully');
+    }
+    else { 
+      $response->setStatus(false, 'Failed to delete reservation.');
+    }
+    
+    echo $response->asJson();
+  }
 
 	public function filters()
   {

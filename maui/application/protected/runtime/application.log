@@ -6043,3 +6043,283 @@ in /home/marin/telescope/maui/application/index.php (13)
 in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/SimplePie.php (1358)
 in /home/marin/telescope/maui/application/protected/extensions/yii-feed-widget/YiiFeedWidgetController.php (92)
 in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.base.CModule] Loading "gii" module
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "db" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `reservations`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `reservations`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `languages`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `languages`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `media`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `media`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `skyTimes`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `skyTimes`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `users`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:37 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.base.CModule] Loading "gii" module
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "db" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `reservations`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `reservations`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `languages`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `languages`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `media`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `media`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `skyTimes`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `skyTimes`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `users`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "assetManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:37:39 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:52 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/SiteController.php (32)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.web.filters.CFilterChain] Running filter CalendarController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (10)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (133)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (10)
+2012/11/12 18:38:57 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (10)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.web.filters.CFilterChain] Running filter TelescopeController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/TelescopeController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (133)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/TelescopeController.php (7)
+2012/11/12 18:38:58 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/TelescopeController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.web.filters.CFilterChain] Running filter CalendarController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "db" application component
+in /home/marin/telescope/maui/application/protected/models/Users.php (31)
+in /home/marin/telescope/maui/application/protected/components/WebUser.php (31)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (138)
+2012/11/12 18:38:59 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/marin/telescope/maui/application/protected/models/Users.php (31)
+in /home/marin/telescope/maui/application/protected/components/WebUser.php (31)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (138)
+2012/11/12 18:38:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `users`
+in /home/marin/telescope/maui/application/protected/models/Users.php (31)
+in /home/marin/telescope/maui/application/protected/components/WebUser.php (31)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (138)
+2012/11/12 18:38:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /home/marin/telescope/maui/application/protected/models/Users.php (31)
+in /home/marin/telescope/maui/application/protected/components/WebUser.php (31)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (138)
+2012/11/12 18:38:59 [trace] [system.db.ar.CActiveRecord] Users.findByPk()
+in /home/marin/telescope/maui/application/protected/components/WebUser.php (31)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (138)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `users` `t` WHERE `t`.`id`=4 LIMIT 1
+in /home/marin/telescope/maui/application/protected/components/WebUser.php (31)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (138)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (140)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:38:59 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (140)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.web.filters.CFilterChain] Running filter TelescopeController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/TelescopeController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (133)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/TelescopeController.php (7)
+2012/11/12 18:48:12 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/TelescopeController.php (7)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.web.filters.CFilterChain] Running filter CalendarController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (2)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (10)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/marin/telescope/maui/application/protected/views/layouts/main.php (133)
+in /home/marin/telescope/maui/application/protected/views/layouts/column1.php (6)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (10)
+2012/11/12 18:48:19 [trace] [system.CModule] Loading "clientScript" application component
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (10)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.CModule] Loading "log" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.CModule] Loading "request" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.CModule] Loading "urlManager" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.web.filters.CFilterChain] Running filter CalendarController.filteraccessControl()
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.CModule] Loading "user" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.CModule] Loading "session" application component
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.CModule] Loading "db" application component
+in /home/marin/telescope/maui/application/protected/models/SkyTimes.php (21)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (45)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/marin/telescope/maui/application/protected/models/SkyTimes.php (21)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (45)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `skyTimes`
+in /home/marin/telescope/maui/application/protected/models/SkyTimes.php (21)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (45)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `skyTimes`
+in /home/marin/telescope/maui/application/protected/models/SkyTimes.php (21)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (45)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.db.ar.CActiveRecord] SkyTimes.findAll()
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (57)
+in /home/marin/telescope/maui/application/index.php (13)
+2012/11/12 18:48:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `skyTimes` `t` WHERE (startTime >= :startTime) AND (endTime <= :endTime)
+in /home/marin/telescope/maui/application/protected/controllers/CalendarController.php (57)
+in /home/marin/telescope/maui/application/index.php (13)

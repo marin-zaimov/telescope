@@ -7,11 +7,12 @@ $this->pageTitle=Yii::app()->name;
        ); */
 ?>
 
-<!--
-<style>
-	.carousel-inner .item {margin-right:auto, margin-left:auto}
+
+<<style>
+	.carousel-inner { text-align: center; }
+
+	.carousel .item > img { display: inline-block; }
 </style>
--->
     
 <center><h1><i>Welcome to the Maui Telescope Project</i></h1></center>
 
@@ -25,7 +26,7 @@ $this->pageTitle=Yii::app()->name;
         <div class="carousel-inner">
         
             <div class="active item"> 
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/howey.jpg" alt="howey" width="900" height="50">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/howey320.jpg" alt="howey" width="auto" height="auto">
             <h4> Howey Physics Building </h4>
 				<p>
 				"Location of the Georgia Tech Observatory!."
@@ -33,7 +34,7 @@ $this->pageTitle=Yii::app()->name;
             </div>
         
             <div class="item"> 
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/moon_phases.jpg" alt="moon_phases" width="900" height="50">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/moon_phases320.jpg" alt="moon_phases" width="auto" height="auto">
             <h4> Phases of the Moon </h4>
 				<p>
 				Make a reservation to see the moon today!
@@ -41,7 +42,7 @@ $this->pageTitle=Yii::app()->name;
             </div>
             
             <div class="item">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/MRTC_Telescope.jpeg" alt="MRTC_Telescope" width="900" height="50">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/MRTC_Telescope320.jpg" alt="MRTC_Telescope" width="auto" height="auto">
             <h4> MRTC Telescope </h4>
 				<p>
 				Check out the specs on this awesome telescope.

@@ -4,50 +4,77 @@ class UserController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->render('account');
+		//$this->render('account');
 	}
 
 	public function actionProfile()
 	{
-		$this->render('profile');
+	  $user = Yii::app()->user->model;
+		$this->render('userForm', array('user' => $user));
 	}
 	
 	public function actionShowUserForm()
 	{
-		if(isset($_POST['User'])){
+	  $user = new Users;
+		$this->render('userForm', array('user' => $user));
+	}
+	
+	public function actionSaveUser()
+	{
 	    $userData = $_POST['User'];
+
+	    $response = new AjaxResponse;
 		  
-		  if (!$userData['password'] == $userData['cPassword']) {
-	      throw new Exception('Password and Confirm Password field are not the same.');
+		  if (!($userData['password'] == $userData['cPassword'])) {
+	      $response->setStatus(false, 'Make sure Password and Confirm Password fields are the same.');
 	    }
-	    if ($userData['termsOfService'] == "on") {
-	      $userData['termsOfService'] = 'Y';
+	    
+	    if (isset($userData['id'])) {
+	      $user = Users::model()->findByPk($userData['id']);
+	      if (!empty($userData['password'])) {
+          if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
+			      $user->salt = PasswordHelper::generateRandomSalt();
+			      $user->password = PasswordHelper::hashPassword($userData['password'], $user->salt);
+		      }
+		      else {
+		        $response->setStatus(false, 'Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
+		      }
+	      }
+			  unset($userData['password']);
+			  $user->setFromArray($userData);
 	    }
 	    else {
-	      $userData['termsOfService'] = 'N';
-	    }
-		  $user = Users::createFromArray($userData);
-		  if (!empty($userData['password'])) {
-				if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
-					$user->salt = PasswordHelper::generateRandomSalt();
-					$user->password = PasswordHelper::hashPassword($user->password, $user->salt);
-				}
-				else {
-					throw new Exception('Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
-				}
+	    
+	      if ($userData['termsOfService'] == "on") {
+	        $userData['termsOfService'] = 'Y';
+	      }
+	      else {
+	        $userData['termsOfService'] = 'N';
+	        $response->setStatus(false, 'You must accept the terms of service to register.');
+	      }
+	      
+		    $user = Users::createFromArray($userData);
+
+			  if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
+				  $user->salt = PasswordHelper::generateRandomSalt();
+				  $user->password = PasswordHelper::hashPassword($userData['password'], $user->salt);
+			  }
+			  else {
+			    $response->setStatus(false, 'Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
+			  }
 			}
-			
-		  if ($user->save()) {
-		    $this->emailNewUser($user);
-		    var_dump('Saved!');
+			$messages = $response->getMessages();
+			if (empty($messages)) {
+		    if ($user->save()) {
+		      $this->emailNewUser($user);
+	        $response->setStatus(true, 'User saved successfully');
+		    }
+		    else {
+	        $response->setStatus(false, $user->errors);
+		    }
 		  }
-		  else {
-		    var_dump($user->errors);
-		    var_dump('Not Saved');
-		  }
-		} else {
-		  $this->render('loginForm');
-		}
+		  echo $response->asJson();
+		  die;
 	}
 	
 	public function actionVerifyEmail()
@@ -75,33 +102,11 @@ class UserController extends Controller
 		}
 	}
 
-
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
+  public function emailNewUser($user)
+  {
+    return true;
+  }
+  
 	public function filters()
   {
     return array( 'accessControl' ); // perform access control for CRUD operations
@@ -114,7 +119,7 @@ class UserController extends Controller
         'users'=>array('@'),
       ),
       array('allow',
-        'actions'=>array('showUserForm','verifyEmail'),
+        'actions'=>array('showUserForm','verifyEmail','saveUser'),
         'users'=>array('?'),
       ),
       array('deny'),
