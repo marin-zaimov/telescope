@@ -12,12 +12,12 @@ My reservations
 
 <div id="reservationsTable" >
   <?php if (!empty($reservations)): ?>
-    <?php foreach($reservations as $r): ?>
     <div class="row-fluid reservation-div">
       <div class="span3">Start Time</div>
       <div class="span3">End Time</div>
       <div class="span3">Viewing Object</div>
       <div class="span3"></div>
+    <?php foreach($reservations as $r): ?>
     <div class="row-fluid reservation-div">
       <div class="span3"><?php echo date('m-d-Y h:i a', strtotime($r->startTime)); ?></div>
       <div class="span3"><?php echo date('m-d-Y h:i a', strtotime($r->endTime)); ?></div>

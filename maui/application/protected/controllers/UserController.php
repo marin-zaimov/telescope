@@ -102,10 +102,21 @@ class UserController extends Controller
 		}
 	}
 
-  public function emailNewUser($user)
-  {
-    return true;
-  }
+  private function emailNewPasswordToUser($userEmail, $template, $pw = null, $newUserRandomPassword)
+	{
+		$emailHelper = new EmailTemplateHelper();
+		$params = array(
+			'EMAIL' => $userEmail,
+			'PWD' => isset($pw) ? $pw : '',
+			'LINK' => "<a href='https://".($_SERVER['SERVER_NAME'] . 
+        "/login") . 
+        "' target='_blank'>Click here to go to the login page</a>"
+		);
+		if ($template == 'newUser' && $newUserRandomPassword) {
+		  $params['LINK'] = "<a href='".($_SERVER['SERVER_NAME'] . "/login/passwordResetView?email=".urlencode($userEmail))."' target='_blank'>Click here to create your password</a>";
+		}
+		$template = $emailHelper->sendEmail($template, $params, $userEmail);
+	}
   
 	public function filters()
   {
