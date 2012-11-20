@@ -25,8 +25,13 @@
     MySQL retrieves and displays DATETIME values in 'YYYY-MM-DD HH:MM:SS' format.
 
     example mysql insert statement:
-    insert into skyTimes (startTIme, endTime, type) values('2012-01-01 17:00:00', '2012-01-01 18:00:00', 'Moon');
+    insert into skyTimes (startTime, endTime, type) values('2012-01-01 17:00:00', '2012-01-01 18:00:00', 'Moon');
   */
+
+
+  // offset of Maui time from Greenwich Mean Time
+  $offset = -10;
+
 
   $f_in = "2012_Short.out"; // input filename
   $f_out = "skyTimes_inserts.sql"; //output filename
@@ -74,19 +79,21 @@
   foreach ($rows as $row => $data) {
 
     // because we split on newline characters,
-    // the blank line separating each day are now
+    // the blank lines separating each day are now
     // empty strings.
     // if we find such a row
     if (strlen($data) == 0) {
 
-      // and we werent' just at a newline previously
+      // and we weren't just at a newline previously
       // (this avoids little bugs)
       if(!$just_saw_newline) {
 
         // then write the event to file.
         // this case only occurs for events where start_time and end_time match
         $start_time = $year ."-". $months[$month] ."-". $day ." ". $start_hour .":". $start_minute .":". $second;
-        $to_write = "insert into skyTimes (startTIme, endTime, type) values('". $start_time ."', '". $start_time ."', '". $sky_event ."');\n";
+        $start_time = adjust_time($start_time, $start_hour);
+
+        $to_write = "insert into skyTimes (startTime, endTime, type) values('". $start_time ."', '". $start_time ."', '". $sky_event ."');\n";
         fwrite($fh, $to_write);
       }
 
@@ -140,8 +147,12 @@
           if ($sky_event == "Sunrise" || $sky_event == "Sunset" || $sky_event == "Stop")
             $end_time = $start_time;
 
+
+          $start_time = adjust_time($start_time, $start_hour);
+          $end_time = adjust_time($end_time, $end_hour);
+
           // write to file
-          $to_write = "insert into skyTimes (startTIme, endTime, type) values('". $start_time ."', '". $end_time ."', '". $sky_event ."');\n";
+          $to_write = "insert into skyTimes (startTime, endTime, type) values('". $start_time ."', '". $end_time ."', '". $sky_event ."');\n";
           fwrite($fh, $to_write);
 
         }
@@ -169,4 +180,47 @@
   // close output file
   fclose($fh);
 
+
+
+  function adjust_time($datetime, $hour) {
+    return maui_to_GMT(fix_day($datetime, $hour));
+  }
+
+
+  /*
+   * The fortran .out file is storing times across the night without explicitly
+   * showing the day has changed.
+   * 
+   * This function adds 24 hours to any time before noon
+   */
+  function fix_day($fortrantime, $hour){
+    $timestamp = strtotime($fortrantime); // datetime to timestamp
+
+    if ($hour < 12)
+      $timestamp = $timestamp + 86400; // add 24 hours for any time that starts after midnight.
+
+    return date('Y-m-d H:i:s', $timestamp);
+  }
+
+
+
+  /*
+   * Convert a maui datetime to GMT datetime
+   */
+  function maui_to_GMT($t){
+    $timestamp = strtotime($t); // datetime to timestamp
+
+    $timestamp = $timestamp + 36000; // add ten hours for maui
+
+   
+    return date('Y-m-d H:i:s', $timestamp);
+  }
+
+
+
 ?>
+
+
+
+
+
