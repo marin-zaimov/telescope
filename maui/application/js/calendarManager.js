@@ -117,16 +117,14 @@ function setupCalendar() {
 
 
         $('.bookit-click').on('click', function() {
-          var id = $(this).data('id');
-          bookitClick(id);
-          alert(id);
 
-          //$.post(/Reser);
+          var id = $(this).data('id');
+
+          bookitClick(reservation_times[id].ref, reservation_times[id].startTime, reservation_times[id].endTime);
 
 
         });
 
-        alert(reservation_times[1].ref);
 
 
       });
@@ -211,12 +209,15 @@ function setupCalendar() {
 }
 
 // takes in the id of the bookit button that was clicked
-function bookitClick(id) {
+function bookitClick(id, start, end) {
 
-  //alert('test');
-  alert(id);
-  //alert($(this).data('id'));
-  $.post('ReserveEvent', function(data) {
+  var payload = {
+    'id': id,
+    'startTime': start,
+    'endTime': end,
+  };
+
+  $.post('ReserveEvent', payload, function(data) {
     alert('callback');
   });
 

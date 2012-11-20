@@ -27,9 +27,32 @@ class CalendarController extends MauiController
 
   public function actionReserveEvent() {
 
-    $u_id = Yii::app()->user->id;
+    $r_id = $_POST['id'];
+    $startTime = hourAndMinuteAndIdToDateTime($_POST['startTime'], $r_id);
+    $endTime = dateTimeToHourAndMinute($_POST['endTime'], $r_id);
+  
+
+    //$u_id = Yii::app()->user->id;
+
+    //$reservationData = Array();
+
+    /*
+    array(
+			'id' => 'ID',
+			'userId' => 'User',
+			'startTime' => 'Start Time',
+			'endTime' => 'End Time',
+			'skyTimeId' => 'Sky Time',
+		);
+     */
+
+		//$reservation = Reservation::createFromArray($reservationData);
+
+
+
     //var_dump($u_id);
-    die;
+    //die;
+    echo 'hit';
 
   }
 
@@ -193,5 +216,21 @@ class CalendarController extends MauiController
   }
 
 
-  
+  // modifies a string with HH:MM format to datetime for a specific skyTime
+  public function hourAndMinuteAndIdToDateTime($hhmm, $id) 
+  {
+    $skytime = SkyTimes::model()->findByPK($id);
+    var_dump($skytime);
+    die;
+  } 
+
+
+  // modifies a datetime to HH:MM string format
+  public function dateTimeToHourAndMinute($a, $b) 
+  {
+
+  }
+
+
+
 }
