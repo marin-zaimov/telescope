@@ -13,7 +13,7 @@ class EmailHelper
 		),
 		'newUser' => array(
 			'subject' => 'Maui - Your user acount has been created',
-			'content' => 'A user account has been created for email %%EMAIL%%. <br/><br/>Your password: %%PWD%%<br/><br/>Please visit the link below to login with your new account. <br/> %%LINK%%'
+			'content' => 'A user account has been created for email %%EMAIL%%.<br/><br/>Please click the link below to verify this email and login with your new account. <br/> %%LINK%%'
 		),
 	);
 	public function createTemplate($template, $params)

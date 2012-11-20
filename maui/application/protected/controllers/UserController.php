@@ -24,54 +24,64 @@ class UserController extends Controller
 	    $userData = $_POST['User'];
 
 	    $response = new AjaxResponse;
-		  
-		  if (!($userData['password'] == $userData['cPassword'])) {
-	      $response->setStatus(false, 'Make sure Password and Confirm Password fields are the same.');
-	    }
-	    
-	    if (isset($userData['id'])) {
-	      $user = Users::model()->findByPk($userData['id']);
-	      if (!empty($userData['password'])) {
-          if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
-			      $user->salt = PasswordHelper::generateRandomSalt();
-			      $user->password = PasswordHelper::hashPassword($userData['password'], $user->salt);
-		      }
-		      else {
-		        $response->setStatus(false, 'Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
-		      }
-	      }
-			  unset($userData['password']);
-			  $user->setFromArray($userData);
-	    }
-	    else {
-	    
-	      if ($userData['termsOfService'] == "on") {
-	        $userData['termsOfService'] = 'Y';
-	      }
-	      else {
-	        $userData['termsOfService'] = 'N';
-	        $response->setStatus(false, 'You must accept the terms of service to register.');
+		  try 
+		  {
+			
+		    if (!($userData['password'] == $userData['cPassword'])) {
+	        $response->setStatus(false, 'Make sure Password and Confirm Password fields are the same.');
 	      }
 	      
-		    $user = Users::createFromArray($userData);
-
-			  if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
-				  $user->salt = PasswordHelper::generateRandomSalt();
-				  $user->password = PasswordHelper::hashPassword($userData['password'], $user->salt);
+	      if (isset($userData['id'])) {
+	        $user = Users::model()->findByPk($userData['id']);
+	        if (!empty($userData['password'])) {
+            if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
+			        $user->salt = PasswordHelper::generateRandomSalt();
+			        $user->password = PasswordHelper::hashPassword($userData['password'], $user->salt);
+		          $emailTemplate = 'newPassword';
+		        }
+		        else {
+		          $response->setStatus(false, 'Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
+		        }
+	        }
+			    unset($userData['password']);
+			    $user->setFromArray($userData);
+	      }
+	      else {
+	      
+	        if ($userData['termsOfService'] == "on") {
+	          $userData['termsOfService'] = 'Y';
+	        }
+	        else {
+	          $userData['termsOfService'] = 'N';
+	          $response->setStatus(false, 'You must accept the terms of service to register.');
+	        }
+	        
+		      $user = Users::createFromArray($userData);
+          $emailTemplate = 'newUser';
+          
+			    if (PasswordHelper::isValidPasswordPattern($userData['password'])) {
+				    $user->salt = PasswordHelper::generateRandomSalt();
+				    $user->password = PasswordHelper::hashPassword($userData['password'], $user->salt);
+			    }
+			    else {
+			      $response->setStatus(false, 'Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
+			    }
 			  }
-			  else {
-			    $response->setStatus(false, 'Password must contain at least one uppercase, one lowercase, one number, and be at least 9 characters long.');
-			  }
-			}
-			$messages = $response->getMessages();
-			if (empty($messages)) {
-		    if ($user->save()) {
-		      $this->emailNewUser($user);
-	        $response->setStatus(true, 'User saved successfully');
+			  $messages = $response->getMessages();
+			  if (empty($messages)) {
+		      if ($user->save()) {
+		        if (isset($emailTemplate)) {
+				      $this->emailNewPasswordToUser($user, $emailTemplate);
+				    }
+	          $response->setStatus(true, 'User saved successfully');
+		      }
+		      else {
+	          $response->setStatus(false, $user->errors);
+		      }
 		    }
-		    else {
-	        $response->setStatus(false, $user->errors);
-		    }
+		  }
+		  catch (Exception $ex) {
+			  $response->setStatus(false, 'User could not be saved.');
 		  }
 		  echo $response->asJson();
 		  die;
@@ -102,18 +112,17 @@ class UserController extends Controller
 		}
 	}
 
-  private function emailNewPasswordToUser($userEmail, $template, $pw = null, $newUserRandomPassword)
+  private function emailNewPasswordToUser($user, $template)
 	{
 		$emailHelper = new EmailTemplateHelper();
 		$params = array(
-			'EMAIL' => $userEmail,
-			'PWD' => isset($pw) ? $pw : '',
-			'LINK' => "<a href='https://".($_SERVER['SERVER_NAME'] . 
+			'EMAIL' => $user->email,
+			'LINK' => "<a href='http://".($_SERVER['SERVER_NAME'] . 
         "/login") . 
         "' target='_blank'>Click here to go to the login page</a>"
 		);
 		if ($template == 'newUser' && $newUserRandomPassword) {
-		  $params['LINK'] = "<a href='".($_SERVER['SERVER_NAME'] . "/login/passwordResetView?email=".urlencode($userEmail))."' target='_blank'>Click here to create your password</a>";
+		  $params['LINK'] = "<a href='".($_SERVER['SERVER_NAME'] . "/user/verifyEmail?email=".urlencode($user->email))."&id=".$user->id."' target='_blank'>Click here to verify your email</a>";
 		}
 		$template = $emailHelper->sendEmail($template, $params, $userEmail);
 	}
