@@ -27,32 +27,20 @@ class CalendarController extends MauiController
 
   public function actionReserveEvent() {
 
-    $r_id = $_POST['id'];
-    $startTime = hourAndMinuteAndIdToDateTime($_POST['startTime'], $r_id);
-    $endTime = dateTimeToHourAndMinute($_POST['endTime'], $r_id);
-  
-
-    //$u_id = Yii::app()->user->id;
-
-    //$reservationData = Array();
-
-    /*
-    array(
-			'id' => 'ID',
-			'userId' => 'User',
-			'startTime' => 'Start Time',
-			'endTime' => 'End Time',
-			'skyTimeId' => 'Sky Time',
-		);
-     */
-
-		//$reservation = Reservation::createFromArray($reservationData);
-
-
-
-    //var_dump($u_id);
-    //die;
-    echo 'hit';
+    $reservationData = $_POST['reservation'];
+    $response = new AjaxResponse;
+    
+    $reservation = Reservations::createFromArray($reservationData);
+    $reservation->userId = Yii::app()->user->id;
+    
+    if ($reservation->save()) {
+      $response->setStatus(true, 'Reservation saved successfully');
+    }
+    else {
+      $response->setStatus(false, 'Reservation could not be saved');
+    }
+    
+    echo $response->asJson();
 
   }
 
@@ -61,106 +49,57 @@ class CalendarController extends MauiController
   public function actionGetEvents()
   {
     
-    $startTime = $_POST['startTime'];
-    $endTime =$_POST['endTime'];
-
+    $userStartTime = $_POST['startTime'];
+    $userEndTime =$_POST['endTime'];
+    $userModel = Yii::app()->user->model;
+    
+    $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+    $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
 
     $criteria = SkyTimes::model()->getDbCriteria();
-
-    // NOT SAFE:
-    //$criteria->addCondition("startTime > '".$startTime."'");
-    //$criteria->addCondition("endTime < '".$endTime."'");
-
     // build query
     $criteria->addCondition("startTime >= :startTime");
     $criteria->addCondition("endTime <= :endTime");
-    $criteria->params = array(':startTime' => $startTime, ':endTime' => $endTime);
+    $criteria->params = array(':startTime' => $serverStart, ':endTime' => $serverEnd);
 
     // query
     $skytimes = SkyTimes::model()->findAll($criteria);
-
-    // tailor it for our needs
-    $temp_skytimes = array();
+    
+    $reservation_times = array();
     if (!empty($skytimes)) {
-
-      // fix it so json_encode works
       foreach ($skytimes as $s) {
-         $temp_skytimes[] = $s->attributes; // append to result
-      }
-
-      // order by evening and morning times
-      $evening = array();
-      $morning = array();
-      foreach ($temp_skytimes as $ts) {
-        if (intval(substr($ts['startTime'],11,2)) >= 12)
-          $evening[] = $ts;
-        else
-          $morning[] = $ts;
-      }
-
-      // sort the evening and morning times separately
-      usort($evening, array($this,"sortBystartTime"));
-      usort($morning, array($this,"sortBystartTime"));
-
-      // combine them, with evening first, then morning
-      $result_skytimes = array_merge($evening, $morning);
-
-
-      //TODO query reservation table to see what's been booked
-
-      // create the 30-minute interval reservation times
-      // ... dont ask
-      $reservation_times = array();
-      foreach ($result_skytimes as $rs) {
-
-        $start = substr($rs['startTime'],11,5);
-        $end = substr($rs['endTime'],11,5);
-
-        $half_hour = intval(substr($start, 3, 2));
-        //$xx = 0;
-        while ($start != $end) {
-          //var_dump($start);
-          $interval_begin = $start;
-
-          $half_hour += 30;
-          if ($half_hour % 60 == 0)
-            $start = (intval(substr($start, 0, 2))+1) . ':00';
-          else
-            $start = substr($start, 0, 2) . ':30';
-          $next_day = intval(substr($start, 0, 2)) % 24;
-          if ($next_day < 10) {
-            if (strlen($start) == 5)
-              $start = '0' . $next_day . substr($start, 2, 3);
-            else
-              $start = '0' . $next_day .':'. substr($start, 2, 3);
-          }
-
-          $interval_end = $start;
-
-
-          // append to our reservation list
-          $reservation_times[] = array('event' => $rs['type'], 'startTime' => $interval_begin, 'endTime' => $interval_end, 'ref' => $rs['id']);
-
+      var_dump($s->attributes);
+        $start = strtotime($s->startTime);
+        $end = strtotime($s->endTime);
+        var_dump($start);
+        var_dump($end);
+        while ($start < $end) {
+        var_dump('IN');
+          $localStart = TimeHelper::toLocalTime($userModel->id, $start);
+          $localEnd = TimeHelper::toLocalTime($userModel->id, ($start+1800));
+          $reservation_times[] = (object) array(
+            'event' => $s->type,
+            'startTimeView' => date('h:i a', $localStart),
+            'endTimeView' => date('h:i a', $localEnd),
+            'startTime' => date('Y-m-d H:i:s', $start),
+            'endTime' => date('Y-m-d H:i:s', ($start+1800)),
+            'skyTimeId' => $s->id
+          );
+          $start = $start + 1800;
         }
-
-
       }
-
-
+      die;
     }
-    //TODO strip out id and crap from result_skytimes.... do we even need it?
-    // just a simple summary for the user at the top is what we want.
-    //$to_client = json_encode(array('reservation_times' => $reservation_times, 'skytimes' => $result_skytimes)); 
-    //echo $to_client;
-    echo json_encode(array('reservation_times' => $reservation_times, 'skytimes' => $result_skytimes)); 
-
+    
+    $this->renderPartial('showDay', array('reservation_times' => $reservation_times));
   }
 
   public function actionMyReservations() {
 
     $userModel = Yii::app()->user->model;
     
-    $this->render('myReservations', array('reservations' => $userModel->reservations));
+		date_default_timezone_set('UTC');
+    $this->render('myReservations', array('reservations' => $userModel->reservations, 'userId' => Yii::app()->user->id));
   }
   
   public function actionRemoveMyReservation()

@@ -1,12 +1,4 @@
 
-// DECLARE GLOBAL VARIABLES HERE
-var one;
-var two = 2;
-
-//THIS PRINTS A VARIABLE TO THE BROWSER CONSOLE FOR DEBUGGING
-console.log(two);
-
-
 // CODE IN THIS FUNCTION RUNS ON PAGE LOAD
 $(function() {
   
@@ -14,13 +6,6 @@ $(function() {
   //enablePopover();
 
 });
-
-
-
-// DECLARE FUNCTIONS HERE
-
-
-
 
 
 function setupCalendar() {
@@ -33,37 +18,6 @@ function setupCalendar() {
       and have a link to create a reservation
     */
     dayClick: function(date, allDay, jsEvent, view) {
-
-      $("#sample").modal({
-        minHeight: 2000,
-        minWidth: 600,
-
-        // TODO reinstate the visuals
-        // visual affects:
-        // append fc-day calendar if wanted
-        /*onOpen: function (dialog) {
-          dialog.overlay.fadeIn('slow', function () {
-            dialog.data.hide();
-            dialog.container.fadeIn('slow', function () {
-              dialog.data.slideDown('slow');	 
-
-              // fc-day calendar
-              //$('#modal-calendar').fullCalendar({
-                //defaultView: 'agendaDay',
-              //});
-
-            });
-          });
-        },*/
-
-        position: [50,50],
-
-      });
-
-      // make this (local date varable):
-      // Thu Oct 18 2012 00:00:00 GMT-0400 (EDT)
-      // look like this (mysql format):
-      //'2012-10-18 00:00:00'
       var genTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
       var startTime = genTime + ' 00:00:00';
       var endTime = genTime + ' 23:59:59';
@@ -71,65 +25,10 @@ function setupCalendar() {
           'startTime': startTime,
           'endTime': endTime,
       };
-
-
-      // add the current date as the header
-      $('#modal-day').append(date.toDateString());
-
-      // get necessary data for the date from the server
-      // and populate the list of reservation times
-      $.post('GetEvents', toServer, function(response) {
-
-        // response holds the server's JSON response
-        // capture it
-        var temp = jQuery.parseJSON(response);
-        var reservation_times = temp.reservation_times;
-
-        // select our modal's accordion div
-        var accordion = $('#accordion2');
-        
-        // loop over all reservation times
-        // and add the event, time period, and relevant data to the accordion list
-        var i = 0;
-        while (i < reservation_times.length) {
-
-          //TODO create a function to do this stuff
-
-          var eventDict = reservation_times[i];
-          var headHTML = '<div class="accordion-heading">'+
-            '               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'">';
-          var clickableObjectAndTime = eventDict['event']+'<div style="float:right;">'+eventDict['startTime']+' - '+eventDict['endTime']+'</div>';
-          var bookItButton = '<p><button id="bookit-btn'+i+'" class="bookit-click btn btn-primary btn-large" data-id="'+i+'">Book it!</button></p>';
-          var tailHTML =   '</a>'+
-                         '</div>'+
-                           '<div id="collapse'+i+'" class="accordion-body collapse"> <!-- add "in" to class to open at load -->'+
-                             '<div class="accordion-inner">'+
-                               bookItButton+'TODO add pics and links'+
-                             '</div>'+
-                           '</div>';
-          var fullString = headHTML + clickableObjectAndTime + tailHTML; 
-
-          // add the content to the page
-          accordion.append(fullString);
-
-          ++i;
-        }
-
-
-        $('.bookit-click').on('click', function() {
-
-          var id = $(this).data('id');
-
-          bookitClick(reservation_times[id].ref, reservation_times[id].startTime, reservation_times[id].endTime);
-
-
-        });
-
-
-
+      $.post('getEvents', toServer, function(response) {
+        Message.popup(response);
       });
-      
-
+     
     },
 
 

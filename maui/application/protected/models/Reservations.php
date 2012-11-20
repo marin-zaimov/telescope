@@ -14,7 +14,7 @@
  * @property SkyTimes $skyTime
  * @property Users $user
  */
-class Reservations extends CActiveRecord
+class Reservations extends MauiModel
 {
 	/**
 	 * Returns the static model of the specified AR class.

@@ -143,6 +143,6 @@
 	<div class="clear"></div>
 
 </div><!-- page -->
-
+<div id="popupModal" style="display: none"></div>
 </body>
 </html>

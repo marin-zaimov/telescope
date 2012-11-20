@@ -26,7 +26,13 @@ class UserController extends Controller
 	    $response = new AjaxResponse;
 		  try 
 		  {
-			
+			  if ($userData['daylightSavings'] == "on") {
+          $userData['daylightSavings'] = 'Y';
+        }
+        else {
+          $userData['daylightSavings'] = 'N';
+        }
+	        
 		    if (!($userData['password'] == $userData['cPassword'])) {
 	        $response->setStatus(false, 'Make sure Password and Confirm Password fields are the same.');
 	      }

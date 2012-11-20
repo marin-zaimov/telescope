@@ -92,6 +92,12 @@
        </select>
     </div>
   </div>
+  <div class="control-group">
+    <label class="control-label" for="inputGMT">Daylight Savings</label>
+    <div class="controls">
+      <input type="checkbox" name="User[daylightSavings]" <?php echo (($user->daylightSavings == 'Y') ? 'checked' : ''); ?> id="inputDaylight"><label for="inputDaylight">I follow daylight savings</label>
+    </div>
+  </div>
   <?php if ($user->isNewRecord): ?>
   <div class="control-group">
     <label class="control-label">Terms of Service</label>

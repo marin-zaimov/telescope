@@ -14,6 +14,7 @@
  * @property string $GMToffset
  * @property string $termsOfService
  * @property string $emailVerified
+ * @property string $daylightSavings
  *
  * The followings are the available model relations:
  * @property Media[] $medias
@@ -52,7 +53,7 @@ class Users extends MauiModel
 			array('email, password, firstName, lastName, GMToffset', 'required'),
 			array('email, password, salt, firstName, lastName, organization', 'length', 'max'=>255),
 			array('GMToffset', 'length', 'max'=>5),
-			array('termsOfService, emailVerified', 'length', 'max'=>1),
+			array('termsOfService, emailVerified, daylightSavings', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, email, password, salt, firstName, lastName, organization, GMToffset, termsOfService, emailVerified', 'safe', 'on'=>'search'),
@@ -88,6 +89,7 @@ class Users extends MauiModel
 			'GMToffset' => 'Gmtoffset',
 			'termsOfService' => 'Terms Of Service',
 			'emailVerified' => 'Email Verified',
+			'daylightSavings' => 'Daylight Savings',
 		);
 	}
 
@@ -112,6 +114,7 @@ class Users extends MauiModel
 		$criteria->compare('GMToffset',$this->GMToffset,true);
 		$criteria->compare('termsOfService',$this->termsOfService,true);
 		$criteria->compare('emailVerified',$this->emailVerified,true);
+		$criteria->compare('daylightSavings',$this->daylightSavings,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
