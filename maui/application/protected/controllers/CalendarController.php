@@ -68,13 +68,11 @@ class CalendarController extends MauiController
     $reservation_times = array();
     if (!empty($skytimes)) {
       foreach ($skytimes as $s) {
-      var_dump($s->attributes);
+      
         $start = strtotime($s->startTime);
         $end = strtotime($s->endTime);
-        var_dump($start);
-        var_dump($end);
+        
         while ($start < $end) {
-        var_dump('IN');
           $localStart = TimeHelper::toLocalTime($userModel->id, $start);
           $localEnd = TimeHelper::toLocalTime($userModel->id, ($start+1800));
           $reservation_times[] = (object) array(
@@ -88,7 +86,6 @@ class CalendarController extends MauiController
           $start = $start + 1800;
         }
       }
-      die;
     }
     
     $this->renderPartial('showDay', array('reservation_times' => $reservation_times));
