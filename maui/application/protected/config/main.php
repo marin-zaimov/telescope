@@ -82,17 +82,17 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'enabled' => true,
+					'enabled' => false,
 					'levels'=>'info, trace, error, warning',
 				),
 				array(
 					'class'=>'CWebLogRoute',
-					'enabled' => true,
+					'enabled' => false,
 					'levels'=>'info, trace, error, warning',
 				),
 				array(
 					'class'=>'CProfileLogRoute',
-					'enabled' => true,
+					'enabled' => false,
 				)
 				
 			),

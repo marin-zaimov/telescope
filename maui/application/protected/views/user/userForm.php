@@ -44,7 +44,7 @@
 
 <form class="user-form form-horizontal" id="userForm" name="input" action="ShowUserForm" method="post">
   <?php if (!$user->isNewRecord): ?>
-    <input type="hidden" name="User[id]" value="<?php echo $user->id; ?>" />
+    <input type="hidden" id="userId" name="User[id]" value="<?php echo $user->id; ?>" />
   <?php endif; ?>
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
