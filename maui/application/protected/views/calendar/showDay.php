@@ -7,7 +7,9 @@
   }
 
 </style>
-
+<? //echo '<pre>';
+//var_dump($reservation_times);
+//die; ?>
 
 <h3>
 My reservations
@@ -23,7 +25,7 @@ My reservations
     <?php foreach($reservation_times as $r): ?>
     <div class="row-fluid event-div">
       <div class="span3 time-div"><?php echo $r->startTimeView .' - '. $r->endTimeView; ?></div>
-      <div class="span3"><?php echo $r->type; ?></div>
+      <div class="span3"><?php echo $r->event; ?></div>
       <div class="span3"><button id="bookit-btn'+i+'" class="bookit-click btn btn-mini" data-id="<?php echo $r->skyTimeId; ?>" data-starttime="<?php echo $r->startTime; ?>" data-endtime="<?php echo $r->endTime; ?>">Book it!</button></div>
     </div>
     <?php endforeach; ?>
