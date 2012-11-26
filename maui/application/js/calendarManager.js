@@ -87,7 +87,21 @@ function setupCalendar() {
     */
 
     // example of events
-    events: [
+    events: function() {
+      $.get('getAllReservations', function(response) {
+        var all_events = []
+        for (var i = 0; i < response.length; ++i) {
+          all_events.append({
+            title: response[i].
+          });
+        }
+        
+      };
+
+    },
+      
+      
+      [
         {
             title: 'an event',
             start: '2012-10-16',
