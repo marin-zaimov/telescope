@@ -7,9 +7,6 @@
   }
 
 </style>
-<? //echo '<pre>';
-//var_dump($reservation_times);
-//die; ?>
 
 <h3>
 My reservations
