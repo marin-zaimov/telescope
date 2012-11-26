@@ -112,6 +112,11 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	
+	public function actionTestMail()
+	{
+	  mail('marin@gatech.edu','haha bro - Maui','Some cool dooo-ddoooo');
+	}
+	
 	public function filters()
   {
     return array( 'accessControl' ); // perform access control for CRUD operations

@@ -90,7 +90,28 @@ class CalendarController extends MauiController
     
     $this->renderPartial('showDay', array('reservation_times' => $reservation_times));
   }
+  
+  
+	public function actionAllReservations()
+	{
+	  $userStartTime = $_POST['startTime'];
+    $userEndTime =$_POST['endTime'];
+    $userModel = Yii::app()->user->model;
+    
+    $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+    $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
 
+    $criteria = SkyTimes::model()->getDbCriteria();
+    // build query
+    $criteria->addCondition("startTime >= :startTime");
+    $criteria->addCondition("endTime <= :endTime");
+    $criteria->params = array(':startTime' => $serverStart, ':endTime' => $serverEnd);
+
+    // query
+    $skytimes = SkyTimes::model()->findAll($criteria);
+	}
+	
+	
   public function actionMyReservations() {
 
     $userModel = Yii::app()->user->model;
