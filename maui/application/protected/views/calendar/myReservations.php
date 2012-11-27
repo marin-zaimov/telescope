@@ -1,29 +1,29 @@
 <style>
-  .reservation-div {
-    
-  }
 
 </style>
 
-<h3>
+<h3 class="page-header">
 My reservations
 </h3>
 
 <div id="reservationsTable" >
   <?php if (!empty($reservations)): ?>
-    <div class="row-fluid reservation-div">
-      <div class="span3">Start Time</div>
-      <div class="span3">End Time</div>
-      <div class="span3">Viewing Object</div>
-      <div class="span3"></div>
+    <table class="table table-hover table-bordered table-striped">
+      <tr>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Viewing Object</th>
+        <th></th>
+      </tr>
     <?php foreach($reservations as $r): ?>
-    <div class="row-fluid reservation-div">
-      <div class="span3"><?php echo date('m-d-Y h:i a', TimeHelper::toLocalTime($userId, strtotime($r->startTime))); ?></div>
-      <div class="span3"><?php echo date('m-d-Y h:i a', TimeHelper::toLocalTime($userId, strtotime($r->endTime))); ?></div>
-      <div class="span3"><?php echo $r->skyTime->type; ?></div>
-      <div class="span3"><a href="#" class="delete-reservation" data-id="<?php echo $r->id; ?>"><i class="icon-trash"></i> Delete</a></div>
-    </div>
+      <tr>
+        <td><?php echo date('m-d-Y h:i a', TimeHelper::toLocalTime($userId, strtotime($r->startTime))); ?></td>
+        <td><?php echo date('m-d-Y h:i a', TimeHelper::toLocalTime($userId, strtotime($r->endTime))); ?></td>
+        <td><?php echo $r->skyTime->type; ?></td>
+        <td><a href="#" class="btn btn-mini btn-danger delete-reservation" data-id="<?php echo $r->id; ?>"><i class="icon-trash"></i> Delete</a></td>
+      </tr>
     <?php endforeach; ?>
+    </table>
   <?php else: ?>
     You have no reservations to display
   <?php endif; ?>

@@ -1,31 +1,29 @@
 <style>
-  .event-div {
-    min-width: 500px;
+  #reservationsTable {
+    min-width: 600px;
   }
-  .time-div {
-    min-width: 200px;
-  }
-
 </style>
 
-<h3>
+<h3 class="page-header">
 My reservations
 </h3>
 
 <div id="reservationsTable" >
   <?php if (!empty($reservation_times)): ?>
-    <div class="row-fluid reservation-div">
-      <div class="span3 time-div">Time</div>
-      <div class="span3">Viewing Object</div>
-      <div class="span3">Book It!</div>
-    </div>
-    <?php foreach($reservation_times as $r): ?>
-    <div class="row-fluid event-div">
-      <div class="span3 time-div"><?php echo $r->startTimeView .' - '. $r->endTimeView; ?></div>
-      <div class="span3"><?php echo $r->event; ?></div>
-      <div class="span3"><button id="bookit-btn'+i+'" class="bookit-click btn btn-mini" data-id="<?php echo $r->skyTimeId; ?>" data-starttime="<?php echo $r->startTime; ?>" data-endtime="<?php echo $r->endTime; ?>">Book it!</button></div>
-    </div>
+    <table class="table table-hover table-bordered table-striped">
+      <tr>
+        <th class="time-div">Time</th>
+        <th>Viewing Object</th>
+        <th>Book It!</th>
+      </tr>
+      <?php foreach($reservation_times as $r): ?>
+      <tr>
+        <th class="time-div"><?php echo $r->startTimeView .' - '. $r->endTimeView; ?></th>
+        <th><?php echo $r->event .' - '. $r->booked; ?></th>
+        <th><button id="bookit-btn'+i+'" class="bookit-click btn btn-primary btn-mini" data-id="<?php echo $r->skyTimeId; ?>" data-starttime="<?php echo $r->startTime; ?>" data-endtime="<?php echo $r->endTime; ?>">Book it!</button></th>
+      </tr>
     <?php endforeach; ?>
+    </table>
   <?php else: ?>
     There are no events for this day
   <?php endif; ?>

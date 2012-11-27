@@ -112,9 +112,9 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	
-	public function actionTestMail()
+  public function actionAboutUs()
 	{
-	  mail('marin@gatech.edu','haha bro - Maui','Some cool dooo-ddoooo');
+		$this->render('aboutUs');
 	}
 	
 	public function filters()

@@ -11,7 +11,7 @@ $(function() {
 
 function onResDelete() {
   var id = $(this).data('id');
-  var row = $(this).closest('.reservation-div');
+  var row = $(this).closest('tr');
   $.post('removeMyReservation', {id: id}, function(result) {
     result = $.parseJSON(result);
     if (result.status == true) {

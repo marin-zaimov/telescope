@@ -81,7 +81,8 @@ class CalendarController extends MauiController
             'endTimeView' => date('h:i a', $localEnd),
             'startTime' => date('Y-m-d H:i:s', $start),
             'endTime' => date('Y-m-d H:i:s', ($start+1800)),
-            'skyTimeId' => $s->id
+            'skyTimeId' => $s->id,
+            'booked' => Reservations::existsForTime(date('Y-m-d H:i:s', $start), date('Y-m-d H:i:s', ($start+1800)))
           );
           $start = $start + 1800;
         }
@@ -89,6 +90,14 @@ class CalendarController extends MauiController
     }
     
     $this->renderPartial('showDay', array('reservation_times' => $reservation_times));
+  }
+  
+  public function actionTest()
+  {
+    $start = '2012-10-28 00:00:00';
+    $end = '2012-12-28 00:00:00';
+    $result = Reservations::getByTime($start, $end);
+    var_dump(count($result));
   }
   
   
