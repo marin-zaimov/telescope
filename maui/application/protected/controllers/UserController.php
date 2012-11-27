@@ -32,11 +32,13 @@ class UserController extends Controller
         else {
           $userData['daylightSavings'] = 'N';
         }
-	        
+	      
+	      //check passwords are the same
 		    if (!($userData['password'] == $userData['cPassword'])) {
 	        $response->setStatus(false, 'Make sure Password and Confirm Password fields are the same.');
 	      }
 	      
+	      //if existing user
 	      if (isset($userData['id'])) {
 	        $user = Users::model()->findByPk($userData['id']);
 	        if (!empty($userData['password'])) {
@@ -52,8 +54,9 @@ class UserController extends Controller
 			    unset($userData['password']);
 			    $user->setFromArray($userData);
 	      }
+	      //if new user
 	      else {
-	      
+	        //check terms of service
 	        if ($userData['termsOfService'] == "on") {
 	          $userData['termsOfService'] = 'Y';
 	        }
@@ -61,6 +64,13 @@ class UserController extends Controller
 	          $userData['termsOfService'] = 'N';
 	          $response->setStatus(false, 'You must accept the terms of service to register.');
 	        }
+	        
+	        //check .edu address
+	        //$emailExplode = explode('.', $userData['email']);
+	        //$emailExt = end($emailExplode);
+	        //if ($emailExt != 'edu') {
+	        //  $response->setStatus(false, 'You must have a ".edu" email address to register.');
+	        //}
 	        
 		      $user = Users::createFromArray($userData);
           $emailTemplate = 'newUser';
@@ -120,17 +130,16 @@ class UserController extends Controller
 
   private function emailNewPasswordToUser($user, $template)
 	{
-		$emailHelper = new EmailTemplateHelper();
+		$emailHelper = new EmailHelper();
 		$params = array(
 			'EMAIL' => $user->email,
-			'LINK' => "<a href='http://".($_SERVER['SERVER_NAME'] . 
-        "/login") . 
+			'LINK' => "<a href='http://".($_SERVER['SERVER_NAME'] . Yii::app()->request->baseUrl ."/index.php/site/login") . 
         "' target='_blank'>Click here to go to the login page</a>"
 		);
-		if ($template == 'newUser' && $newUserRandomPassword) {
-		  $params['LINK'] = "<a href='".($_SERVER['SERVER_NAME'] . "/user/verifyEmail?email=".urlencode($user->email))."&id=".$user->id."' target='_blank'>Click here to verify your email</a>";
+		if ($template == 'newUser') {
+		  $params['LINK'] = "<a href='http://".($_SERVER['SERVER_NAME'] . Yii::app()->request->baseUrl ."/index.php/user/verifyEmail?email=".urlencode($user->email))."&id=".$user->id."' target='_blank'>Click here to verify your email</a>";
 		}
-		$template = $emailHelper->sendEmail($template, $params, $userEmail);
+		$template = $emailHelper->sendEmail($template, $params, $user->email);
 	}
   
 	public function filters()

@@ -108,9 +108,7 @@ class Reservations extends MauiModel
     $params[':endTime'] = $end;
     $criteria->params = $params;
     $criteria->order = 'startTime';
-    //echo '<pre>';
-    //var_dump($criteria);
-   // die;
+
     $reservations = Reservations::model()->findAll($criteria);
     
     return $reservations;
