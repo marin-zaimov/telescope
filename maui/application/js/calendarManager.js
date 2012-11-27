@@ -88,26 +88,28 @@ function setupCalendar() {
 
     // example of events
     events: function() {
-      $.get('getAllReservations', function(response) {
+      $.get('AllReservations', function(response) {
         var all_events = []
         for (var i = 0; i < response.length; ++i) {
           all_events.append({
-            title: response[i].
+            title: response[i].title,
+            start: response[i].start,
+            description: response[i].description,
           });
         }
-        
-      };
-
+        return all_events;
+      });
     },
       
       
-      [
+    /*  event example
+    [
         {
             title: 'an event',
             start: '2012-10-16',
             description: 'This is a cool event'
         }
-    ],
+    ],*/
 
     // example of how to move the header
     /*header: {
