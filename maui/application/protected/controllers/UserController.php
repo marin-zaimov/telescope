@@ -66,11 +66,11 @@ class UserController extends Controller
 	        }
 	        
 	        //check .edu address
-	        //$emailExplode = explode('.', $userData['email']);
-	        //$emailExt = end($emailExplode);
-	        //if ($emailExt != 'edu') {
-	        //  $response->setStatus(false, 'You must have a ".edu" email address to register.');
-	        //}
+	        $emailExplode = explode('.', $userData['email']);
+	        $emailExt = end($emailExplode);
+	        if ($emailExt != 'edu') {
+	          $response->setStatus(false, 'You must have a ".edu" email address to register.');
+	        }
 	        
 		      $user = Users::createFromArray($userData);
           $emailTemplate = 'newUser';
