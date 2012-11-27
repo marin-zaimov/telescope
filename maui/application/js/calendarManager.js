@@ -26,9 +26,14 @@ function setupCalendar() {
           'endTime': endTime,
       };
       $.post('getEvents', toServer, function(response) {
-        Message.popup(response);
+        Message.popup(response, { onClose: function(dialog) {
+            $.modal.close();
+            $('#popupModal').html("");
+            $('#popupModal').removeClass();
+            window.location.href = window.location.href;
+          }
+        });
       });
-     
     },
 
 
@@ -88,7 +93,6 @@ function setupCalendar() {
 
     // example of events
     events: function() {
-      alert('hit');
       $.get('AllReservations', function(response) {
         var all_events = []
         for (var i = 0; i < response.length; ++i) {
