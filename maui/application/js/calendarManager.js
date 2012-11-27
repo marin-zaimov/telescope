@@ -93,14 +93,88 @@ function setupCalendar() {
 
     // example of events
 
-    events: 
+    /*events: //function() {
+      //alert('hit');
+      //return
       [
+        {
+          title: 'an event',
+          start: '2012-11-16',
+          description: 'This is a cool event'
+        }
+      ]
+
+    //}
+    ,*/
+     
+    events: function(start, end, callback) {
+      $.ajax({
+            url: 'AllReservations',
+            dataType: 'json',
+            data: {
+                // our hypothetical feed requires UNIX timestamps
+                start: Math.round(start.getTime() / 1000),
+                end: Math.round(end.getTime() / 1000)
+            },
+            success: function(doc) {
+                /*var events = [];
+                $(doc).find('event').each(function() {
+                    events.push({
+                        title: $(this).attr('title'),
+                        start: $(this).attr('start') // will be parsed
+                    });
+                });
+                callback(events);*/
+
+              var reservations = jQuery.parseJSON(doc);
+              alert(reservations[0].title);
+              var all_events = []
+              alert(reservations.length);
+              for (var i = 0; i < reservations.length; ++i) {
+                all_events.push({
+                  title: reservations[i].title,
+                  start: reservations[i].start,
+                  //description: reservations[i].description,
+                });
+              }
+              callback(all_events);
+
+
+            }
+        });
+
+    },
+      
+      
+      /*function(start, end, callback) {
+        $.ajax({
+            url: 'AllReserverations',
+            dataType: 'json',
+            data: {
+                // our hypothetical feed requires UNIX timestamps
+                start: Math.round(start.getTime() / 1000),
+                end: Math.round(end.getTime() / 1000)
+            },
+            success: function(doc) {
+                var events = [];
+                $(doc).find('event').each(function() {
+                    events.push({
+                        title: $(this).attr('title'),
+                        start: $(this).attr('start') // will be parsed
+                    });
+                });
+                alert('hit');
+                callback(events);
+            }
+        });
+    }*/
+      /*[
         {
             title: 'an event',
             start: '2012-11-16',
             description: 'This is a cool event'
         }
-    ],
+    ],*/
       /*function() {
       alert('hit');
       events.push({
@@ -114,20 +188,24 @@ function setupCalendar() {
         description: 'This is a cool event'
       }]*/
     //},
-
-      /*$.get('AllReservations', function(response) {
+/*
+      function() { return $.get('AllReservations', function(response) {
+        var reservations = jQuery.parseJSON(response);
+        alert(reservations[0].title);
         var all_events = []
-        for (var i = 0; i < response.length; ++i) {
-          all_events.append({
-            title: response[i].title,
-            start: response[i].start,
-            description: response[i].description,
+        alert(reservations.length);
+        for (var i = 0; i < reservations.length; ++i) {
+          all_events.push({
+            title: reservations[i].title,
+            start: reservations[i].start,
+            //description: reservations[i].description,
           });
         }
         return all_events;
-      });*/
-    //},
-      
+      });
+    },
+     */ 
+
     /*  event example
     [
         {
