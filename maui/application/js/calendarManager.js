@@ -94,13 +94,13 @@ function setupCalendar() {
     // example of events
 
     events: 
-      /*[
+      [
         {
             title: 'an event',
             start: '2012-11-16',
             description: 'This is a cool event'
         }
-    ],*/
+    ],
       /*function() {
       alert('hit');
       events.push({
