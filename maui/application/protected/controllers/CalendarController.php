@@ -97,19 +97,19 @@ class CalendarController extends MauiController
     $userModel = Yii::app()->user->model;
     $criteria = Reservations::model()->getDbCriteria();
     $params = array();
-    if (isset($_POST['startTime'])) {
-	    $userStartTime = $_POST['startTime'];
+    if (isset($_GET['startTime'])) {
+	    $userStartTime = $_GET['startTime'];
       $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
       $criteria->addCondition("startTime >= :startTime");
       $params[':startTime'] = $serverStart;
     }
-    if (isset($_POST['endTime'])) {
-      $userEndTime = $_POST['endTime'];
-      $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);$criteria->addCondition("endTime <= :endTime");
+    if (isset($_GET['endTime'])) {
+      $userEndTime = $_GET['endTime'];
+      $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
       $criteria->addCondition("endTime <= :endTime");
       $params[':endTime'] = $serverEnd;
     }
-    
+    $criteria->params = $params;
     $criteria->order = 'startTime';
     // query
     $reservations = Reservations::model()->findAll($criteria);
