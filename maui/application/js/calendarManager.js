@@ -92,8 +92,30 @@ function setupCalendar() {
     */
 
     // example of events
-    events: function() {
-      $.get('AllReservations', function(response) {
+
+    events: 
+      /*[
+        {
+            title: 'an event',
+            start: '2012-11-16',
+            description: 'This is a cool event'
+        }
+    ],*/
+      /*function() {
+      alert('hit');
+      events.push({
+        title: 'event title',
+        start: '2012-11-16',
+        description: 'This is a cool event'
+      });*/
+      /*return [{
+        title: 'event title',
+        start: '2012-11-16',
+        description: 'This is a cool event'
+      }]*/
+    //},
+
+      /*$.get('AllReservations', function(response) {
         var all_events = []
         for (var i = 0; i < response.length; ++i) {
           all_events.append({
@@ -103,8 +125,8 @@ function setupCalendar() {
           });
         }
         return all_events;
-      });
-    },
+      });*/
+    //},
       
     /*  event example
     [
