@@ -112,6 +112,8 @@ class Reservations extends MauiModel
     //var_dump($criteria);
    // die;
     $reservations = Reservations::model()->findAll($criteria);
+    
+    return $reservations;
 	}
 	
 	public static function existsForTime($start, $end)

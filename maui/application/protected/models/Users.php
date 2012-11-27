@@ -69,7 +69,8 @@ class Users extends MauiModel
 		// class name for the relations automatically generated below.
 		return array(
 			'medias' => array(self::HAS_MANY, 'Media', 'userId'),
-			'reservations' => array(self::HAS_MANY, 'Reservations', 'userId'),
+			'reservations' => array(self::HAS_MANY, 'Reservations', 'userId',
+			  'order'=> 'startTime'),
 		);
 	}
 

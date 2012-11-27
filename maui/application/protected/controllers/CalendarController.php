@@ -30,14 +30,20 @@ class CalendarController extends MauiController
     $reservationData = $_POST['reservation'];
     $response = new AjaxResponse;
     
-    $reservation = Reservations::createFromArray($reservationData);
-    $reservation->userId = Yii::app()->user->id;
-    
-    if ($reservation->save()) {
-      $response->setStatus(true, 'Reservation saved successfully');
+    if (Reservations::existsForTime($reservationData['startTime'], $reservationData['endTime'])) {
+      $response->setStatus(false, 'A Reservation already exists for this time');
     }
     else {
-      $response->setStatus(false, 'Reservation could not be saved');
+      $reservation = Reservations::createFromArray($reservationData);
+      $reservation->userId = Yii::app()->user->id;
+      
+      if ($reservation->save()) {
+        $response->addData('reservationId', $reservation->id);
+        $response->setStatus(true, 'Reservation saved successfully');
+      }
+      else {
+        $response->setStatus(false, 'Reservation could not be saved');
+      }
     }
     
     echo $response->asJson();
@@ -75,6 +81,17 @@ class CalendarController extends MauiController
         while ($start < $end) {
           $localStart = TimeHelper::toLocalTime($userModel->id, $start);
           $localEnd = TimeHelper::toLocalTime($userModel->id, ($start+1800));
+          
+          $reservations = Reservations::getByTime(date('Y-m-d H:i:s', $start), date('Y-m-d H:i:s', ($start+1800)));
+          
+          if (!empty($reservations)) {
+            $reservation = $reservations[0];
+            $bookedByUser = Users::model()->findByPk($reservation->userId);
+          }
+          else {
+            $reservation = array();
+            $bookedByUser = array();
+          }
           $reservation_times[] = (object) array(
             'event' => $s->type,
             'startTimeView' => date('h:i a', $localStart),
@@ -82,24 +99,16 @@ class CalendarController extends MauiController
             'startTime' => date('Y-m-d H:i:s', $start),
             'endTime' => date('Y-m-d H:i:s', ($start+1800)),
             'skyTimeId' => $s->id,
-            'booked' => Reservations::existsForTime(date('Y-m-d H:i:s', $start), date('Y-m-d H:i:s', ($start+1800)))
+            'reservation' => $reservation,
+            'bookedByUser' => $bookedByUser
           );
           $start = $start + 1800;
         }
       }
     }
     
-    $this->renderPartial('showDay', array('reservation_times' => $reservation_times));
-  }
-  
-  public function actionTest()
-  {
-    $start = '2012-10-28 00:00:00';
-    $end = '2012-12-28 00:00:00';
-    $result = Reservations::getByTime($start, $end);
-    var_dump(count($result));
-  }
-  
+    $this->renderPartial('showDay', array('titleLabel' => date('F j', strtotime($userStartTime)),'reservation_times' => $reservation_times));
+  }  
   
 	public function actionAllReservations()
 	{

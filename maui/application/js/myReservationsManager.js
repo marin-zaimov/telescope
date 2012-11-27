@@ -1,13 +1,8 @@
 
 $(function() {
-  one = 1;
-  //keeps track of changes to the slect bar and runs a function on change
   $('.delete-reservation').on('click', onResDelete);
 });
 
-
-
-// DECLARE FUNCTIONS HERE
 
 function onResDelete() {
   var id = $(this).data('id');
