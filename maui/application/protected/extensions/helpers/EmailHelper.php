@@ -48,10 +48,10 @@ class EmailHelper
 		
 		mail($emailTo, $messageData['subject'], $messageData['message'], $headers);
 		
-		var_dump($emailTo);
-		var_dump($messageData);
-		var_dump($headers);
-		die;
+		//var_dump($emailTo);
+		//var_dump($messageData);
+		//var_dump($headers);
+		//die;
 		/*$email = new Email();
 		$email->to = $emailTo;
 		$email->message = $messageData['message'];
