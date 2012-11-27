@@ -8,17 +8,13 @@ $this->pageTitle=Yii::app()->name;
 ?>
 
 
-<<style>
+<style>
 	.carousel-inner { text-align: center; }
 
 	.carousel .item > img { display: inline-block; }
 </style>
     
-<center><h1><i>Welcome to the Maui Telescope Project</i></h1></center>
-
-
-<p>This is a temporary site for the maui telescope project! Please log in or register to access the site </p>
-
+<h3 class="page-header">Welcome to the Maui Telescope Project</h3>
 
 
  <div id="myCarousel" class="carousel slide">

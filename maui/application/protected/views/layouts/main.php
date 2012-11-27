@@ -18,10 +18,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/fullcalendar.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/maui.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/bootstrap-responsive.css" />
-  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/sticky.css" />  	
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/plugins/sticky.css" />
+ 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/maui.css" />
   <style>
       body {
         padding-top: 60px; /* When using the navbar-top-fixed */
@@ -76,7 +76,7 @@
 <?php
   $urls = array(
     'home' => array('name' => 'Home', 'url' => Yii::app()->request->baseUrl .'/index.php/site/index'),
-    'about' => array('name' => 'About', 'url' => Yii::app()->request->baseUrl .'/index.php/aboutUs/index'),
+    'about' => array('name' => 'About', 'url' => Yii::app()->request->baseUrl .'/index.php/site/aboutUs'),
     'telescope' => array('name' => 'Telescope', 'url' => Yii::app()->request->baseUrl .'/index.php/telescope/index'),
     'login' => array('name' => 'Login/Register', 'url' => Yii::app()->request->baseUrl .'/index.php/site/login'),
     'logout' => array('name' => 'Logout ('.Yii::app()->user->name.')', 'url' => Yii::app()->request->baseUrl .'/index.php/site/logout'),
@@ -92,6 +92,8 @@
 
     return $result;
   }
+  
+  date_default_timezone_set('UTC');
 ?>
 <body>
 

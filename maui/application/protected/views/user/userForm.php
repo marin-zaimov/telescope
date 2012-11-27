@@ -34,10 +34,10 @@
 ?>
 
 <?php if ($user->isNewRecord): ?>
-  <h3>Create a New Account</h3>
+  <h3 class="page-header">Create a New Account</h3>
   <p>To create a new account enter your information below. You will recieve and email to confirm your account.</p>
 <?php else: ?>
-  <h3>Edit your profile</h3>
+  <h3 class="page-header">Edit your profile</h3>
 <?php endif; ?>
 
 

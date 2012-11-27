@@ -31,12 +31,34 @@
 /* simple modal styling */
 /* ------------------- */
 
-#simplemodal-overlay {
-  background-color:#000;
+#simplemodal-container a.modalCloseImg {
+  background:url(./img/glyphicons-halflings.png) no-repeat -312px 0; /* adjust url as required */
+  width:14px;
+  height:14px;
+  display:inline;
+  z-index:3200;
+  position:absolute;
+  top: 10px;
+  right: 25px;
+  cursor:pointer;
 }
+
 #simplemodal-container {
-  background-color:#333;
-  border:8px solid #444;
-  padding:12px;
-  color:white;
+  background-color: #FFF;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #555;
+  border-radius: 3px;
+  padding: 10px;
+  display: none;
 }
+
+
+#popupModal {
+  padding: 5px;
+  padding-right: 25px;
+}
+
+.page-header {
+    margin-top: 0px;
+  }

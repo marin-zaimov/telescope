@@ -98,4 +98,32 @@ class Reservations extends MauiModel
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public static function getByTime($start, $end)
+	{
+	  $criteria = Reservations::model()->getDbCriteria();
+	  $criteria->addCondition("startTime >= :startTime");
+    $params[':startTime'] = $start;
+    $criteria->addCondition("endTime <= :endTime");
+    $params[':endTime'] = $end;
+    $criteria->params = $params;
+    $criteria->order = 'startTime';
+
+    $reservations = Reservations::model()->findAll($criteria);
+    
+    return $reservations;
+	}
+	
+	public static function existsForTime($start, $end)
+	{
+	  $models = self::getByTime($start, $end);
+	  if (!empty($models)) {
+	    return true;
+	  }
+	  return false;
+	}
+
 }
+
+
+
