@@ -32,6 +32,7 @@ Message = {
         $.modal.close();
         $('#popupModal').html("");
         $('#popupModal').removeClass();
+        window.location.href = window.location.href
       }
     }, extraOptions));
   },
