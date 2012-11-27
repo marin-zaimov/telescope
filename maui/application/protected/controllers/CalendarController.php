@@ -94,21 +94,44 @@ class CalendarController extends MauiController
   
 	public function actionAllReservations()
 	{
-	  $userStartTime = $_POST['startTime'];
-    $userEndTime =$_POST['endTime'];
     $userModel = Yii::app()->user->model;
+    $criteria = Reservations::model()->getDbCriteria();
+    $params = array();
+    if (isset($_POST['startTime'])) {
+	    $userStartTime = $_POST['startTime'];
+      $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+      $criteria->addCondition("startTime >= :startTime");
+      $params[':startTime'] = $serverStart;
+    }
+    if (isset($_POST['endTime'])) {
+      $userEndTime = $_POST['endTime'];
+      $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);$criteria->addCondition("endTime <= :endTime");
+      $criteria->addCondition("endTime <= :endTime");
+      $params[':endTime'] = $serverEnd;
+    }
     
-    $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
-    $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
-
-    $criteria = SkyTimes::model()->getDbCriteria();
-    // build query
-    $criteria->addCondition("startTime >= :startTime");
-    $criteria->addCondition("endTime <= :endTime");
-    $criteria->params = array(':startTime' => $serverStart, ':endTime' => $serverEnd);
-
+    $criteria->order = 'startTime';
     // query
-    $skytimes = SkyTimes::model()->findAll($criteria);
+    $reservations = Reservations::model()->findAll($criteria);
+
+    $data = array();
+    foreach ($reservations as $r) {
+      
+      $start = strtotime($r->startTime);
+      $end = strtotime($r->endTime);
+      
+      $localStart = TimeHelper::toLocalTime($userModel->id, $start);
+      $localEnd = TimeHelper::toLocalTime($userModel->id, $end);
+      
+      $data[] = array(
+        'title' => $r->skyTime->type.' - '.$r->user->organization .' - '.$r->user->firstName .' '.$r->user->lastName,
+        'start' => date('Y-m-d', $localStart),
+        'end' => date('Y-m-d', $localEnd),
+        'descrition' => date('h:i a', $localStart),
+      );
+    }
+    echo json_encode($data);
+    
 	}
 	
 	
