@@ -145,7 +145,7 @@ class CalendarController extends MauiController
         'title' => $r->skyTime->type.' - '.$r->user->organization .' - '.$r->user->firstName .' '.$r->user->lastName,
         'start' => date('Y-m-d', $localStart),
         'end' => date('Y-m-d', $localEnd),
-        'descrition' => date('h:i a', $localStart),
+        'description' => date('h:i a', $localStart),
       );
     }
     echo json_encode($data);

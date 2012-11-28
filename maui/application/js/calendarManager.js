@@ -30,7 +30,8 @@ function setupCalendar() {
             $.modal.close();
             $('#popupModal').html("");
             $('#popupModal').removeClass();
-            window.location.href = window.location.href;
+            //window.location.href = window.location.href;
+            location.reload();
           }
         });
       });
@@ -109,117 +110,32 @@ function setupCalendar() {
      
     events: function(start, end, callback) {
       $.ajax({
-            url: 'AllReservations',
-            dataType: 'json',
-            data: {
-                // our hypothetical feed requires UNIX timestamps
-                start: Math.round(start.getTime() / 1000),
-                end: Math.round(end.getTime() / 1000)
-            },
-            success: function(doc) {
-                /*var events = [];
-                $(doc).find('event').each(function() {
-                    events.push({
-                        title: $(this).attr('title'),
-                        start: $(this).attr('start') // will be parsed
-                    });
-                });
-                callback(events);*/
-
-              var reservations = jQuery.parseJSON(doc);
-              alert(reservations[0].title);
-              var all_events = []
-              alert(reservations.length);
-              for (var i = 0; i < reservations.length; ++i) {
-                all_events.push({
-                  title: reservations[i].title,
-                  start: reservations[i].start,
-                  //description: reservations[i].description,
-                });
-              }
-              callback(all_events);
-
-
-            }
-        });
-
-    },
-      
-      
-      /*function(start, end, callback) {
-        $.ajax({
-            url: 'AllReserverations',
-            dataType: 'json',
-            data: {
-                // our hypothetical feed requires UNIX timestamps
-                start: Math.round(start.getTime() / 1000),
-                end: Math.round(end.getTime() / 1000)
-            },
-            success: function(doc) {
-                var events = [];
-                $(doc).find('event').each(function() {
-                    events.push({
-                        title: $(this).attr('title'),
-                        start: $(this).attr('start') // will be parsed
-                    });
-                });
-                alert('hit');
-                callback(events);
-            }
-        });
-    }*/
-      /*[
-        {
-            title: 'an event',
-            start: '2012-11-16',
-            description: 'This is a cool event'
+        url: 'AllReservations',
+        dataType: 'json',
+        data: {
+          // nothing to server
+        },
+        success: function(reservations) {
+          var all_events = []
+          for (var i = 0; i < reservations.length; ++i) {
+            all_events.push({
+              title: reservations[i].title,
+              start: reservations[i].start,
+              description: reservations[i].description,
+            });
+          }
+          callback(all_events);
         }
-    ],*/
-      /*function() {
-      alert('hit');
-      events.push({
-        title: 'event title',
-        start: '2012-11-16',
-        description: 'This is a cool event'
-      });*/
-      /*return [{
-        title: 'event title',
-        start: '2012-11-16',
-        description: 'This is a cool event'
-      }]*/
-    //},
-/*
-      function() { return $.get('AllReservations', function(response) {
-        var reservations = jQuery.parseJSON(response);
-        alert(reservations[0].title);
-        var all_events = []
-        alert(reservations.length);
-        for (var i = 0; i < reservations.length; ++i) {
-          all_events.push({
-            title: reservations[i].title,
-            start: reservations[i].start,
-            //description: reservations[i].description,
-          });
-        }
-        return all_events;
       });
     },
-     */ 
 
-    /*  event example
-    [
-        {
-            title: 'an event',
-            start: '2012-10-16',
-            description: 'This is a cool event'
-        }
-    ],*/
 
-    // example of how to move the header
-    /*header: {
-      left: 'today prev, next',
-      center: '',
-      right: 'title',
+    /*
+    eventRender: function(the_event, element) {
+        element.popover({
+            content: the_event.description
+        });
+        element.popover('show');
     },*/
 
   })
