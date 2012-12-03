@@ -25,6 +25,63 @@ class CalendarController extends MauiController
 	    var_dump('hahaha');
 	}
 
+
+  public function actionPopulateCalendar() {
+    /*
+    $reservations = Yii::app()->db->createCommand("SELECT * FROM reservations")->query();
+    $skyTimes = Yii::app()->db->createCommand("SELECT * FROM skyTimes")->query();
+
+    foreach ($reservations as $f)
+      var_dump($f);
+    foreach ($skyTimes as $f)
+      var_dump($f);
+    */
+
+    $userModel = Yii::app()->user->model;
+    $criteria = Reservations::model()->getDbCriteria();
+    $params = array();
+    if (isset($_GET['startTime'])) {
+	    $userStartTime = $_GET['startTime'];
+      $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+      $criteria->addCondition("startTime >= :startTime");
+      $params[':startTime'] = $serverStart;
+    }
+    if (isset($_GET['endTime'])) {
+      $userEndTime = $_GET['endTime'];
+      $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
+      $criteria->addCondition("endTime <= :endTime");
+      $params[':endTime'] = $serverEnd;
+    }
+    $criteria->params = $params;
+    $criteria->order = 'startTime';
+    // query
+    $reservations = Reservations::model()->findAll($criteria);
+    //$skyTimes = SkyTimes::model()->findAll($criteria);
+    //var_dump($skyTimes);
+
+    $data = array();
+    foreach ($skyTimes as $st) {
+      
+      $start = strtotime($st->startTime);
+      $end = strtotime($st->endTime);
+      
+      $localStart = TimeHelper::toLocalTime($userModel->id, $start);
+      $localEnd = TimeHelper::toLocalTime($userModel->id, $end);
+      
+      $reserveCount = Yii::app()->db->createCommand("SELECT * FROM reservations WHERE skyTimeId=".$st->id)->query();
+
+      var_dump($reserveCount);
+      $data[] = array(
+        //'title' => $st->type.': '.$st->user->organization .' - '.$r->user->firstName .' '.$r->user->lastName,
+        //'start' => date('Y-m-d', $localStart),
+      );
+    }
+    echo json_encode($data);
+
+
+
+  }
+
   public function actionReserveEvent() {
 
     $reservationData = $_POST['reservation'];
@@ -112,17 +169,21 @@ class CalendarController extends MauiController
   
 	public function actionAllReservations()
 	{
+
     $userModel = Yii::app()->user->model;
     $criteria = Reservations::model()->getDbCriteria();
     $params = array();
+
     if (isset($_GET['startTime'])) {
-	    $userStartTime = $_GET['startTime'];
+	    $userStartTime = intval($_GET['startTime']);
       $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
       $criteria->addCondition("startTime >= :startTime");
       $params[':startTime'] = $serverStart;
     }
+
+
     if (isset($_GET['endTime'])) {
-      $userEndTime = $_GET['endTime'];
+      $userEndTime = intval($_GET['endTime']);
       $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
       $criteria->addCondition("endTime <= :endTime");
       $params[':endTime'] = $serverEnd;

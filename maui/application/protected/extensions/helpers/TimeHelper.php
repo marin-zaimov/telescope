@@ -11,8 +11,12 @@ class TimeHelper
 		return $startTime < $endTime;
 	}
 	
-	public function localDatetimeToGMT($userId, $datetime)
-	{
+	//public function localDatetimeToGMT($userId, $datetime)
+  public function localDatetimeToGMT($userId, $datetime)
+  {
+    if (gettype($datetime) == 'integer') {
+      $datetime = date('Y-m-d H:i:s', $datetime);
+    }
 		date_default_timezone_set('UTC');
 		$timestamp = strtotime($datetime);
 		$newTimestamp = self::toGMTTime($userId, $timestamp);
@@ -30,6 +34,8 @@ class TimeHelper
 		}
 		$timestamp -= 3600*$user->GMToffset;
 
+    //var_dump($timestamp);
+    //die;
 		return $timestamp;
 	}
 	

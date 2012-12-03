@@ -109,11 +109,38 @@ function setupCalendar() {
     ,*/
      
     events: function(start, end, callback) {
+
+
+      /*$.getJSON('PopulateCalendar', function(response) {
+        alert('hit');
+      });*/
+      /*
+      $.ajax({
+        url: 'PopulateCalendar',
+        dataType: 'json',
+        data: {
+          start: Math.round(start.getTime() / 1000),
+          end: Math.round(end.getTime() / 1000)
+        },
+        success: function(reservations) {
+          var all_events = []
+          for (var i = 0; i < reservations.length; ++i) {
+            all_events.push({
+              title: reservations[i].title,
+              start: reservations[i].start,
+              description: reservations[i].description,
+            });
+          }
+          callback(all_events);
+        }
+      });
+      */
       $.ajax({
         url: 'AllReservations',
         dataType: 'json',
         data: {
-          // nothing to server
+          startTime: Math.round(start.getTime() / 1000),
+          endTime: Math.round(end.getTime() / 1000)
         },
         success: function(reservations) {
           var all_events = []
