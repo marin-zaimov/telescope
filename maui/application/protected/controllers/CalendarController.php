@@ -186,6 +186,13 @@ class CalendarController extends MauiController
 	public function actionAllReservations()
 	{
 
+    $colors = array(
+      'Jupiter' => 'purple',
+      'Saturn' => 'green',
+      'Moon' => 'gray',
+    );
+
+
     $userModel = Yii::app()->user->model;
     $criteriaReservations = Reservations::model()->getDbCriteria();
     $criteriaSkyTimes = SkyTimes::model()->getDbCriteria();
@@ -232,6 +239,12 @@ class CalendarController extends MauiController
       foreach ($skyTimes as $s) {
 
         $sky_object = $s->type; // e.g. Jupiter
+        $color = 'orange';
+        if ($sky_object == 'Jupiter' || $sky_object == 'Saturn' || $sky_object == 'Moon')
+          $color = $colors[$sky_object];
+
+
+
         if ($sky_object != 'Sunset' && $sky_object != 'Sunrise' && $sky_object != 'Stop') {
       
           $start = strtotime($s->startTime);
@@ -267,9 +280,12 @@ class CalendarController extends MauiController
 
             $data[] = array(
               'title' => $sky_object.': '.$actual_reservations.'/'.$possible_reservations,
-              //'title' => $sky_object.': '.$possible_reservations,
               'start' => date('Y-m-d', $localStartOri),
               'description' => date('h:i a', $localStartOri),
+              'color' => $color,
+              'object' => $sky_object,
+              'actual' => $actual_reservations,
+              'possible' => $possible_reservations,
             );
 
             $possible_reservations = 0;
@@ -290,12 +306,14 @@ class CalendarController extends MauiController
               $possible_reservations++;
             }
             
-
             $data[] = array(
               'title' => $sky_object.': '.$actual_reservations.'/'.$possible_reservations,
-              //'title' => $sky_object.': '.$possible_reservations,
               'start' => date('Y-m-d', $localStart),
               'description' => date('h:i a', $localStart),
+              'color' => $color,
+              'object' => $sky_object,
+              'actual' => $actual_reservations,
+              'possible' => $possible_reservations,
             );
           }
 
@@ -305,6 +323,9 @@ class CalendarController extends MauiController
       }
 
     }
+
+
+    $data = $this->removeDuplicates($data);
 
     echo json_encode($data);
 
@@ -424,6 +445,45 @@ class CalendarController extends MauiController
   }
 
 
+
+  public function removeDuplicates($data) {
+
+            //var_dump('hit');
+            //die;
+    $returnMe = array();
+
+
+    foreach ($data as $d) {
+
+      $hit = false;
+      for ($i = 0; $i < sizeof($returnMe); $i++) {
+
+        if ($returnMe[$i]['start'] == $d['start'] && $returnMe[$i]['object'] == $d['object']) {
+          $hit = true;
+
+          $returnMe[$i]['possible'] = $returnMe[$i]['possible'] + $d['possible'];
+          $returnMe[$i]['actual'] = $returnMe[$i]['actual'] + $d['actual'];
+          $returnMe[$i]['title'] = $returnMe[$i]['object'].': '.$returnMe[$i]['actual'].'/'.$returnMe[$i]['possible'];
+
+        }
+
+
+      }
+      if (!$hit) {
+        /*$temp = array(
+          'title' => $d['object'].': '.$d['actual'].'/'.$d['possible'],
+          'start' => $d['start'],
+          'description' => $d['description'],
+          'color' => $d['color'],
+        );*/
+        $returnMe[] = $d;//$temp;
+      }
+
+
+    }
+    return $returnMe;
+
+  }
 
 
 
