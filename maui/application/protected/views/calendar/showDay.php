@@ -8,7 +8,7 @@
 </style>
 
 <h3 class="page-header">
-<?php echo $titleLabel; ?> - viewing times
+<?php echo $titleLabel; ?> - Viewing Times
 </h3>
 
 <div id="reservationsDiv" >

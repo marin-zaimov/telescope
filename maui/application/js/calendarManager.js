@@ -5,9 +5,27 @@ $(function() {
   setupCalendar();
   //enablePopover();
 
+  setupHighlightBtns();
+  setupFCBtns();
+
+
+
+
 });
+var highlight_btns = [
+    '#moon-filter',
+    '#jupiter-filter',
+    '#saturn-filter',
+    '#m13-filter',
+    '#m15-filter',
+    '#m31-filter',
+    '#m42-filter',
+    '#m57-filter',
+    '#m81-filter',
+  ];
 
 
+  
 function setupCalendar() {
 
   $('#calendar').fullCalendar({
@@ -94,8 +112,11 @@ function setupCalendar() {
               start: reservations[i].start,
               description: reservations[i].description,
               color: reservations[i].color,
+              object: reservations[i].object,
+              id: 'sky_event'+i,
             });
           }
+          window.all_events = all_events;
           callback(all_events);
         }
       });
@@ -120,6 +141,7 @@ function setupCalendar() {
 
 }
 
+
 function globalDayClick(date, allDay, jsEvent, view) {
   var genTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
   var startTime = genTime + ' 00:00:00';
@@ -134,13 +156,58 @@ function globalDayClick(date, allDay, jsEvent, view) {
         $('#popupModal').html("");
         $('#popupModal').removeClass();
         //window.location.href = window.location.href;
-        location.reload();
+        //location.reload();
+        $('#calendar').fullCalendar('refetchEvents');
       }
     });
   });
 
 }
 
+
+function setupHighlightBtns() {
+
+  for (var i = 0; i < window.highlight_btns.length; i++) {
+    $(window.highlight_btns[i]).click(highlightDays);
+  }
+      
+    
+}
+
+function clearHighlights() {
+
+  $('td').css('background-color','white');
+  for (var i = 0; i < window.highlight_btns.length; i++) {
+    $(window.highlight_btns[i]).attr('class','btn');
+  }
+}
+
+
+function highlightDays(e) {
+  var el_id = $(e.currentTarget).attr("id");
+  if (el_id == undefined)
+    el_id = e;
+  //alert(el_id);
+  var btn_name = $('#'+el_id).text();
+
+  for (var i = 0; i < window.all_events.length; i++) {
+    if (window.all_events[i].object == btn_name) {
+      if ($('#'+el_id).attr('class').indexOf('active') == -1) {
+        $(findFullCalendarDayForClickedEvent(window.all_events[i].start)).css('background-color','red');
+      }
+      else {
+        $(findFullCalendarDayForClickedEvent(window.all_events[i].start)).css('background-color','white');
+      }
+    }
+  }
+
+
+}
+
+function setupFCBtns() {
+  $('.fc-button').click(clearHighlights);
+
+}
 
 // takes in the id of the bookit button that was clicked
 function bookitClick(id, start, end) {
@@ -201,7 +268,7 @@ function enablePopover() {
       popPosition = 'left';
       $(this).append('<a href="#" id="cal-popover" rel="popover"></a>');
     }
-    else {
+    else {*
       popPosition = 'right';
       $(this).next().append('<a href="#" id="cal-popover" rel="popover"></a>');
     }*/
@@ -222,3 +289,48 @@ function enablePopover() {
   });
 
 }
+
+/*
+ * ripped from stack overflow post by jthiesse
+ */
+function findFullCalendarDayForClickedEvent(eventDate) {
+
+  var foundDay;
+
+  var $theCalendar = $( '#calendar' );
+
+  var currentDate = $theCalendar.fullCalendar( 'getDate' );
+  var fullCalendarDayContainers = $theCalendar.find( 'td[class*="fc-day"]' );
+
+  for( var i = 0; i < fullCalendarDayContainers.length; i++ ) {
+
+    var $currentContainer = $( fullCalendarDayContainers[ i ] );
+
+    var dayNumber = $currentContainer.find( '.fc-day-number' ).html();
+
+    // first find the matching day
+    if ( eventDate.getDate() == dayNumber ) {
+
+      // now month check, if our current container has fc-other-month
+      // then the event month and the current month needs to mismatch,
+      // otherwise container is missing fc-other-month then the event
+      // month and current month need to match
+      if( $currentContainer.hasClass( 'fc-other-month' ) ) {
+
+        if( eventDate.getMonth() != currentDate.getMonth() ) {
+          foundDay = $currentContainer;
+          break;
+        }
+      }
+      else {
+        if ( eventDate.getMonth() == currentDate.getMonth() ) {
+          foundDay = $currentContainer;
+          break;
+        }
+      }
+    }
+  }
+
+  return foundDay;
+}
+
