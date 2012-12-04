@@ -18,23 +18,7 @@ function setupCalendar() {
       and have a link to create a reservation
     */
     dayClick: function(date, allDay, jsEvent, view) {
-      var genTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
-      var startTime = genTime + ' 00:00:00';
-      var endTime = genTime + ' 23:59:59';
-      var toServer = {
-          'startTime': startTime,
-          'endTime': endTime,
-      };
-      $.post('getEvents', toServer, function(response) {
-        Message.popup(response, { onClose: function(dialog) {
-            $.modal.close();
-            $('#popupModal').html("");
-            $('#popupModal').removeClass();
-            //window.location.href = window.location.href;
-            location.reload();
-          }
-        });
-      });
+      globalDayClick(date, allDay, jsEvent, view);
     },
 
 
@@ -92,49 +76,9 @@ function setupCalendar() {
     },
     */
 
-    // example of events
-
-    /*events: //function() {
-      //alert('hit');
-      //return
-      [
-        {
-          title: 'an event',
-          start: '2012-11-16',
-          description: 'This is a cool event'
-        }
-      ]
-
-    //}
-    ,*/
      
     events: function(start, end, callback) {
 
-
-      /*$.getJSON('PopulateCalendar', function(response) {
-        alert('hit');
-      });*/
-      /*
-      $.ajax({
-        url: 'PopulateCalendar',
-        dataType: 'json',
-        data: {
-          start: Math.round(start.getTime() / 1000),
-          end: Math.round(end.getTime() / 1000)
-        },
-        success: function(reservations) {
-          var all_events = []
-          for (var i = 0; i < reservations.length; ++i) {
-            all_events.push({
-              title: reservations[i].title,
-              start: reservations[i].start,
-              description: reservations[i].description,
-            });
-          }
-          callback(all_events);
-        }
-      });
-      */
       $.ajax({
         url: 'AllReservations',
         dataType: 'json',
@@ -149,6 +93,7 @@ function setupCalendar() {
               title: reservations[i].title,
               start: reservations[i].start,
               description: reservations[i].description,
+              color: reservations[i].color,
             });
           }
           callback(all_events);
@@ -165,10 +110,37 @@ function setupCalendar() {
         element.popover('show');
     },*/
 
+
+    eventClick: function(calEvent, jsEvent, view) {
+      globalDayClick(calEvent.start, true, jsEvent, view);
+    },
+
   })
 
 
 }
+
+function globalDayClick(date, allDay, jsEvent, view) {
+  var genTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+  var startTime = genTime + ' 00:00:00';
+  var endTime = genTime + ' 23:59:59';
+  var toServer = {
+      'startTime': startTime,
+      'endTime': endTime,
+  };
+  $.post('getEvents', toServer, function(response) {
+    Message.popup(response, { onClose: function(dialog) {
+        $.modal.close();
+        $('#popupModal').html("");
+        $('#popupModal').removeClass();
+        //window.location.href = window.location.href;
+        location.reload();
+      }
+    });
+  });
+
+}
+
 
 // takes in the id of the bookit button that was clicked
 function bookitClick(id, start, end) {

@@ -34,8 +34,6 @@ class TimeHelper
 		}
 		$timestamp -= 3600*$user->GMToffset;
 
-    //var_dump($timestamp);
-    //die;
 		return $timestamp;
 	}
 	

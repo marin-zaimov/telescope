@@ -114,16 +114,24 @@ class CalendarController extends MauiController
     
     $userStartTime = $_POST['startTime'];
     $userEndTime =$_POST['endTime'];
+
+    
+
     $userModel = Yii::app()->user->model;
     
     $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
     $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
 
     $criteria = SkyTimes::model()->getDbCriteria();
+    
     // build query
-    $criteria->addCondition("startTime >= :startTime");
-    $criteria->addCondition("endTime <= :endTime");
+    //$criteria->addCondition("startTime >= :startTime");
+    //$criteria->addCondition("endTime <= :endTime");
+    // pimp it up
+    $criteria->addCondition("startTime < :endTime");
+    $criteria->addCondition("endTime > :startTime");
     $criteria->params = array(':startTime' => $serverStart, ':endTime' => $serverEnd);
+    
 
     // query
     $skytimes = SkyTimes::model()->findAll($criteria);
@@ -136,6 +144,12 @@ class CalendarController extends MauiController
         $end = strtotime($s->endTime);
         
         while ($start < $end) {
+          // oh sweet cs
+          if ($start < strtotime($serverStart) || $start > strtotime($serverEnd)) {
+            $start = $start + 1800;
+            continue;
+          }
+
           $localStart = TimeHelper::toLocalTime($userModel->id, $start);
           $localEnd = TimeHelper::toLocalTime($userModel->id, ($start+1800));
           
@@ -167,52 +181,139 @@ class CalendarController extends MauiController
     $this->renderPartial('showDay', array('titleLabel' => date('F j', strtotime($userStartTime)),'reservation_times' => $reservation_times));
   }  
   
+
+	
 	public function actionAllReservations()
 	{
 
     $userModel = Yii::app()->user->model;
-    $criteria = Reservations::model()->getDbCriteria();
+    $criteriaReservations = Reservations::model()->getDbCriteria();
+    $criteriaSkyTimes = SkyTimes::model()->getDbCriteria();
     $params = array();
 
-    if (isset($_GET['startTime'])) {
-	    $userStartTime = intval($_GET['startTime']);
-      $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
-      $criteria->addCondition("startTime >= :startTime");
-      $params[':startTime'] = $serverStart;
-    }
-
-
+    //if (isset($_GET['startTime'])) {
     if (isset($_GET['endTime'])) {
       $userEndTime = intval($_GET['endTime']);
       $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
-      $criteria->addCondition("endTime <= :endTime");
+	    //$userStartTime = intval($_GET['startTime']);
+      //$serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+      $criteriaReservations->addCondition("startTime < :endTime");
+      $criteriaSkyTimes->addCondition("startTime < :endTime");
+      //$params[':startTime'] = $serverStart;
       $params[':endTime'] = $serverEnd;
     }
-    $criteria->params = $params;
-    $criteria->order = 'startTime';
-    // query
-    $reservations = Reservations::model()->findAll($criteria);
 
-    $data = array();
-    foreach ($reservations as $r) {
-      
-      $start = strtotime($r->startTime);
-      $end = strtotime($r->endTime);
-      
-      $localStart = TimeHelper::toLocalTime($userModel->id, $start);
-      $localEnd = TimeHelper::toLocalTime($userModel->id, $end);
-      
-      $data[] = array(
-        'title' => $r->skyTime->type.' - '.$r->user->organization .' - '.$r->user->firstName .' '.$r->user->lastName,
-        'start' => date('Y-m-d', $localStart),
-        'end' => date('Y-m-d', $localEnd),
-        'description' => date('h:i a', $localStart),
-      );
+
+    //if (isset($_GET['endTime'])) {
+    if (isset($_GET['startTime'])) {
+	    $userStartTime = intval($_GET['startTime']);
+      $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+      //$userEndTime = intval($_GET['endTime']);
+      //$serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
+      $criteriaReservations->addCondition("endTime > :startTime");
+      $criteriaSkyTimes->addCondition("endTime > :startTime");
+      //$params[':endTime'] = $serverEnd;
+      $params[':startTime'] = $serverStart;
     }
+    $criteriaReservations->params = $params;
+    $criteriaReservations->order = 'startTime';
+    $criteriaSkyTimes->params = $params;
+    $criteriaSkyTimes->order = 'startTime';
+    
+    // query
+    $reservations = Reservations::model()->findAll($criteriaReservations);
+    $skyTimes = SkyTimes::model()->findAll($criteriaSkyTimes);
+
+    $reservation_times = array();
+    $curr_reservation = 0;
+    $data = array();
+    if (!empty($skyTimes)) {
+
+      foreach ($skyTimes as $s) {
+
+        $sky_object = $s->type; // e.g. Jupiter
+        if ($sky_object != 'Sunset' && $sky_object != 'Sunrise' && $sky_object != 'Stop') {
+      
+          $start = strtotime($s->startTime);
+          $end = strtotime($s->endTime);
+          $localStart = TimeHelper::toLocalTime($userModel->id, $start);
+          $localEnd = TimeHelper::toLocalTime($userModel->id, $end);
+          $localStartOri = $localStart;
+
+          $possible_reservations = 0; // e.g. the '7' in "Jupiter: 0/7"
+          $actual_reservations = 0; // e.g. the '0' in "Jupiter: 0/7"
+
+          $localStartDay = date('d',$localStart);
+          $localEndDay   = date('d',$localEnd);
+          if ($localStartDay != $localEndDay) {
+
+            while ($localStartDay != $localEndDay) {
+
+              if (($curr_reservation < sizeof($reservations))
+               && ($start == strtotime($reservations[$curr_reservation]->startTime))) {
+                $actual_reservations++;
+                $curr_reservation++;
+              }
+
+
+              $localStart = $localStart + 1800;
+              $start = $start + 1800;
+
+              $localStartDay = date('d',$localStart);
+
+              $possible_reservations++;
+            }
+
+
+            $data[] = array(
+              'title' => $sky_object.': '.$actual_reservations.'/'.$possible_reservations,
+              //'title' => $sky_object.': '.$possible_reservations,
+              'start' => date('Y-m-d', $localStartOri),
+              'description' => date('h:i a', $localStartOri),
+            );
+
+            $possible_reservations = 0;
+            $actual_reservations = 0;
+          }
+
+          if ($localStart < $localEnd) {
+
+            while ($localStart < $localEnd) {
+              
+              if (($curr_reservation < sizeof($reservations))
+               && ($start == strtotime($reservations[$curr_reservation]->startTime))) {
+                $actual_reservations++;
+                $curr_reservation++;
+              }
+              $localStart = $localStart + 1800;
+              $start = $start + 1800;
+              $possible_reservations++;
+            }
+            
+
+            $data[] = array(
+              'title' => $sky_object.': '.$actual_reservations.'/'.$possible_reservations,
+              //'title' => $sky_object.': '.$possible_reservations,
+              'start' => date('Y-m-d', $localStart),
+              'description' => date('h:i a', $localStart),
+            );
+          }
+
+        }
+
+
+      }
+
+    }
+
     echo json_encode($data);
+
+
     
 	}
-	
+
+
+
 	
   public function actionMyReservations() {
 
@@ -275,20 +376,54 @@ class CalendarController extends MauiController
   }
 
 
-  // modifies a string with HH:MM format to datetime for a specific skyTime
-  public function hourAndMinuteAndIdToDateTime($hhmm, $id) 
-  {
-    $skytime = SkyTimes::model()->findByPK($id);
-    var_dump($skytime);
-    die;
-  } 
+
+	public function actionOldAllReservations()
+	{
+
+    $userModel = Yii::app()->user->model;
+    $criteria = Reservations::model()->getDbCriteria();
+    $params = array();
+
+    if (isset($_GET['startTime'])) {
+	    $userStartTime = intval($_GET['startTime']);
+      $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
+      $criteria->addCondition("startTime >= :startTime");
+      $params[':startTime'] = $serverStart;
+    }
 
 
-  // modifies a datetime to HH:MM string format
-  public function dateTimeToHourAndMinute($a, $b) 
-  {
+    if (isset($_GET['endTime'])) {
+      $userEndTime = intval($_GET['endTime']);
+      $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
+      $criteria->addCondition("endTime <= :endTime");
+      $params[':endTime'] = $serverEnd;
+    }
+    $criteria->params = $params;
+    $criteria->order = 'startTime';
+    // query
+    $reservations = Reservations::model()->findAll($criteria);
 
+    $data = array();
+    foreach ($reservations as $r) {
+      
+      $start = strtotime($r->startTime);
+      $end = strtotime($r->endTime);
+      
+      $localStart = TimeHelper::toLocalTime($userModel->id, $start);
+      $localEnd = TimeHelper::toLocalTime($userModel->id, $end);
+      
+      $data[] = array(
+        'title' => $r->skyTime->type.' - '.$r->user->organization .' - '.$r->user->firstName .' '.$r->user->lastName,
+        'start' => date('Y-m-d', $localStart),
+        'end' => date('Y-m-d', $localEnd),
+        'description' => date('h:i a', $localStart),
+      );
+    }
+    echo json_encode($data);
+    
   }
+
+
 
 
 
