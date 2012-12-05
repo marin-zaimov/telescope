@@ -22,7 +22,7 @@ function saveUser(data, newUser) {
     result = $.parseJSON(result);
     if (result.status == true) {
     if (newUser) {
-      $('#content').html('Thank you for creating a new user. Please remember the password that you assigned them and let them know. This password is not stored anywhere in readable format.');
+      $('#content').html('Thank you for creating a new user. We have sent you an email. Please click on the link in your email to verif your account');
     }
       Message.flash('User saved succesfully', true);
     }

@@ -79,7 +79,9 @@
   <div class="control-group">
     <label class="control-label" for="inputOrg">Organization</label>
     <div class="controls">
-      <input type="text" name="User[organization]" value="<?php echo $user->organization; ?>" id="inputOrg" placeholder="Organization">
+      <input type="text" name="User[organization]" value="<?php echo $user->organization; ?>" id="inputOrg" placeholder="Organization"><br/>
+      <input type="text" name="User[schoolName]" value="<?php echo $user->schoolName; ?>" placeholder="School Name"><br/>
+      <input type="text" name="User[schoolLocation]" value="<?php echo $user->schoolLocation; ?>" placeholder="School Location">
     </div>
   </div>
   <div class="control-group">

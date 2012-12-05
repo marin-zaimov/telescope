@@ -1,3 +1,10 @@
+
+<style>
+  #forgotPassword {
+    font-size: 75%;
+  }
+</style>
+
 <?php
 $this->pageTitle=Yii::app()->name . ' - Login';
 ?>
@@ -35,8 +42,9 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
+		<br/><a href="#" id="forgotPassword">Forgot Password?</a>
 	</div>
-
+<br/>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Login', array('class'=>'btn btn-primary')); ?>
 	</div>
@@ -45,3 +53,11 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 </div><!-- form -->
 
 If you dont have an account, <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/user/showUserForm">click here to register</a>
+
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/loginManager.js"></script>
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins/sticky.min.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/MauiBase.js"></script>
+
+

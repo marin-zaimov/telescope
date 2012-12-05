@@ -20,7 +20,201 @@ class SiteController extends Controller
 			),
 		);
 	}
+	
+	
+  public function actionResetPassword() {
 
+		$userLoginInfo = $_POST['User'];
+
+		$result = $this->resetPasswordAndLogin($userLoginInfo);
+
+		if ($result->getStatus() == true) {
+			$this->redirect(Yii::app()->baseUrl .'/index.php/site/index');
+		}
+		else {
+			$data = array_merge($userLoginInfo, array('errors' => $result->getMessages()));
+			$this->render('resetPass', $data);
+		}
+	}
+	public function resetPassword($userLoginInfo)
+	{
+		$response = new AjaxResponse();
+		if ($userLoginInfo->newPassword == $userLoginInfo->newPasswordConfirm) {
+		  if (PasswordHelper::isValidPasswordPattern($userLoginInfo->newPassword)) {
+			  try {
+			
+				  //hash temp Password. If the same
+				  $user = Users::getByEmail($userLoginInfo->email);
+				  if (empty($user->passwordResetTime) || empty($user->passwordReset) || (strtotime($user->passwordResetTime)) < time()) {
+					  throw new Exception('Your temporary password has expired. Please request another if you have forgotten your permanent password.');
+				  }
+				  else if ($user->verifyPassword($userLoginInfo->tempPassword, true)) {
+					  $user->salt = PasswordHelper::generateRandomSalt();
+					  $user->password = PasswordHelper::hashPassword($userLoginInfo->newPassword, $user->salt);
+					  $user->passwordReset = null;
+					  $user->passwordResetTime = null;
+					  if ($user->save()) {
+				      $response->setStatus(true);
+				      $response->addMessage("User password reset Successfully");
+					  }
+					  else {
+					    $response->setStatus(false);
+				      $response->addMessage('Something went wrong when trying to set a new password.');
+					  }
+				  } else {
+				    $response->setStatus(false);
+				    $response->addMessage('Incorrect temporary password.');
+				  }
+				
+			  }
+			  catch (Exception $ex) {
+				  $response->setStatus(false);
+				  $response->addMessage('Something went wrong when trying to set a new password.');
+				  $response->addMessage($ex->getMessage());
+			  }
+		  } else {
+		    $response->setStatus(false);
+			  $response->addMessage("New Password is of invalid format. Password must:");
+			  $response->addMessage("be from 9 to 31 characters in length");
+			  $response->addMessage("contain at least one lower case letter");
+			  $response->addMessage("contain at least one upper case letter");
+			  $response->addMessage("contain at least one number:");
+		  }
+		}
+		else {
+			$response->setStatus(false);
+			$response->addMessage("New Passwords are not the same");
+		}
+		
+		return $response;
+	}
+	
+  public function login($userLoginInfo)
+	{
+		$response = new AjaxResponse();
+		if(!empty($userLoginInfo)) {
+			$userLoginInfo = (object) $userLoginInfo;
+			
+			$userIdentity = new UserIdentity($userLoginInfo->email, $userLoginInfo->password);
+			if($userIdentity->authenticate()) {
+			  
+			  //remove temp password if user logged in with regular password
+			  $user = Users::getByEmail($userLoginInfo->email);
+			  $user->passwordReset = null;
+			  $user->passwordResetTime = null;
+			  if ($user->save()) {
+				  Yii::app()->user->login($userIdentity);
+				  $response->setStatus(true);
+				  $response->addMessage("User logged in Successfully");
+			  }
+			  else {
+				  $response->setStatus(false);
+				  $response->addMessage("User login failed");
+			  }
+			}
+			else {
+				$response->setStatus(false);
+				$response->addMessage("User login failed");
+			}
+		}
+		else {
+			$response->setStatus(false);
+			$response->addMessage("User login failed");
+		}
+		return $response;
+	}
+	
+	public function resetPasswordAndLogin($userLoginInfo)
+	{
+		$response = new AjaxResponse();
+		if(!empty($userLoginInfo)) {
+			$userLoginInfo = (object) $userLoginInfo;
+			try {
+				$resetResult = $this->resetPassword($userLoginInfo);
+
+				if ($resetResult->getStatus() == true) {
+					$userLoginInfo->password = $userLoginInfo->newPassword;
+					$loginResult = $this->login($userLoginInfo);
+					if ($loginResult->getStatus() == true) {
+						$response->setStatus(true);
+						$response->addMessage("User password changed Successfully");
+						$response->addMessage("User logged in Successfully");
+					}
+					else {
+						return $loginResult;
+					}
+				}
+				else {
+					return $resetResult;
+				}
+			}
+			catch (Exception $ex) {
+				$response->setStatus(false);
+				$response->addMessage('Something went wrong when trying to set a new password ans login.');
+				$response->addMessage($ex->getMessage());
+			}
+		}
+		else {
+			$response->setStatus(false);
+			$response->addMessage("No information entered.");
+		}
+		return $response;
+	}
+
+
+	public function actionRequestTempPassword()
+	{
+	  $response = new AjaxResponse();
+		$userEmail = $_POST['email'];
+		if ($userEmail != null) { 
+			$user = Users::getByEmail($userEmail);
+
+	    if (!empty($user)) {
+	      if ($user->emailVerified == 'N') {
+			    $response->setStatus(false);
+			    $response->addMessage('Your email has not been verified. Click the link you received in your email after registration to verify it.');
+		      echo $response->asJson();
+		      return;
+	      }
+	    }
+	    
+			$result = Users::assignRandomPasswordToUser($userEmail);
+      
+			if ($result == true) {
+				$randomPassword = $result->getData('randomPassword');
+				$hashedRandonmPassword = $result->getData('hashedRandomPassword');
+				$userName = $result->getData('userName');
+			
+				$emailHelper = new EmailHelper();
+				$params = array(
+				  'NAME' => $userName,
+					'EMAIL' => $userEmail,
+					'TEMP_PASSWORD' => $randomPassword,
+					'LINK' => "<a href='http://".($_SERVER['SERVER_NAME'] . Yii::app()->request->baseUrl ."/index.php/site/passwordResetView?email=".urlencode($userEmail))."' target='_blank'>Click here to reset your password</a>"
+				);
+
+		    $template = 'requestTempPassword';
+		
+		    $emailHelper->sendEmail($template, $params, $userEmail);
+        
+			}
+		}
+		$response->setStatus(true);
+		$response->addMessage("A temporary password had been emailed to you. Please follow the link in the email and use the emailed temporary password there to reset you password");
+	  echo $response->asJson();
+	}
+
+
+	public function actionPasswordResetView()
+	{
+		$email = $_GET['email'];
+    $newUser = $_GET['newUser'];
+    $errors = array();
+    
+		$this->render('resetPass', array('email' => $email, 'errors' => $errors));
+	}
+	
+	
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.

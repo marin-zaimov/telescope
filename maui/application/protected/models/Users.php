@@ -15,6 +15,10 @@
  * @property string $termsOfService
  * @property string $emailVerified
  * @property string $daylightSavings
+ * @property string $schoolName
+ * @property string $schoolLocation
+ * @property string $passwordReset
+ * @property string $passwordResetTime
  *
  * The followings are the available model relations:
  * @property Media[] $medias
@@ -51,12 +55,13 @@ class Users extends MauiModel
 		  array('email', 'unique'),
       array('email', 'email'),
 			array('email, password, firstName, lastName, GMToffset', 'required'),
-			array('email, password, salt, firstName, lastName, organization', 'length', 'max'=>255),
+			array('email, password, salt, firstName, lastName, organization, schoolName, schoolLocation, schoolLocation, passwordReset', 'length', 'max'=>255),
 			array('GMToffset', 'length', 'max'=>5),
 			array('termsOfService, emailVerified, daylightSavings', 'length', 'max'=>1),
+			array('passwordResetTime', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, email, password, salt, firstName, lastName, organization, GMToffset, termsOfService, emailVerified', 'safe', 'on'=>'search'),
+			array('id, email, password, salt, firstName, lastName, organization, GMToffset, termsOfService, emailVerified, daylightSavings, schoolName, schoolLocation, passwordReset, passwordResetTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -91,6 +96,10 @@ class Users extends MauiModel
 			'termsOfService' => 'Terms Of Service',
 			'emailVerified' => 'Email Verified',
 			'daylightSavings' => 'Daylight Savings',
+			'schoolName' => 'School Name',
+			'schoolLocation' => 'School Location',
+			'passwordReset' => 'Password Reset',
+			'passwordResetTime' => 'Password Reset Time',
 		);
 	}
 
@@ -116,6 +125,10 @@ class Users extends MauiModel
 		$criteria->compare('termsOfService',$this->termsOfService,true);
 		$criteria->compare('emailVerified',$this->emailVerified,true);
 		$criteria->compare('daylightSavings',$this->daylightSavings,true);
+		$criteria->compare('schoolName',$this->schoolName,true);
+		$criteria->compare('schoolLocation',$this->schoolLocation,true);
+		$criteria->compare('passwordReset',$this->passwordReset,true);
+		$criteria->compare('passwordResetTime',$this->passwordResetTime,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -139,16 +152,53 @@ class Users extends MauiModel
 		return $this;
 	}
 	
-	public function verifyPassword($pw) 
+
+	public function verifyPassword($pw, $resetPW = false) 
 	{
 		$salt = $this->salt;
-    $usersPW = $this->password;
+		if ($resetPW == true) {
+			$usersPW = $this->passwordReset;
+		}
+		else {
+			$usersPW = $this->password;
+		}
 		$passwordVerified = false;
 		
 		if(PasswordHelper::hashPassword($pw, $salt) === $usersPW) {
 			$passwordVerified = true;
 		}
-		
+		//die;
 		return $passwordVerified;
+	}
+	
+	public function assignRandomPasswordToUser($email)
+	{
+		$response = new AjaxResponse();
+		
+		$user = Users::getByEmail($email);
+		if (!empty($user)) {
+		  $randomPassword = PasswordHelper::generateRandomPassword();
+		  $hashedRandomPassword = PasswordHelper::hashPassword($randomPassword, $user->salt);
+		  $user->passwordReset = $hashedRandomPassword;
+		  $user->passwordResetTime = date('Y-m-d H:i:s', (time()+1800));
+		
+		  if ($user->save()) {
+		    $response->setStatus(true);
+		    $response->addMessage('New random password created and set successfully.');
+		    $response->addData('randomPassword', $randomPassword);
+		    $response->addData('userName', $user->firstName);
+		    $response->addData('hashedRandomPassword', $hashedRandomPassword);
+		  }
+		  else {
+		    $response->setStatus(false);
+		    $response->addMessage("Gould not help with resetting the user's password.");
+		    $response->addMessage($ex->getMessage());
+		  }
+		}
+		else {
+		  $response->setStatus(false);
+		  $response->addMessage("No user with this email.");
+		}
+		return $response;
 	}
 }

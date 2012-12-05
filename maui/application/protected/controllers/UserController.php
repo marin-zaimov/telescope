@@ -38,6 +38,16 @@ class UserController extends Controller
 	        $response->setStatus(false, 'Make sure Password and Confirm Password fields are the same.');
 	      }
 	      
+	      
+        //check .edu and .k12.ga.us address
+        $emailExplode = explode('.', $userData['email']);
+        $last = array_pop($emailExplode);
+        $secondLast = array_pop($emailExplode);
+        $thirdLast = array_pop($emailExplode);
+        if ($last != 'edu' && !($last == 'us' && $secondLast == 'ga' && $thirdLast == 'k12')) {
+          $response->setStatus(false, 'You must have a ".edu" or ".k12.ga.us" email address to register.');
+        }
+        
 	      //if existing user
 	      if (isset($userData['id'])) {
 	        $user = Users::model()->findByPk($userData['id']);
@@ -65,12 +75,6 @@ class UserController extends Controller
 	          $response->setStatus(false, 'You must accept the terms of service to register.');
 	        }
 	        
-	        //check .edu address
-	        $emailExplode = explode('.', $userData['email']);
-	        $emailExt = end($emailExplode);
-	        if ($emailExt != 'edu') {
-	          $response->setStatus(false, 'You must have a ".edu" email address to register.');
-	        }
 	        
 		      $user = Users::createFromArray($userData);
           $emailTemplate = 'newUser';
@@ -88,6 +92,7 @@ class UserController extends Controller
 		      if ($user->save()) {
 		        if (isset($emailTemplate)) {
 				      $this->emailNewPasswordToUser($user, $emailTemplate);
+				      $this->emailAdminOfNewUser($user);
 				    }
 	          $response->setStatus(true, 'User saved successfully');
 		      }
@@ -113,6 +118,7 @@ class UserController extends Controller
 		    $model=new LoginForm;
 		    $messages = array();
 		    if ($user->save()) {
+		      $this->emailVerifiedUser($user);
 		      $messages[] = 'Thank you for veryfying your email';
 		    }
 		    else {
@@ -127,6 +133,17 @@ class UserController extends Controller
 		  throw new Exception('This link is not valid');
 		}
 	}
+	
+	private function emailVerifiedUser($user)
+	{
+	  $emailHelper = new EmailHelper();
+		$params = array(
+			'NAME' => $user->firstName
+		);
+		$template = 'verifiedUser';
+		
+		$emailHelper->sendEmail($template, $params, $user->email);
+	}
 
   private function emailNewPasswordToUser($user, $template)
 	{
@@ -139,7 +156,23 @@ class UserController extends Controller
 		if ($template == 'newUser') {
 		  $params['LINK'] = "<a href='http://".($_SERVER['SERVER_NAME'] . Yii::app()->request->baseUrl ."/index.php/user/verifyEmail?email=".urlencode($user->email))."&id=".$user->id."' target='_blank'>Click here to verify your email</a>";
 		}
-		$template = $emailHelper->sendEmail($template, $params, $user->email);
+		$emailHelper->sendEmail($template, $params, $user->email);
+	}
+	
+	private function emailAdminOfNewUser($user)
+	{
+	  $emailHelper = new EmailHelper();
+		$params = array(
+			'EMAIL' => $user->email,
+			'NAME' => $user->firstName .' '.$user->lastName,
+			'ORGANIZATION' => $user->organization,
+			'SCHOOLNAME' => $user->schoolName,
+			'SCHOOLLOCATION' => $user->schoolLocation,
+			
+		);
+		$template = 'adminUserCreated';
+
+		$emailHelper->sendEmail($template, $params, Yii::app()->params['adminEmail']);
 	}
   
 	public function filters()

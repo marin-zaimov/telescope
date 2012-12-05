@@ -15,6 +15,22 @@ class EmailHelper
 			'subject' => 'Maui Telescope - Your user acount has been created',
 			'content' => 'A user account has been created for email %%EMAIL%%.<br/><br/>Please click the link below to verify this email and login with your new account. <br/> %%LINK%%'
 		),
+		'verifiedUser' => array(
+			'subject' => 'Maui Telescope - Welcome! Your account has been verified',
+			'content' => 'Hey %%NAME%%,<br/></br>Welcome to the Telescope on Maui project.<br/></br>Thanks for registering.'
+		),
+		'requestTempPassword' => array(
+			'subject' => 'Maui Telescope - You have requested a temporary password',
+			'content' => 'Hey %%NAME%%,<br/></br>You have requested a temporary password.<br/></br>Here is your temporary password: %%TEMP_PASSWORD%%<br/><br/>Please click on the link below to reset your password.<br/><br/> %%LINK%%'
+		),
+		'adminUserCreated' => array(
+			'subject' => 'Maui Telescope - A new user has registered',
+			'content' => 'A new user has registered. Below are the user details:<br/></br>Email: %%EMAIL%%<br/>Name: %%NAME%%<br/>Organization: %%ORGANIZATION%%<br/>School name: %%SCHOOLNAME%%<br/>School Location: %%SCHOOLLOCATION%%'
+		),
+		'reservationReminder' => array(
+			'subject' => 'Maui Telescope - Your reservation is approaching',
+			'content' => 'Hey %%NAME%%,<br/></br>This is just a reminder that your reservation to use the telescope is approaching.<br/><br/>It is scheduled for %%STARTTIME%%.<br/><br/>You will be viewing: %%OBJECT%%.<br/><br/>Enjoy the rest of your day!<br/><br/>-The Telescope on Maui Project'
+		),
 	);
 	public function createTemplate($template, $params)
 	{
@@ -45,9 +61,9 @@ class EmailHelper
     
     
 		$messageData = $this->createTemplate($template, $params);
-		
+		var_dump($messageData);
 		mail($emailTo, $messageData['subject'], $messageData['message'], $headers);
-		
+		//die;
 		//var_dump($emailTo);
 		//var_dump($messageData);
 		//var_dump($headers);
