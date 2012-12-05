@@ -22,20 +22,10 @@ class CalendarController extends MauiController
 	
 	public function actionPopulateDB()
 	{
-	    var_dump('hahaha');
 	}
 
 
-  public function actionPopulateCalendar() {
-    /*
-    $reservations = Yii::app()->db->createCommand("SELECT * FROM reservations")->query();
-    $skyTimes = Yii::app()->db->createCommand("SELECT * FROM skyTimes")->query();
-
-    foreach ($reservations as $f)
-      var_dump($f);
-    foreach ($skyTimes as $f)
-      var_dump($f);
-    */
+  /*public function actionPopulateCalendar() {
 
     $userModel = Yii::app()->user->model;
     $criteria = Reservations::model()->getDbCriteria();
@@ -78,9 +68,7 @@ class CalendarController extends MauiController
     }
     echo json_encode($data);
 
-
-
-  }
+  }*/
 
   public function actionReserveEvent() {
 
@@ -398,58 +386,8 @@ class CalendarController extends MauiController
 
 
 
-	public function actionOldAllReservations()
-	{
-
-    $userModel = Yii::app()->user->model;
-    $criteria = Reservations::model()->getDbCriteria();
-    $params = array();
-
-    if (isset($_GET['startTime'])) {
-	    $userStartTime = intval($_GET['startTime']);
-      $serverStart = TimeHelper::localDatetimeToGMT($userModel->id, $userStartTime);
-      $criteria->addCondition("startTime >= :startTime");
-      $params[':startTime'] = $serverStart;
-    }
-
-
-    if (isset($_GET['endTime'])) {
-      $userEndTime = intval($_GET['endTime']);
-      $serverEnd = TimeHelper::localDatetimeToGMT($userModel->id, $userEndTime);
-      $criteria->addCondition("endTime <= :endTime");
-      $params[':endTime'] = $serverEnd;
-    }
-    $criteria->params = $params;
-    $criteria->order = 'startTime';
-    // query
-    $reservations = Reservations::model()->findAll($criteria);
-
-    $data = array();
-    foreach ($reservations as $r) {
-      
-      $start = strtotime($r->startTime);
-      $end = strtotime($r->endTime);
-      
-      $localStart = TimeHelper::toLocalTime($userModel->id, $start);
-      $localEnd = TimeHelper::toLocalTime($userModel->id, $end);
-      
-      $data[] = array(
-        'title' => $r->skyTime->type.' - '.$r->user->organization .' - '.$r->user->firstName .' '.$r->user->lastName,
-        'start' => date('Y-m-d', $localStart),
-        'end' => date('Y-m-d', $localEnd),
-        'description' => date('h:i a', $localStart),
-      );
-    }
-    echo json_encode($data);
-    
-  }
-
-
-
   public function removeDuplicates($data) {
 
-            //var_dump('hit');
-            //die;
     $returnMe = array();
 
 
@@ -470,13 +408,7 @@ class CalendarController extends MauiController
 
       }
       if (!$hit) {
-        /*$temp = array(
-          'title' => $d['object'].': '.$d['actual'].'/'.$d['possible'],
-          'start' => $d['start'],
-          'description' => $d['description'],
-          'color' => $d['color'],
-        );*/
-        $returnMe[] = $d;//$temp;
+        $returnMe[] = $d;
       }
 
 
