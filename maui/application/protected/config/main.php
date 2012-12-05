@@ -69,7 +69,7 @@ return array(
 			'connectionString' => 'mysql:localhost;dbname=maui',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'sirdante11',
+			'password' => 'marin',
 			'charset' => 'utf8',
 		),
 		
