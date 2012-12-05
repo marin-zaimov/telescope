@@ -86,14 +86,6 @@ function setupCalendar() {
     },
 
 
-    /*
-    eventMouseover: function(event, jsEvent, view) {
-      $.getJSON('Dash', function(response) {
-        alert(response.names[0]);   // john doe
-      });
-    },
-    */
-
      
     events: function(start, end, callback) {
 
@@ -112,6 +104,7 @@ function setupCalendar() {
               start: reservations[i].start,
               description: reservations[i].description,
               color: reservations[i].color,
+              textColor: 'black',
               object: reservations[i].object,
               id: 'sky_event'+i,
             });

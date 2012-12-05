@@ -11,6 +11,53 @@
     
   }
 
+
+
+  #moon-filter {
+    font-weight: bolder;
+    background-color: <?php echo $colors['Moon'] ?>;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from( white),to( <?php echo $colors['Moon'] ?>));
+    background-image: -webkit-linear-gradient(top, white, <?php echo $colors['Moon'] ?>);
+    background-image: -o-linear-gradient(top, white, <?php echo $colors['Moon'] ?>);
+    background-image: linear-gradient(to bottom, white, <?php echo $colors['Moon'] ?>);
+    background-image: -moz-linear-gradient(top, white, <?php echo $colors['Moon'] ?>);
+
+
+  }
+  #jupiter-filter {
+    font-weight: bolder;
+    background-color: <?php echo $colors['Jupiter'] ?>;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from( white),to( <?php echo $colors['Jupiter'] ?>));
+    background-image: -webkit-linear-gradient(top, white, <?php echo $colors['Jupiter'] ?>);
+    background-image: -o-linear-gradient(top, white, <?php echo $colors['Jupiter'] ?>);
+    background-image: linear-gradient(to bottom, white, <?php echo $colors['Jupiter'] ?>);
+    background-image: -moz-linear-gradient(top, white, <?php echo $colors['Jupiter'] ?>);
+
+
+  }
+  #saturn-filter {
+    font-weight: bolder;
+    background-color: <?php echo $colors['Saturn'] ?>;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from( white),to( <?php echo $colors['Saturn'] ?>));
+    background-image: -webkit-linear-gradient(top, white, <?php echo $colors['Saturn'] ?>);
+    background-image: -o-linear-gradient(top, white, <?php echo $colors['Saturn'] ?>);
+    background-image: linear-gradient(to bottom, white, <?php echo $colors['Saturn'] ?>);
+    background-image: -moz-linear-gradient(top, white, <?php echo $colors['Saturn'] ?>);
+
+
+  }
+  #m13-filter, #m15-filter, #m31-filter, #m42-filter, #m57-filter, #m81-filter {
+    font-weight: bolder;
+    background-color: #FFFFCA;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from( white),to( #FFFFCA));
+    background-image: -webkit-linear-gradient(top, white, #FFFFCA);
+    background-image: -o-linear-gradient(top, white, #FFFFCA);
+    background-image: linear-gradient(to bottom, white, #FFFFCA);
+    background-image: -moz-linear-gradient(top, white, #FFFFCA);
+  }
+
+
+
 </style>
 
 <h3 class="page-header">Calendar</h1>
@@ -33,7 +80,6 @@
 
         <div class="highlight-btns">
           <div class="btn-group" data-toggle="buttons-checkbox">
-            <!-- TODO: don't hard code -->
             <button type="button" class="btn" id="moon-filter">Moon</button>
             <button type="button" class="btn" id="jupiter-filter">Jupiter</button>
             <button type="button" class="btn" id="saturn-filter">Saturn</button>

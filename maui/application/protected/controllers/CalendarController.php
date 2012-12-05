@@ -3,11 +3,17 @@
 class CalendarController extends MauiController
 {
 
+  public $colors = array(
+      'Jupiter' => '#D6EBFF',
+      'Saturn' => '#FFD6EB',
+      'Moon' => '#E8FFD2',
+    );
+
 
 
 	public function actionIndex()
 	{
-		$this->render('index');
+		$this->render('index', array('colors'=>$this->colors));
 	}
 
 	public function actionReserve()
@@ -174,12 +180,7 @@ class CalendarController extends MauiController
 	public function actionAllReservations()
 	{
 
-    $colors = array(
-      'Jupiter' => 'purple',
-      'Saturn' => 'green',
-      'Moon' => 'gray',
-    );
-
+    
 
     $userModel = Yii::app()->user->model;
     $criteriaReservations = Reservations::model()->getDbCriteria();
@@ -227,9 +228,9 @@ class CalendarController extends MauiController
       foreach ($skyTimes as $s) {
 
         $sky_object = $s->type; // e.g. Jupiter
-        $color = 'orange';
+        $color = '#FFFFCA';
         if ($sky_object == 'Jupiter' || $sky_object == 'Saturn' || $sky_object == 'Moon')
-          $color = $colors[$sky_object];
+          $color = $this->colors[$sky_object];
 
 
 
