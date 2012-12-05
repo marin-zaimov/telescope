@@ -8,21 +8,31 @@ $(function() {
   setupHighlightBtns();
   setupFCBtns();
 
-
-
-
 });
+
+var highlight_color = '#DDD';
 var highlight_btns = [
-    '#moon-filter',
-    '#jupiter-filter',
-    '#saturn-filter',
-    '#m13-filter',
-    '#m15-filter',
-    '#m31-filter',
-    '#m42-filter',
-    '#m57-filter',
-    '#m81-filter',
-  ];
+  '#moon-filter',
+  '#jupiter-filter',
+  '#saturn-filter',
+  '#m13-filter',
+  '#m15-filter',
+  '#m31-filter',
+  '#m42-filter',
+  '#m57-filter',
+  '#m81-filter',
+];
+var highlight_btn_name_to_filter = {
+  'Moon': '#moon-filter',
+  'Jupiter': '#jupiter-filter',
+  'Saturn': '#saturn-filter',
+  'M13': '#m13-filter',
+  'M15': '#m15-filter',
+  'M31': '#m31-filter',
+  'M42': '#m42-filter',
+  'M57': '#m57-filter',
+  'M81': '#m81-filter',
+};
 
 
   
@@ -111,18 +121,11 @@ function setupCalendar() {
           }
           window.all_events = all_events;
           callback(all_events);
+          highlightAfterMonthChange();
+
         }
       });
     },
-
-
-    /*
-    eventRender: function(the_event, element) {
-        element.popover({
-            content: the_event.description
-        });
-        element.popover('show');
-    },*/
 
 
     eventClick: function(calEvent, jsEvent, view) {
@@ -168,11 +171,7 @@ function setupHighlightBtns() {
 }
 
 function clearHighlights() {
-
   $('td').css('background-color','white');
-  for (var i = 0; i < window.highlight_btns.length; i++) {
-    $(window.highlight_btns[i]).attr('class','btn');
-  }
 }
 
 
@@ -180,13 +179,12 @@ function highlightDays(e) {
   var el_id = $(e.currentTarget).attr("id");
   if (el_id == undefined)
     el_id = e;
-  //alert(el_id);
   var btn_name = $('#'+el_id).text();
 
   for (var i = 0; i < window.all_events.length; i++) {
     if (window.all_events[i].object == btn_name) {
       if ($('#'+el_id).attr('class').indexOf('active') == -1) {
-        $(findFullCalendarDayForClickedEvent(window.all_events[i].start)).css('background-color','red');
+        $(findFullCalendarDayForClickedEvent(window.all_events[i].start)).css('background-color',window.highlight_color);
       }
       else {
         $(findFullCalendarDayForClickedEvent(window.all_events[i].start)).css('background-color','white');
@@ -196,6 +194,20 @@ function highlightDays(e) {
 
 
 }
+
+function highlightAfterMonthChange() {
+
+  for (var i = 0; i < window.all_events.length; i++) {
+    if ($(window.highlight_btn_name_to_filter[window.all_events[i].object]).attr('class').indexOf('active') == -1) {
+    }
+    else {
+      $(findFullCalendarDayForClickedEvent(window.all_events[i].start)).css('background-color', window.highlight_color);
+    }
+  }
+
+
+}
+
 
 function setupFCBtns() {
   $('.fc-button').click(clearHighlights);
